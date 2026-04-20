@@ -64,7 +64,7 @@ export default function OurValues() {
   const active = values[activeIndex]
 
   return (
-    <section className="bg-[#f0eeeb] py-24 text-slate-950">
+    <section id="our-values" className="bg-[#f0eeeb] py-24 text-slate-950">
       <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-14">
 
         {/* Top — title left, text right */}

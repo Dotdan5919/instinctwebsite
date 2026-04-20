@@ -35,10 +35,10 @@ useEffect(() => {
           {/* Vertical border lines — span full page height */}
       <div className="absolute z-10 left-24 w-[1300px] h-full border-l border-r border-white/20 pointer-events-none" />
 
-      <div className={`flex w-screen overflow-hidden flex-col ${backgrounds[currentStep]} bg-cover bg-no-repeat bg-center min-h-screen`}>
+      <div id="hero-wrapper" className={`flex w-screen overflow-hidden flex-col ${backgrounds[currentStep]} bg-cover bg-no-repeat bg-center min-h-screen`}>
         <Preheader />
         <Navbar />
-        <Hero />
+       <Hero currentStep={currentStep} />
       </div>
 
       

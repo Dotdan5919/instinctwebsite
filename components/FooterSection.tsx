@@ -37,7 +37,7 @@ export default function FooterSection() {
             </div>
           
             <p className="mt-2 text-sm text-slate-400">
-              Let's discuss how we can collaborate
+              Let&apos;s discuss how we can collaborate
             </p>
             
           </div>
@@ -58,7 +58,7 @@ export default function FooterSection() {
       >
         <div className="flex items-center justify-between gap-6">
           {/* Logo */}
-          <div className="h-12 w-12 flex-shrink-0 overflow-hidden rounded-full bg-white/10">
+          <div className="h-12 w-12 shrink-0 overflow-hidden rounded-full bg-white/10">
             <Image src={logo} alt="Instinct Engineering" width={48} height={48} className="object-cover" />
           </div>
 
