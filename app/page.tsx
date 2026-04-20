@@ -5,6 +5,10 @@ import ExtraordinarySection from "@/components/ExtraordinarySection";
 import TrustedSection from "@/components/TrustedSection";
 import NumbersSection from "@/components/NumbersSection";
 import FeaturedProjectsSection from "@/components/FeaturedProjectsSection";
+import WhatWeDoSection from "@/components/WhatWeDoSection";
+import QualityPeopleSection from "@/components/QualityPeopleSection";
+import BuildingTogetherSection from "@/components/BuildingTogetherSection";
+import FooterSection from "@/components/FooterSection";
 
 export default function Home() {
   return (
@@ -17,10 +21,15 @@ export default function Home() {
         <Hero />
       </div>
 
+      
       <ExtraordinarySection />
       <TrustedSection />
       <NumbersSection />
       <FeaturedProjectsSection />
+      <WhatWeDoSection />
+      <QualityPeopleSection />
+      <BuildingTogetherSection />
+      <FooterSection />
     </div>
   );
 
