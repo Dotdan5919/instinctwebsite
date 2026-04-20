@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { motion } from "framer-motion";
 import heroBg from "@/images/building.jpg";
 import Btn from "./Btn";
 
@@ -9,17 +10,29 @@ export default function BuildingTogetherSection() {
         <div className="relative">
 
           {/* Image — right side, bleeds top, taller than card */}
-          <div className="absolute right-0 top-[-48px] w-[60%] h-[120%] overflow-hidden rounded-[28px]">
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.9 }}
+            viewport={{ once: true }}
+            className="absolute right-0 top-[-48px] w-[60%] h-[120%] overflow-hidden rounded-[28px]"
+          >
             <Image
               src={heroBg}
               alt="Construction team reviewing plans"
               fill
               className="object-cover object-center"
             />
-          </div>
+          </motion.div>
 
           {/* Cream card — overlaps image on the left */}
-          <div className="relative z-10 w-[55%] rounded-[28px] bg-[#FDF3DC] p-12 my-8 shadow-[0_20px_50px_rgba(15,23,42,0.06)]">
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true }}
+            className="relative z-10 w-[55%] rounded-[28px] bg-[#FDF3DC] p-12 my-8 shadow-[0_20px_50px_rgba(15,23,42,0.06)]"
+          >
             <h2 className="font-bebas text-5xl uppercase leading-[1.05] text-slate-950 sm:text-6xl">
               BUILDING TOMORROW,
               <br />
@@ -46,7 +59,7 @@ export default function BuildingTogetherSection() {
             <div className="mt-8">
               <Btn text="Join the Instinct Team" />
             </div>
-          </div>
+          </motion.div>
 
         </div>
       </div>

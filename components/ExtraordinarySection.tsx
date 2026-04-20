@@ -1,4 +1,5 @@
 import Image from "next/image"
+import { motion } from "framer-motion"
 
 import extraordinary from "@/images/extraordinary.png"
 import Btn from "./Btn"
@@ -8,7 +9,13 @@ export default function ExtraordinarySection() {
     <section className="bg-white text-black py-24 z-10">
       <div className="mx-auto max-w-7xl px-14 md:px-16">
         <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr] items-center">
-          <div className="max-w-2xl ">
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="max-w-2xl "
+          >
             <h2 className="font-bebas text-4xl md:text-5xl tracking-tight uppercase leading-tight">
               EXTRAORDINARY TEAMS
               <br />
@@ -26,9 +33,15 @@ export default function ExtraordinarySection() {
      
 
      <Btn text="Our Vision, Values & Commitment"/>
-          </div>
+          </motion.div>
 
-          <div className="overflow-hidden rounded-[32px] border border-black/5 shadow-[0_25px_80px_rgba(15,23,42,0.08)]">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.0 }}
+            viewport={{ once: true }}
+            className="overflow-hidden rounded-[32px] border border-black/5 shadow-[0_25px_80px_rgba(15,23,42,0.08)]"
+          >
             <Image
               src={extraordinary}
               alt="Construction team on site"
@@ -36,7 +49,7 @@ export default function ExtraordinarySection() {
               height={640}
               className="h-full w-full object-cover"
             />
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

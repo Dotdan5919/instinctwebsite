@@ -1,4 +1,6 @@
+"use client"
 import Image from "next/image";
+import { motion } from "framer-motion";
 import logo from '@/icons/instinct-logo.png'
 import Btn from "./Btn";
 
@@ -17,7 +19,13 @@ export default function FooterSection() {
       }}
     >
       {/* CTA Row */}
-      <div className="mx-auto max-w-7xl px-6 pt-12 pb-10 sm:px-10 lg:px-14">
+      <motion.div
+        initial={{ opacity: 0, y: -50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="mx-auto max-w-7xl px-6 pt-12 pb-10 sm:px-10 lg:px-14"
+      >
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <div className="flex items-center gap-5">
@@ -35,13 +43,19 @@ export default function FooterSection() {
           </div>
           
         </div>
-      </div>
+      </motion.div>
 
       {/* Divider */}
       <div className="border-t border-white/10" />
 
       {/* Nav Row */}
-      <div className="mx-auto max-w-7xl px-6 py-6 sm:px-10 lg:px-14">
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+        className="mx-auto max-w-7xl px-6 py-6 sm:px-10 lg:px-14"
+      >
         <div className="flex items-center justify-between gap-6">
           {/* Logo */}
           <div className="h-12 w-12 flex-shrink-0 overflow-hidden rounded-full bg-white/10">
@@ -79,7 +93,7 @@ export default function FooterSection() {
             </a>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Divider */}
       <div className="border-t border-white/10" />

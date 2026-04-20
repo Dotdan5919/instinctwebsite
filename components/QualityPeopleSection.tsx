@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { motion } from "framer-motion";
 import extraordinary from "@/images/define.jpg";
 import Btn from "./Btn";
 
@@ -20,7 +21,13 @@ export default function QualityPeopleSection() {
           <div className="absolute inset-0 bg-slate-950/55" />
 
           {/* Content — pinned to bottom-left */}
-          <div className="relative flex flex-col justify-end h-full min-h-[500px] px-10 py-12 sm:px-14 sm:py-14">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="relative flex flex-col justify-end h-full min-h-[500px] px-10 py-12 sm:px-14 sm:py-14"
+          >
             <div className="max-w-lg space-y-6">
               <h2 className="font-bebas text-5xl uppercase leading-[1.05] text-white sm:text-6xl">
                 DEFINED BY THE
@@ -32,7 +39,7 @@ export default function QualityPeopleSection() {
               </p>
               <Btn text="The people behind the projects" />
             </div>
-          </div>
+          </motion.div>
 
         </div>
       </div>

@@ -4,23 +4,9 @@ import Navbar from './Navbar'
 
 const cyclingWords = ['CERTAINTY.', 'CONTROL.', 'DISCIPLINE.']
 
-const backgrounds = [
-  "bg-[url('../images/hero_bg.png')]",
-  "bg-[url('../images/hero_bg_2.png')]",
- "bg-[url('../images/hero_bg_1.png')]"
-]
-
-const steps = [
-  { num: '01', label: 'Defined Before Build' },
-  { num: '02', label: 'Controlled Delivery' },
-  { num: '03', label: 'Built to Perform' },
-]
-
 export default function Hero() {
   const [wordIndex, setWordIndex] = useState(0)
   const [animState, setAnimState] = useState<'visible' | 'exit' | 'enter'>('visible')
-  const [currentStep, setCurrentStep] = useState(0)
-  const [progress, setProgress] = useState(0)
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -37,29 +23,6 @@ export default function Hero() {
     return () => clearInterval(interval)
   }, [])
 
-  useEffect(() => {
-    const stepInterval = setInterval(() => {
-      setCurrentStep((prev) => (prev + 1) % steps.length)
-      setProgress(0)
-    }, 5000)
-
-    const progressInterval = setInterval(() => {
-      setProgress((prev) => Math.min(prev + (100 / 50), 100)) // 50 steps over 5 seconds
-    }, 100)
-
-    return () => {
-      clearInterval(stepInterval)
-      clearInterval(progressInterval)
-    }
-  }, [])
-
-  const handleScrollDown = () => {
-    window.scrollTo({
-      top: document.body.scrollHeight,
-      behavior: 'smooth',
-    })
-  }
-
   const wordStyle: React.CSSProperties = {
     display: 'inline-block',
     transition: 'transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease',
@@ -73,14 +36,14 @@ export default function Hero() {
   }
 
   return (
-    <section className={`px-14 md:px-16 mx-auto w-full max-w-7xl relative min-h-screen overflow-hidden flex flex-col items-center  bg-cover bg-center transition-all duration-1000`}>
+    <section className=" px-14 md:px-16  mx-auto w-full max-w-7xl relative min-h-screen overflow-hidden flex flex-col items-center bg-[url('/images/hero_bg.png')] bg-cover bg-center">
     
     
      {/* Dark overlay */}
-      <div className="absolute inset-0 z-10" />
+      <div className="absolute inset-0  z-10" />
 
       {/* Content */}
-      <div className="relative z-20 w-full pt-24">
+      <div className="relative z-20 w-full  pt-24">
 
         {/* Headline */}
         <h1
@@ -97,9 +60,9 @@ export default function Hero() {
         </h1>
 
         {/* Description + CTA row */}
-        <div className="flex items-center mb-16 max-w-4xl justify-between ">
+        <div className="flex items-center  mb-16 max-w-4xl justify-between ">
           <div className="flex gap-4 items-center">
-            <div className="w-3 h-2 p-2 bg-amber-500 mt-1" />
+            <div className="w-3 h-2 p-2 bg-amber-500  mt-1" />
             <p className="text-gray-300 text-[15px] leading-relaxed font-montserrat ">
               At Instinct Engineering, construction is approached as a disciplined system
               where planning, precision, and execution align to produce outcomes that endure.
@@ -114,15 +77,14 @@ export default function Hero() {
 
         {/* Steps */}
         <div className="flex gap-0">
-          {steps.map((step, index) => (
+          {[
+            { num: '01', label: 'Defined Before Build', active: false },
+            { num: '02', label: 'Controlled Delivery', active: true },
+            { num: '03', label: 'Built to Perform', active: false },
+          ].map((step) => (
             <div key={step.num} className="flex flex-col mr-16">
-              <div className="w-48 h-[3px] mb-3 bg-white/30 relative">
-                {index === currentStep && (
-                  <div
-                    className="h-full bg-amber-500 transition-all duration-100"
-                    style={{ width: `${progress}%` }}
-                  />
-                )}
+              <div className="w-48 h-[3px] mb-3" style={{ background: step.active ? '#f59e0b' : 'rgba(255,255,255,0.3)' }}>
+                {step.active && <div className="h-full w-1/2 bg-amber-500" />}
               </div>
               <p className="text-white text-sm font-medium">
                 <span className="text-white/60 mr-1">{step.num}</span>
@@ -135,10 +97,7 @@ export default function Hero() {
       </div>
 
     {/* Rotating circular badge */}
-<div 
-  onClick={handleScrollDown}
-  className="absolute bottom-24 right-25 z-20 w-[140px] h-[140px] hover:scale-105 transition-transform duration-500 cursor-pointer"
->
+<div className="absolute bottom-24 right-25 z-20 w-[140px] h-[140px] hover:scale-105 transition-transform duration-500">
   <div className="relative w-52 h-52 rounded-2xl bg-[#8F5E03] hover:bg-amber-900 flex items-center justify-center p-20">
     
     {/* Static circular text */}
@@ -193,7 +152,7 @@ export default function Hero() {
       >
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
       </svg>
-      <span className="text-[#f5d07a] text-[8px] font-semibold tracking-widest w-20 h-7 flex items-center justify-center">Scroll down</span>
+      <span className="text-[#f5d07a] text-[8px] font-semibold tracking-widest  w-20 h-7 flex items-center justify-center">Scroll down</span>
     </div>
 
   </div>

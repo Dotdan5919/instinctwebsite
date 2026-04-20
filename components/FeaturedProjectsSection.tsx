@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
 import img1 from "@/images/project1.png";
 import img2 from "@/images/project2.png";
 import img3 from "@/images/project3.png";
@@ -140,7 +141,13 @@ export default function FeaturedProjectsSection() {
     <section className="bg-white text-slate-950 pt-24 pb-0 overflow-hidden">
 
       {/* Header */}
-      <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-14">
+      <motion.div
+        initial={{ opacity: 0, y: -50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7 }}
+        viewport={{ once: true }}
+        className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-14"
+      >
         <div className="grid gap-10 xl:grid-cols-[0.95fr_1.2fr_0.8fr] xl:items-start">
           <div>
             <h2 className="font-bebas text-5xl uppercase leading-tight text-slate-950 sm:text-6xl">
@@ -163,13 +170,17 @@ export default function FeaturedProjectsSection() {
             <Btn text="See all Projects" />
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Sidebar + Cards */}
       <div className="mt-12 flex items-stretch h-[480px] lg:h-[500px]">
 
         {/* Sidebar */}
-        <div
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.9 }}
+          viewport={{ once: true }}
           className="hidden lg:flex flex-shrink-0 rounded-tr-3xl bg-[#5b3900] flex-col justify-center"
           style={{
             width: "max(calc((100vw - 80rem) / 2 + 3.5rem + 300px), 390px)",
@@ -203,10 +214,14 @@ export default function FeaturedProjectsSection() {
               );
             })}
           </div>
-        </div>
+        </motion.div>
 
         {/* Cards */}
-        <div
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.1 }}
+          viewport={{ once: true }}
           ref={scrollRef}
           className="flex gap-4 overflow-x-auto scroll-smooth flex-1 px-4"
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
@@ -252,39 +267,40 @@ export default function FeaturedProjectsSection() {
               </div>
             </div>
           ))}
-        </div>
+        </motion.div>
       </div>
 
-      {/* Scroll control — bottom right, matches screenshot */}
-    <div className="relative py-5 px-6 sm:px-10 lg:px-14 overflow-hidden">
-      <button
-        type="button"
-        onClick={canScrollLeft ? scrollLeft : scrollRight}
-        className="flex items-center gap-3 text-sm font-medium text-slate-700 hover:text-slate-950 transition-all duration-500 ease-in-out"
-        style={{
-          transform: canScrollLeft ? "translateX(calc(100vw - 280px))" : "translateX(0)",
-          paddingLeft: canScrollLeft
-            ? "0"
-            : "max(calc((100vw - 80rem) / 2 + 3.5rem + 300px + 1rem), 407px)",
-        }}
-      >
-        {canScrollLeft ? (
-          <>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M15 18l-6-6 6-6" />
-            </svg>
-            Scroll Left
-          </>
-        ) : (
-          <>
-            Scroll Right
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M9 18l6-6-6-6" />
-            </svg>
-          </>
-        )}
-      </button>
-    </div>
+   <div className="relative py-5 px-6 sm:px-10 lg:px-14 overflow-hidden">
+  <button
+    type="button"
+    onClick={canScrollLeft ? scrollLeft : scrollRight}
+    className="flex items-center gap-3 text-sm font-medium text-slate-700 hover:text-slate-950 transition-all duration-500 ease-in-out"
+    style={{
+      transform: canScrollRight ? "translateX(calc(100vw - 280px))" : "translateX(0)",
+      paddingLeft: canScrollRight
+        ? "0"
+        : "max(calc((100vw - 80rem) / 2 + 3.5rem + 300px + 1rem), 407px)",
+    }}
+  >
+    {!canScrollRight ? (
+      <>
+        Scroll Right
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M9 18l6-6-6-6" />
+        </svg>
+      </>
+    ) : (
+      <>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M15 18l-6-6 6-6" />
+        </svg>
+        Scroll Left
+      </>
+    )}
+  </button>
+</div>
+
+
     </section>
   );
 }

@@ -1,60 +1,28 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
 import Btn from "./Btn";
 
-function RollingDigit({
-  digit,
-  delay,
-  started,
-}: {
-  digit: string;
-  delay: number;
-  started: boolean;
-}) {
-  const [offset, setOffset] = useState(0);
-  const isNum = !isNaN(Number(digit)) && digit !== ",";
+function useCountUp(target: number, duration = 2000, started = false) {
+  const [count, setCount] = useState(0);
 
   useEffect(() => {
-    if (!isNum || !started) return;
-    const t = setTimeout(() => setOffset(Number(digit)), delay);
-    return () => clearTimeout(t);
-  }, [digit, delay, isNum, started]);
+    if (!started) return;
+    let startTime: number | null = null;
 
-  if (!isNum) {
-    return (
-      <span className="text-6xl font-bebas leading-none text-white">
-        {digit}
-      </span>
-    );
-  }
+    const step = (timestamp: number) => {
+      if (!startTime) startTime = timestamp;
+      const progress = Math.min((timestamp - startTime) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setCount(Math.floor(eased * target));
+      if (progress < 1) requestAnimationFrame(step);
+    };
 
-  return (
-    <span
-      className="inline-block overflow-hidden"
-      style={{ height: "72px" }} // fixed px height matching font size
-    >
-      <span
-        className="flex flex-col"
-        style={{
-          transform: `translateY(-${offset * 72}px)`,
-          transition: started
-            ? `transform 900ms cubic-bezier(0.22, 1, 0.36, 1) ${delay}ms`
-            : "none",
-        }}
-      >
-        {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((n) => (
-          <span
-            key={n}
-            className="font-bebas text-6xl text-white tabular-nums"
-            style={{ display: "block", height: "72px", lineHeight: "72px" }}
-          >
-            {n}
-          </span>
-        ))}
-      </span>
-    </span>
-  );
+    requestAnimationFrame(step);
+  }, [target, duration, started]);
+
+  return count;
 }
 
 function StatItem({
@@ -68,7 +36,15 @@ function StatItem({
   started: boolean;
   baseDelay: number;
 }) {
-  const digits = value.toLocaleString().split("");
+  const [delayedStart, setDelayedStart] = useState(false);
+
+  useEffect(() => {
+    if (!started) return;
+    const t = setTimeout(() => setDelayedStart(true), baseDelay);
+    return () => clearTimeout(t);
+  }, [started, baseDelay]);
+
+  const count = useCountUp(value, 2000, delayedStart);
 
   return (
     <div className="flex flex-col gap-3">
@@ -76,14 +52,12 @@ function StatItem({
         {label}
       </p>
       <div className="flex items-center">
-        {digits.map((digit, i) => (
-          <RollingDigit
-            key={i}
-            digit={digit}
-            started={started}
-            delay={baseDelay + (digits.length - 1 - i) * 90}
-          />
-        ))}
+        <span
+          className="font-bebas text-6xl text-white tabular-nums"
+          style={{ lineHeight: "72px" }}
+        >
+          {count.toLocaleString()}
+        </span>
         <span
           className="font-bebas text-5xl text-amber-400 ml-1"
           style={{ lineHeight: "72px" }}
@@ -130,9 +104,13 @@ export default function NumbersSection() {
         <div className="flex flex-col gap-10 rounded-[2rem] border border-white/10 bg-[#5b3900] p-8 sm:p-10 lg:p-12">
 
           {/* Stats row */}
-          <div className="grid gap-8 xl:grid-cols-[auto_1fr] xl:items-center">
-
-            {/* Title */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="grid gap-8 xl:grid-cols-[auto_1fr] xl:items-center"
+          >
             <div className="flex items-center pr-8 xl:border-r xl:border-white/20">
               <h2 className="font-bebas text-5xl uppercase leading-none text-amber-400 sm:text-6xl lg:text-7xl">
                 Our
@@ -140,8 +118,6 @@ export default function NumbersSection() {
                 Numbers
               </h2>
             </div>
-
-            {/* Stats */}
             <div className="grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-4">
               {stats.map((item, i) => (
                 <StatItem
@@ -153,10 +129,16 @@ export default function NumbersSection() {
                 />
               ))}
             </div>
-          </div>
+          </motion.div>
 
           {/* White card */}
-          <div className="rounded-[1.5rem] bg-white p-8 text-slate-950 sm:p-10">
+          <motion.div
+            initial={{ opacity: 0, y: -50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="rounded-[1.5rem] bg-white p-8 text-slate-950 sm:p-10"
+          >
             <h2 className="font-bebas text-4xl uppercase tracking-tight text-slate-950 sm:text-5xl">
               We Build History
             </h2>
@@ -174,7 +156,7 @@ export default function NumbersSection() {
             <div className="mt-8">
               <Btn text="Learn more about our journey" />
             </div>
-          </div>
+          </motion.div>
 
         </div>
       </div>

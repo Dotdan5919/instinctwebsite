@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Btn({text}: {text: string}) {
   return (
-    <button className="vision-btn mt-3 inline-flex items-center gap-4 rounded-full pl-3 py-3 pr-4 font-montserrat text-sm uppercase transition-colors duration-300">
+    <button className="vision-btn mt-3 inline-flex items-center gap-3 rounded-full pl-2 py-2 pr-3 font-montserrat text-xs uppercase transition-colors duration-300">
       <style>{`
         .vision-btn {
           position: relative;
@@ -10,31 +10,28 @@ export default function Btn({text}: {text: string}) {
           isolation: isolate;
           display: inline-flex;
           align-items: center;
-          min-width: 0;
           transition: color 0.4s ease;
         }
         .vision-btn::before {
           content: '';
           position: absolute;
-          left: 8px;
-          top: 50%;
-          width: 40px;
-          height: 40px;
+          inset: 0;
           border-radius: 9999px;
           background: rgb(245 158 11);
-          transform: translateY(-50%) scale(1);
-          transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+          transform: scaleX(0);
+          transform-origin: left center;
+          transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
           z-index: 0;
         }
         .vision-btn:hover::before {
-          transform: translateY(-50%) scale(20);
+          transform: scaleX(1);
         }
 
         .vision-btn .arrow-left {
           position: relative;
           z-index: 1;
-          width: 40px;
-          height: 40px;
+          width: 32px;
+          height: 32px;
           border-radius: 9999px;
           background: rgb(245 158 11);
           display: inline-flex;
@@ -56,13 +53,8 @@ export default function Btn({text}: {text: string}) {
           z-index: 1;
           color: rgb(245 158 11);
           transition: color 0.4s ease;
-          white-space: normal;
-          text-align: left;
-          max-width: 220px;
-          min-width: 0;
-          line-height: 1.2;
-          display: inline-block;
-          word-break: break-word;
+          white-space: nowrap;
+          font-size: 11px;
         }
         .vision-btn:hover .btn-text {
           color: white;
@@ -71,8 +63,8 @@ export default function Btn({text}: {text: string}) {
         .vision-btn .arrow-right {
           position: relative;
           z-index: 1;
-          width: 40px;
-          height: 40px;
+          width: 32px;
+          height: 32px;
           border-radius: 9999px;
           background: rgb(245 158 11);
           display: inline-flex;

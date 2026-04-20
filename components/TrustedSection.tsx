@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { motion } from "framer-motion";
 import TrustedImage from "@/images/Trusted.png";
 import Btn from "./Btn";
 
@@ -9,7 +10,13 @@ export default function TrustedSection() {
         <div className="relative flex items-center">
 
           {/* Image — taller, no border, overlaps the cream box */}
-          <div className="relative z-0 w-[45%] flex-shrink-0">
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.9 }}
+            viewport={{ once: true }}
+            className="relative z-0 w-[45%] flex-shrink-0"
+          >
             <div className="overflow-hidden rounded-3xl shadow-2xl" style={{ height: '620px' }}>
               <Image
                 src={TrustedImage}
@@ -20,10 +27,14 @@ export default function TrustedSection() {
                 style={{ position: 'absolute' }}
               />
             </div>
-          </div>
+          </motion.div>
 
           {/* Cream box — overlaps the image on the left */}
-          <div
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true }}
             className="relative z-0 flex-1 rounded-3xl bg-[#fff8ed] py-14 pr-12 shadow-xl"
             style={{ marginLeft: '-80px', paddingLeft: 'calc(80px + 48px)' }}
           >
@@ -40,7 +51,7 @@ export default function TrustedSection() {
             </p>
 
             <Btn text="Explore Our Approach" />
-          </div>
+          </motion.div>
 
         </div>
       </div>
