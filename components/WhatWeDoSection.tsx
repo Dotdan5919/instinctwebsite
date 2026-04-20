@@ -3,6 +3,13 @@ import { useState } from "react";
 import Image from "next/image";
 import Btn from "./Btn";
 import extraordinary from "@/images/extraordinary.png";
+import whatwedo1 from "@/images/whatwedo1.jpg";
+import whatwedo2 from "@/images/whatwedo2.jpg";
+import whatwedo3 from "@/images/whatwedo3.jpg";
+import whatwedo4 from "@/images/whatwedo4.jpg";
+import whatwedo5 from "@/images/whatwedo5.jpg";
+import whatwedo6 from "@/images/whatwedo6.jpg";
+import whatwedo7 from "@/images/whatwedo7.jpg";
 
 const services = [
   {
@@ -16,48 +23,58 @@ const services = [
     num: "02",
     name: "Building Construction",
     description:
-      "From foundations to finishes, we execute full-scale building projects with rigorous quality control, skilled labour, and on-site precision at every phase.",
-    link: "Learn about Building Construction with Instinct",
+      "From residential developments to commercial buildings, we execute projects to defined specifications — ensuring structural integrity, quality, and long-term performance.",
+    link: "View Building Projects",
   },
   {
     num: "03",
     name: "Road & Infrastructure",
     description:
-      "We design and build durable road networks and civil infrastructure — delivering safe, long-lasting solutions that connect communities and support development.",
-    link: "Learn about Road & Infrastructure with Instinct",
+      "We deliver civil and infrastructure works designed for durability, efficiency, and long-term usability — supporting movement, access, and development.",
+    link: "Explore Infrastructure",
   },
   {
     num: "04",
     name: "Project Partnering",
     description:
-      "We collaborate closely with clients, consultants, and contractors to align goals, share risk, and drive outcomes through structured partnership frameworks.",
-    link: "Learn about Project Partnering with Instinct",
+      "Our collaborative approach integrates clients, consultants, and stakeholders — ensuring alignment, transparency, and coordinated delivery from start to finish.",
+    link: "Learn about partnering",
   },
   {
     num: "05",
     name: "Roofing Systems",
     description:
-      "We install and maintain high-performance roofing systems tailored to each structure — combining durability, weatherproofing, and aesthetic integrity.",
-    link: "Learn about Roofing Systems with Instinct",
+      "Engineered roofing solutions installed with precision — designed to provide protection, resilience, and long-term performance under varying conditions.",
+    link: "View roofing solutions",
   },
   {
     num: "06",
     name: "Flooring & Finishes",
     description:
-      "Our finishing teams deliver precision floor installations and interior finishes that meet exacting standards for both commercial and residential environments.",
-    link: "Learn about Flooring & Finishes with Instinct",
+      "We deliver high-performance flooring and finishing systems — combining durability, functionality, and refined detailing across all project types.",
+    link: "Explore flooring and finishes",
   },
   {
     num: "07",
     name: "Reconstruction & Upgrades",
     description:
-      "We restore and modernise existing structures — assessing, planning, and executing upgrades that extend building life and enhance performance.",
-    link: "Learn about Reconstruction & Upgrades with Instinct",
+      "We upgrade and redevelop existing structures — improving integrity, functionality, and lifespan through structured and carefully managed execution.",
+    link: "See more on reconstruction",
   },
 ];
 
 export default function WhatWeDoSection() {
   const [active, setActive] = useState(0);
+
+  const serviceImages = [
+    whatwedo7,
+    whatwedo6,
+    whatwedo5,
+    whatwedo4,
+    whatwedo3,
+    whatwedo1,
+    whatwedo2,
+  ]
 
   return (
     <section className="bg-white py-24">
@@ -122,7 +139,7 @@ export default function WhatWeDoSection() {
             {/* Right – image + text panel */}
             <div className="relative min-h-[420px] bg-slate-950 overflow-hidden">
               <Image
-                src={extraordinary}
+                src={serviceImages[active] ?? extraordinary}
                 alt={services[active].name}
                 fill
                 className="object-cover transition-opacity duration-500"

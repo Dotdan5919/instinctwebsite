@@ -20,16 +20,20 @@ export default function FooterSection() {
       <div className="mx-auto max-w-7xl px-6 pt-12 pb-10 sm:px-10 lg:px-14">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
+            <div className="flex items-center gap-5">
             <h2 className="font-bebas text-4xl uppercase text-white sm:text-5xl">
               READY TO START A CONVERSATION ?
             </h2>
+            
+            <Btn text="Contact Us" />
+            </div>
+          
             <p className="mt-2 text-sm text-slate-400">
               Let's discuss how we can collaborate
             </p>
+            
           </div>
-          <div className="flex-shrink-0">
-            <Btn text="Contact Us" />
-          </div>
+          
         </div>
       </div>
 
@@ -47,7 +51,7 @@ export default function FooterSection() {
           {/* Nav links */}
           <nav className="hidden items-center gap-8 lg:flex">
             {["Our Company", "Our Services", "Our Projects", "News & Insights", "Careers", "Resources"].map((item) => (
-              <a key={item} href="#" className="text-sm text-slate-300 hover:text-white transition-colors">
+              <a key={item} href="#" className="text-sm text-slate-300 hover:text-yellow-500 transition-colors">
                 {item}
               </a>
             ))}
@@ -112,13 +116,13 @@ export default function FooterSection() {
               Subscribe to Our Newsletter to get Important News, Amazing Offers & Inside Scoops.
             </p>
             <p className="mt-4 text-sm font-semibold text-white">Email</p>
-            <div className="mt-2 flex overflow-hidden rounded-lg border border-white/15 bg-white/5">
+            <div className="mt-2 flex overflow-hidden rounded-lg border border-white/15 bg-white">
               <input
                 type="email"
                 placeholder="Enter your email address"
-                className="flex-1 bg-transparent px-4 py-3 text-sm text-white placeholder:text-slate-500 outline-none"
+                className="flex-1 bg-transparent px-4 py-3 text-sm text-gray-500 placeholder:text-slate-500 outline-none"
               />
-              <button className="px-4 text-sm font-medium text-[#E8950A] hover:text-white transition-colors">
+              <button className="px-4 text-sm font-medium text-gray-500 hover:text-amber-600 transition-colors">
                 Send
               </button>
             </div>

@@ -2,13 +2,15 @@ import React from 'react'
 
 export default function Btn({text}: {text: string}) {
   return (
-    <button className="vision-btn mt-3 inline-flex items-center gap-4 rounded-full pl-2 py-2 pr-5 font-montserrat text-sm uppercase transition-colors duration-300">
+    <button className="vision-btn mt-3 inline-flex items-center gap-4 rounded-full pl-3 py-3 pr-4 font-montserrat text-sm uppercase transition-colors duration-300">
       <style>{`
         .vision-btn {
           position: relative;
           overflow: hidden;
           isolation: isolate;
-        
+          display: inline-flex;
+          align-items: center;
+          min-width: 0;
           transition: color 0.4s ease;
         }
         .vision-btn::before {
@@ -54,6 +56,13 @@ export default function Btn({text}: {text: string}) {
           z-index: 1;
           color: rgb(245 158 11);
           transition: color 0.4s ease;
+          white-space: normal;
+          text-align: left;
+          max-width: 220px;
+          min-width: 0;
+          line-height: 1.2;
+          display: inline-block;
+          word-break: break-word;
         }
         .vision-btn:hover .btn-text {
           color: white;

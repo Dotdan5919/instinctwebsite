@@ -61,6 +61,8 @@ export default function Hero() {
   }
 
   const wordStyle: React.CSSProperties = {
+    display: 'inline-block',
+    transition: 'transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease',
     transform:
       animState === 'exit'
         ? 'translateY(40px)'

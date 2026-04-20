@@ -1,15 +1,15 @@
 import Image from "next/image";
-import heroBg from "@/images/hero_bg.png";
+import heroBg from "@/images/building.jpg";
 import Btn from "./Btn";
 
 export default function BuildingTogetherSection() {
   return (
-    <section className="bg-white py-16 overflow-hidden">
+    <section className="bg-white py-20 overflow-hidden">
       <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-14">
         <div className="relative">
 
           {/* Image — right side, bleeds top, taller than card */}
-          <div className="absolute right-0 top-[-48px] w-[58%] h-[calc(100%+48px)] overflow-hidden rounded-[28px]">
+          <div className="absolute right-0 top-[-48px] w-[60%] h-[120%] overflow-hidden rounded-[28px]">
             <Image
               src={heroBg}
               alt="Construction team reviewing plans"

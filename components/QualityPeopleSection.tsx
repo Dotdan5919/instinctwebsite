@@ -1,5 +1,5 @@
 import Image from "next/image";
-import extraordinary from "@/images/extraordinary.png";
+import extraordinary from "@/images/define.jpg";
 import Btn from "./Btn";
 
 export default function QualityPeopleSection() {
