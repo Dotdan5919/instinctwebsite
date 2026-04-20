@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import projectImage from "@/images/extraordinary.png";
+import projectImage from "@/images/featured_image.png";
 import Btn from "./Btn";
 
 type CategoryKey = "residential" | "commercial" | "infrastructure" | "renovation";
@@ -133,11 +133,11 @@ export default function FeaturedProjectsSection() {
             </h2>
           </div>
 
-          <div className="max-w-2xl">
-            <p className="font-montserrat text-base text-slate-600 sm:text-lg">
+          <div className="max-w-2xl ">
+            <p className="font-montserrat text-base text-slate-600 sm:text-lg ">
               Scale. Complexity. Performance. Impact.
             </p>
-            <p className="mt-5 max-w-xl font-montserrat text-lg leading-8 text-slate-700">
+            <p className="mt-5 max-w-xl font-montserrat text-lg leading-6 text-slate-700">
               We deliver projects that go beyond construction — creating
               structures that meet functional demands, uphold quality standards,
               and support long-term use across diverse environments.
