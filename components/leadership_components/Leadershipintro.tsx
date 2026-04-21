@@ -20,11 +20,13 @@ export default function LeadershipIntro() {
 
           {/* Right — copy */}
           <div className="space-y-4">
-            <p className="text-sm leading-7 text-slate-600">
+            <p className="text-lg leading-7 text-slate-600">
+
+                
               Our leadership team brings together decades of experience across engineering,
               construction, and project delivery.
             </p>
-            <p className="text-sm leading-7 text-slate-600">
+            <p className="text-lg leading-7 text-slate-600">
               Their role is not oversight alone, but active participation in ensuring that every
               project meets the standards we are known for.
             </p>

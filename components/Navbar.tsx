@@ -105,7 +105,7 @@ function OurCompanyMenu() {
         heading="Who we are"
         items={[
           { label: 'About us', href: '/ourcompany' },
-          { label: 'What we do', href: '/ourcompany#what-we-do' },
+          { label: 'What we do', href: '/whatwedo' },
           { label: 'Our Leadership', href: '/ourleadership' },
           { label: 'Our Values', href: '/ourcompany#our-values' },
           { label: 'Our Clients', href: '/ourcompany#clients' },
@@ -141,7 +141,7 @@ function OurServicesMenu() {
       <LinkColumn
         heading="Approach"
         items={[
-          { label: 'Preconstruction', href: '/our-services#preconstruction' },
+          { label: 'Preconstruction', href: '/ourapproach' },
           { label: 'Project Management', href: '/our-services#project-management' },
           { label: 'Lean Construction', href: '/our-services#lean-construction' },
           { label: 'Construction Management', href: '/our-services#construction-management' },

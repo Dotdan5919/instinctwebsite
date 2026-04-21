@@ -13,8 +13,8 @@ import OurPartners from "@/components/about_components/OurPartners";
 
 export default function OurCompany() {
   return (
-    <div className="min-h-screen bg-slate-950 text-white">
-       <div className="absolute z-10 left-24 w-325 h-full border-l border-r border-white/20 pointer-events-none" />
+    <div className=" flex flex-col relative min-h-screen bg-slate-950 text-white">
+       <div className="absolute z-10 left-24 w-[1300px] h-full border-l border-r border-white/20 pointer-events-none" />
 
 <div className="  absolute inset-0 z-0 bg-linear-to-r from-[#000000] via-[#0a0f1a]/75 to-[#6666664D]/10 pointer-events-none h-screen" />
       <div className={`flex w-screen overflow-hidden flex-col bg-[url('../images/about-hero.jpg')] bg-cover bg-no-repeat bg-center min-h-screen`}>

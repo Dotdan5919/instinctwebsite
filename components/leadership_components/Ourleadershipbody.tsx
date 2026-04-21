@@ -2,7 +2,17 @@
 import React from 'react'
 import LeadershipIntro from '@/components/leadership_components/Leadershipintro'
 import LeadershipGrid from '@/components/leadership_components/Leadershipgrid'
-import { type Member } from '@/components/leadership_components/MemberCard'
+import { type Member } from '@/components/leadership_components/Membercard'
+import Image from 'next/image'
+import MrOladokun from '@/images/leadership/mroladokun.png'
+import Mrbadejo from '@/images/leadership/badejo.png'
+import Mreugene from '@/images/leadership/eugene.png'
+import Mrfrancis from '@/images/leadership/francis.png'
+import Mrganiyu from '@/images/leadership/ganiyu.png'
+import Mroke from '@/images/leadership/oke.png'
+import Mrsoladolapo from '@/images/leadership/oladolapo.png'
+import MrOlumide from '@/images/leadership/olumide.png'
+
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 // Replace image URLs with your actual assets.
@@ -18,10 +28,12 @@ const boardMembers: Member[] = [
   {
     name: 'Oladokun Michael Olumuyiwa',
     role: 'Managing Director/CEO',
-    image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&q=80',
+    image: MrOladokun,
     bio: `Oladokun Michael Olumuyiwa is a Civil Engineer with over 25 years of experience across construction and real estate. A graduate of the University of Ibadan, he holds a BSc and is a member of the Nigerian Society of Engineers (MNSE) and the Nigerian Institution of Civil Engineers (MNICE).
 
-He has led the execution of diverse projects, including residential developments, commercial buildings, and infrastructure works across Lagos and beyond.`,
+He has led the execution of diverse projects, including residential developments, commercial buildings, and road infrastructure.
+
+His leadership is defined by structured execution, technical precision, and consistent delivery standards.`,
   },
 ]
 
@@ -29,25 +41,27 @@ const operationsMembers: Member[] = [
   {
     name: 'Oladokun Francis Olarenwaju',
     role: 'Project Manager',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80',
-    bio: 'Oladokun Francis Olarenwaju brings extensive experience in construction project management, overseeing multiple complex site operations across Lagos.',
+    image: Mrfrancis,
+    bio: `Oladokun Francis Olarenwaju holds an HND in Urban and Regional Planning, with a postgraduate qualification in Planning Studies.
+    
+    With over 20 years of experience, he oversees project coordination and delivery, ensuring alignment across planning, execution, and completion phases.`,
   },
   {
     name: 'Eng. Eugene Okoror',
     role: 'Project Engineer',
-    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=800&q=80',
+    image: Mreugene,
     bio: 'Eng. Eugene Okoror is a seasoned project engineer responsible for the technical delivery and quality assurance across Instinct Engineering projects.',
   },
   {
     name: 'Arc. Badejo Adetimehin',
     role: 'Architect',
-    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800&q=80',
+    image: Mrbadejo,
     bio: 'Arc. Badejo Adetimehin leads the architectural design and planning function, ensuring all projects meet the highest standards of design integrity.',
   },
   {
     name: 'Oke Oluwafemi',
     role: 'Builder',
-    image: 'https://images.unsplash.com/photo-1552058544-f2b08422138a?w=800&q=80',
+    image: Mroke,
     bio: 'Oke Oluwafemi is a skilled builder with hands-on experience in residential and commercial construction.',
   },
   {
@@ -59,14 +73,14 @@ const operationsMembers: Member[] = [
   {
     name: 'Ganiyu Joseph Bolutife',
     role: 'Site Engineer',
-    image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=800&q=80',
+    image: Mrganiyu,
     bio: 'Ganiyu Joseph Bolutife supervises on-site engineering activities ensuring safe, efficient, and high-quality project execution.',
   },
   {
-    name: 'Arc. Ohumide Omisore',
+    name: 'Arc. Olumide Omisore',
     role: 'Architect',
-    image: 'https://images.unsplash.com/photo-1566492031773-4f4e44671857?w=800&q=80',
-    bio: 'Arc. Ohumide Omisore supports the architectural team in delivering thoughtful, technically sound designs for all project types.',
+    image: MrOlumide,
+    bio: 'Arc. Olumide Omisore supports the architectural team in delivering thoughtful, technically sound designs for all project types.',
   },
 ]
 
@@ -74,7 +88,7 @@ const managementMembers: Member[] = [
   {
     name: 'Oladokun Omolara Olapo',
     role: 'Accountant/Administrator',
-    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80',
+    image: Mrsoladolapo,
     bio: 'Oladokun Omolara Olapo manages the financial and administrative operations of Instinct Engineering, ensuring accurate reporting and smooth organisational processes.',
   },
 ]
@@ -89,7 +103,7 @@ export default function OurLeadershipBody() {
       <LeadershipGrid
         title="Board of Directors"
         members={boardMembers}
-        columns={2}
+        columns={3}
       />
 
       <LeadershipGrid

@@ -1,13 +1,14 @@
-
 'use client'
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import Image from 'next/image'
+import type { StaticImport } from 'next/dist/shared/lib/get-img-props'
 
 export interface Member {
   name: string
   role: string
-  image?: string          // undefined = placeholder silhouette
-  bio?: string            // shown in modal
+  image?: string | StaticImport
+  bio?: string
 }
 
 // ─── Silhouette placeholder SVG ───────────────────────────────────────────────
@@ -15,39 +16,38 @@ function Silhouette() {
   return (
     <svg viewBox="0 0 200 220" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
       <rect width="200" height="220" fill="#eeeeed" />
-      {/* body */}
       <ellipse cx="100" cy="190" rx="72" ry="48" fill="#8b8f96" />
-      {/* torso */}
       <rect x="62" y="130" width="76" height="70" rx="8" fill="#8b8f96" />
-      {/* tie */}
       <polygon points="100,128 107,145 100,170 93,145" fill="#6b6f75" />
-      {/* collar */}
       <polygon points="86,128 100,145 114,128 107,124 100,132 93,124" fill="#a0a4ab" />
-      {/* head */}
       <ellipse cx="100" cy="90" rx="38" ry="44" fill="#8b8f96" />
     </svg>
   )
 }
 
-// ─── Name/role overlay badge (bottom of photo cards) ─────────────────────────
-function NameBadge({ name, role, dark = false }: { name: string; role: string; dark?: boolean }) {
-  return (
-    <div
-      className={`absolute bottom-0 left-0 right-0 px-4 py-3 ${
-        dark ? 'bg-black/55' : 'bg-white/80'
-      } backdrop-blur-[2px]`}
-      style={{ borderBottomLeftRadius: 8, borderBottomRightRadius: 8 }}
-    >
-      <p className={`text-sm font-bold leading-tight ${dark ? 'text-white' : 'text-slate-900'}`}>
-        {name}
-      </p>
-      <p className={`text-xs mt-0.5 ${dark ? 'text-slate-300' : 'text-slate-500'}`}>{role}</p>
-    </div>
-  )
-}
-
 // ─── Modal ────────────────────────────────────────────────────────────────────
 function MemberModal({ member, onClose }: { member: Member; onClose: () => void }) {
+  const scrollRef = useRef<HTMLDivElement>(null)
+  const pillRef = useRef<HTMLDivElement>(null)
+  const trackRef = useRef<HTMLDivElement>(null)
+
+  const updatePill = () => {
+    const el = scrollRef.current
+    const pill = pillRef.current
+    const track = trackRef.current
+    if (!el || !pill || !track) return
+    const trackH = track.offsetHeight
+    const scrollable = el.scrollHeight - el.clientHeight
+    const ratio = scrollable > 0 ? el.scrollTop / scrollable : 0
+    const pillH = Math.max(28, trackH * (el.clientHeight / el.scrollHeight))
+    pill.style.height = `${pillH}px`
+    pill.style.top = `${ratio * (trackH - pillH)}px`
+  }
+
+  useEffect(() => {
+    setTimeout(updatePill, 100)
+  }, [member])
+
   return (
     <AnimatePresence>
       <motion.div
@@ -57,19 +57,20 @@ function MemberModal({ member, onClose }: { member: Member; onClose: () => void 
         exit={{ opacity: 0 }}
         onClick={onClose}
       >
-        {/* Backdrop */}
         <div className="absolute inset-0 bg-black/50" />
 
-        {/* Panel */}
         <motion.div
-          className="relative z-10 bg-white rounded-xl shadow-2xl w-full max-w-lg overflow-y-auto max-h-[90vh]"
+          className="relative z-10 bg-white rounded-xl shadow-2xl w-full max-w-lg pt-8 overflow-hidden"
+          style={{ maxHeight: '90vh' }}
           initial={{ opacity: 0, scale: 0.95, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 20 }}
           transition={{ duration: 0.25 }}
           onClick={(e) => e.stopPropagation()}
         >
-          {/* Close button */}
+          {/* hide webkit scrollbar */}
+          <style>{`#member-scroll::-webkit-scrollbar { display: none; }`}</style>
+
           <button
             onClick={onClose}
             className="absolute top-4 right-4 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-white/90 text-slate-600 hover:bg-slate-100 transition-colors text-lg font-light"
@@ -78,33 +79,74 @@ function MemberModal({ member, onClose }: { member: Member; onClose: () => void 
             ✕
           </button>
 
-          {/* Photo */}
-          <div className="w-full aspect-[3/2] overflow-hidden rounded-t-xl bg-slate-200">
-            {member.image ? (
-              <img
-                src={member.image}
-                alt={member.name}
-                className="w-full h-full object-cover object-top"
-              />
-            ) : (
-              <Silhouette />
-            )}
-          </div>
+          {/* scroll wrapper */}
+          <div style={{ position: 'relative', maxHeight: '90vh', borderRadius: '0.75rem', overflow: 'hidden' }}>
 
-          {/* Info */}
-          <div className="px-8 py-6">
-            <h2 className="text-xl font-bold text-slate-900">{member.name}</h2>
-            <p className="text-sm text-slate-500 mt-1 mb-4">{member.role}</p>
-            {member.bio && (
-              <p className="text-sm leading-7 text-slate-600 whitespace-pre-line">{member.bio}</p>
-            )}
+            {/* actual scrollable area */}
+            <div
+              id="member-scroll"
+              ref={scrollRef}
+              onScroll={updatePill}
+              style={{
+                overflowY: 'scroll',
+                scrollbarWidth: 'none',
+                msOverflowStyle: 'none',
+                maxHeight: '90vh',
+                paddingRight: '24px',
+              } as React.CSSProperties}
+            >
+              <div className="mx-auto h-[250px] w-64 flex items-center justify-center rounded-t-xl relative border-l-4 border-amber-500">
+                {member.image ? (
+                  <Image src={member.image} fill alt={member.name} className="object-contain object-top rounded-lg" />
+                ) : (
+                  <Silhouette />
+                )}
+              </div>
+              <div className="px-8 py-6">
+                <h2 className="text-xl font-bold text-slate-900">{member.name}</h2>
+                <p className="text-sm text-slate-500 mt-1 mb-4">{member.role}</p>
+                {member.bio && (
+                  <p className="text-sm leading-7 text-slate-600 whitespace-pre-line">{member.bio}</p>
+                )}
+              </div>
+            </div>
+
+            {/* custom amber pill */}
+            <div
+              ref={trackRef}
+              style={{
+                position: 'absolute',
+                top: '10px',
+                right: '5px',
+                width: '4px',
+                height: 'calc(100% - 20px)',
+                borderRadius: '4px',
+                background: 'rgba(0,0,0,0.08)',
+                pointerEvents: 'none',
+                zIndex: 10,
+              }}
+            >
+              <div
+                ref={pillRef}
+                style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: '-2px',
+                  width: '8px',
+                  height: '40px',
+                  background: '#e8a020',
+                  borderRadius: '4px',
+                  transition: 'top 0.08s linear, height 0.08s linear',
+                }}
+              />
+            </div>
+
           </div>
         </motion.div>
       </motion.div>
     </AnimatePresence>
   )
 }
-
 // ─── The card itself ──────────────────────────────────────────────────────────
 export default function MemberCard({
   member,
@@ -127,27 +169,31 @@ export default function MemberCard({
         className="relative cursor-pointer rounded-lg overflow-hidden"
         style={{
           aspectRatio: '3 / 3.6',
-          // amber left border for no-photo cards; amber full border for photo cards on hover
-          border: hasPhoto
-            ? `2px solid ${hovered ? '#e8a020' : 'transparent'}`
-            : '2px solid #e8a020',
-          // no-photo cards: white bg; photo cards: no bg needed
+          borderLeft: hasPhoto
+            ? `4px solid ${hovered ? '#e8a020' : 'transparent'}`
+            : '4px solid #e8a020',
           background: hasPhoto ? 'transparent' : '#f5f5f2',
-          transition: 'border-color 0.2s ease, box-shadow 0.2s ease',
+          transition: 'border-color 0.25s ease, box-shadow 0.25s ease',
           boxShadow: hovered ? '0 8px 32px rgba(0,0,0,0.18)' : '0 2px 8px rgba(0,0,0,0.06)',
         }}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
         onClick={() => setModalOpen(true)}
       >
-        {/* Photo or silhouette */}
+        {/* ── Image / silhouette ── */}
         {hasPhoto ? (
-          <img
-            src={member.image}
-            alt={member.name}
-            className="w-full h-full object-cover object-top transition-transform duration-500"
-            style={{ transform: hovered ? 'scale(1.04)' : 'scale(1)' }}
-          />
+          <div className="absolute inset-0">
+            <Image
+              src={member.image!}
+              fill
+              alt={member.name}
+              className="object-cover object-top"
+              style={{
+                transform: hovered ? 'scale(1.05)' : 'scale(1)',
+                transition: 'transform 0.5s ease',
+              }}
+            />
+          </div>
         ) : (
           <div className="w-full h-full flex items-center justify-center pb-16">
             <div className="w-3/4 h-3/4">
@@ -156,23 +202,50 @@ export default function MemberCard({
           </div>
         )}
 
-        {/* Name badge — always visible on photo cards; sits below silhouette on no-photo */}
+        {/* ── Dark gradient overlay — fades in on hover (photo cards only) ── */}
+        {hasPhoto && (
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              background: 'linear-gradient(to top, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.35) 45%, transparent 75%)',
+              opacity: hovered ? 1 : 0.45,
+              transition: 'opacity 0.35s ease',
+            }}
+          />
+        )}
+
+        {/* ── Name badge — slides up on hover ── */}
         {hasPhoto ? (
-          <NameBadge name={member.name} role={member.role} dark />
+          <div
+            className="absolute left-0 right-0 px-5 py-4"
+            style={{
+              bottom: hovered ? '28px' : '8px',
+              transition: 'bottom 0.35s ease',
+            }}
+          >
+            {/* frosted pill */}
+            <div className="rounded-lg bg-white/15 backdrop-blur-[3px] px-4 py-3">
+              <p className="text-base font-bold text-white leading-tight">{member.name}</p>
+              <p className="text-sm text-white/75 mt-0.5">{member.role}</p>
+            </div>
+          </div>
         ) : (
+          /* No-photo card: static label below silhouette */
           <div className="absolute bottom-0 left-0 right-0 px-4 py-4">
             <p className="text-sm font-bold text-slate-900">{member.name}</p>
             <p className="text-xs text-slate-500 mt-0.5">{member.role}</p>
           </div>
         )}
 
-        {/* Arrow button — shows on hover for photo cards */}
+        {/* ── Arrow button — appears on hover ── */}
         {hasPhoto && (
-          <motion.div
-            className="absolute bottom-3 right-3 w-9 h-9 rounded-full bg-[#e8a020] flex items-center justify-center"
-            initial={{ opacity: 0, scale: 0.7 }}
-            animate={{ opacity: hovered ? 1 : 0, scale: hovered ? 1 : 0.7 }}
-            transition={{ duration: 0.18 }}
+          <div
+            className="absolute bottom-6 right-5 w-9 h-9 rounded-full bg-[#e8a020] flex items-center justify-center"
+            style={{
+              opacity: hovered ? 1 : 0,
+              transform: hovered ? 'scale(1)' : 'scale(0.6)',
+              transition: 'opacity 0.25s ease, transform 0.25s ease',
+            }}
           >
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
               <path
@@ -183,7 +256,7 @@ export default function MemberCard({
                 strokeLinejoin="round"
               />
             </svg>
-          </motion.div>
+          </div>
         )}
       </motion.div>
 
