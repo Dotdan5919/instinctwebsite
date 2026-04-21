@@ -1,6 +1,7 @@
 'use client'
 import React, { useEffect, useRef } from 'react'
 import Image from 'next/image'
+import { motion } from 'framer-motion'
 import lafarge from '@/images/lafarge.png'
 import dangote from '@/images/dangote.png'
 import dulux from '@/images/dulux.png'
@@ -57,7 +58,13 @@ export default function OurPartners() {
   }, [])
 
   return (
-    <section className="bg-white py-24 text-slate-950">
+    <motion.section 
+      initial={{ opacity: 0, scale: 0.95 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.7, delay: 0.2 }}
+      viewport={{ once: true }}
+      className="bg-white py-24 text-slate-950"
+    >
       <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-14">
 
         {/* Top — title left, description right */}
@@ -84,7 +91,7 @@ export default function OurPartners() {
               style={{ willChange: 'transform' }}
             >
               {allPartners.map((partner, i) => (
-                <div key={`${partner.name}-${i}`} className="relative h-14 w-28 flex-shrink-0">
+                <div key={`${partner.name}-${i}`} className="relative h-34 w-44 flex-shrink-0">
                   <Image
                     src={partner.logo}
                     alt={partner.name}
@@ -98,6 +105,6 @@ export default function OurPartners() {
         </div>
 
       </div>
-    </section>
+    </motion.section>
   )
 }

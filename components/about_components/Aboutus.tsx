@@ -1,9 +1,17 @@
+'use client'
 import React from 'react'
+import { motion } from 'framer-motion'
 import Btn from '@/components/Btn';
 
 export default function Aboutus() {
   return (
-    <section className="bg-white py-24 text-slate-950">
+    <motion.section 
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, delay: 0.1 }}
+      viewport={{ once: true }}
+      className="bg-white py-24 text-slate-950"
+    >
       <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-14">
         <div className="grid gap-16 lg:grid-cols-[0.5fr_1fr] items-start">
 
@@ -30,6 +38,6 @@ export default function Aboutus() {
 
         </div>
       </div>
-    </section>
+    </motion.section>
   )
 }

@@ -1,6 +1,7 @@
 'use client'
 import React, { useState } from 'react'
 import Image from 'next/image'
+import { motion } from 'framer-motion'
 import precision from "@/images/precision.jpg";
 import accountability from "@/images/accountability.jpg";
 import discipline from "@/images/Discipline.jpg";
@@ -64,11 +65,22 @@ export default function OurValues() {
   const active = values[activeIndex]
 
   return (
-    <section id="our-values" className="bg-[#f0eeeb] py-24 text-slate-950">
+    <section 
+      id="our-values"
+    
+      className="bg-[#f0eeeb] py-24 text-slate-950"
+    >
       <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-14">
 
         {/* Top — title left, text right */}
-        <div className="grid gap-10 lg:grid-cols-[0.5fr_1fr] items-start mb-16">
+        <motion.div 
+        
+          initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: 0.1 }}
+      viewport={{ once: true }}
+        
+        className="grid gap-10 lg:grid-cols-[0.5fr_1fr] items-start mb-16">
           <h2 className="font-bebas text-5xl uppercase tracking-tight sm:text-6xl">
             OUR VALUE
           </h2>
@@ -80,7 +92,7 @@ export default function OurValues() {
               They shape the standards we uphold, the expectations we set, and the outcomes we deliver. These principles are embedded in our processes, our teams, and our approach to construction. They are not stated ideals, they are applied in how we build, deliver, and maintain trust.
             </p>
           </div>
-        </div>
+        </motion.div>
 
         {/* Bottom — value list left, dynamic content right */}
         <div className="grid lg:grid-cols-[0.5fr_1fr] gap-10 items-start">

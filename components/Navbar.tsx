@@ -2,6 +2,7 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { motion } from 'framer-motion'
 import logo from '@/icons/instinct-logo.png'
 import projectImage from '@/images/building.jpg'
 
@@ -105,10 +106,10 @@ function OurCompanyMenu() {
         items={[
           { label: 'About us', href: '/ourcompany' },
           { label: 'What we do', href: '/ourcompany#what-we-do' },
-          { label: 'Our Leadership', href: '/ourcompany#leadership' },
+          { label: 'Our Leadership', href: '/ourleadership' },
           { label: 'Our Values', href: '/ourcompany#our-values' },
           { label: 'Our Clients', href: '/ourcompany#clients' },
-          { label: 'Milestones', href: '/ourcompany#milestones' },
+          { label: 'Our Journey', href: '/ourjourney' },
         ]}
       />
       <LinkColumn
@@ -342,7 +343,12 @@ export default function Navbar() {
   const [hoveredItem, setHoveredItem] = useState<string | null>(null)
 
   return (
-    <div className="relative z-50 w-full mt-10">
+    <motion.div 
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: 0.2 }}
+      className="relative z-50 w-full mt-10"
+    >
       <div className="flex absolute border h-24 w-[3000px] -left-96 border-white/20" />
 
       {/* Navbar row */}
@@ -413,6 +419,6 @@ export default function Navbar() {
           {menuComponents[activeMenu]}
         </div>
       )}
-    </div>
+    </motion.div>
   )
 }

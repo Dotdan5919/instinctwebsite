@@ -1,10 +1,18 @@
+'use client'
 import Image from "next/image";
 import buildingHero from "@/images/whoweare.jpg";
 import React from 'react'
+import { motion } from 'framer-motion'
 
 export default function Whoweare() {
   return (
-    <section className="bg-white overflow-hidden">
+    <motion.section 
+      initial={{ opacity: 0, x: -40 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.8, delay: 0.2 }}
+      viewport={{ once: true }}
+      className="bg-white overflow-hidden"
+    >
       <div className="grid lg:grid-cols-[1.2fr_1.1fr] min-h-[527px] ">
 
         {/* Left — amber panel */}
@@ -37,6 +45,6 @@ export default function Whoweare() {
         </div>
 
       </div>
-    </section>
+    </motion.section>
   )
 }

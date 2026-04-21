@@ -1,10 +1,18 @@
+'use client'
 import React from 'react'
 import Image from 'next/image'
+import { motion } from 'framer-motion'
 import vision from "@/images/vision.jpg"
 
 export default function Mission() {
   return (
-    <section className="bg-white py-24 text-slate-950">
+    <motion.section 
+      initial={{ opacity: 0, x: 40 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.9, delay: 0.3 }}
+      viewport={{ once: true }}
+      className="bg-white py-24 text-slate-950"
+    >
       <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-14">
 
         {/* Outer rounded card */}
@@ -49,6 +57,6 @@ export default function Mission() {
 
         </div>
       </div>
-    </section>
+    </motion.section>
   )
 }

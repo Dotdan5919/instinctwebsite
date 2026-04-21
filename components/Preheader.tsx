@@ -1,5 +1,6 @@
 'use client'
 import React, { useState, useEffect } from 'react'
+import { motion } from 'framer-motion'
 
 export default function Preheader() {
   const [stage, setStage] = useState<'enter' | 'visible' | 'exit' | 'reset'>('enter')
@@ -66,12 +67,17 @@ export default function Preheader() {
   }
 
   return (
-    <div className="bg-[#0d0d0d] py-2 overflow-hidden ">
+    <motion.div 
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: 0.1 }}
+      className="bg-[#0d0d0d] py-2 overflow-hidden "
+    >
       <div className="relative h-8 overflow-hidden">
         <span className="text-sm font-medium font-montserrat text-white" style={animationStyles}>
           15+ Years of Construction Delivery &nbsp;&nbsp;•&nbsp;&nbsp; Multi-Sector Expertise &nbsp;&nbsp;•&nbsp;&nbsp; Proven Performance
         </span>
       </div>
-    </div>
+    </motion.div>
   )
 }

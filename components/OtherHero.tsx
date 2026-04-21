@@ -1,5 +1,6 @@
 'use client'
 import React, { useState, useEffect } from 'react'
+import { motion } from 'framer-motion'
 import Navbar from './Navbar'
 
 const steps = [
@@ -31,7 +32,13 @@ export default function OtherHero({title, subtitle}: {title?: string, subtitle?:
  
 
   return (
-    <section className="px-14 md:px-16 mx-auto w-full max-w-7xl relative  overflow-hidden flex flex-col items-center bg-cover bg-center transition-all duration-1000">
+    <motion.section 
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, delay: 0.3 }}
+      viewport={{ once: true }}
+      className="px-14 md:px-16 mx-auto w-full max-w-7xl relative  overflow-hidden flex flex-col items-center bg-cover bg-center transition-all duration-1000"
+    >
 
       {/* Dark overlay */}
       
@@ -55,6 +62,6 @@ export default function OtherHero({title, subtitle}: {title?: string, subtitle?:
    
    
    
-    </section>
+    </motion.section>
   )
 }
