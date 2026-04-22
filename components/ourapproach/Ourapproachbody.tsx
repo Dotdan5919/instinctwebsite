@@ -15,6 +15,7 @@ import projectmanagement from "@/images/ourapproach/project-management.jpg";
 
 const sections = [
   {
+    id: 'preconstruction',
     title: 'PRECONSTRUCTION',
     imagePosition: 'right' as const,
     image: preconstruction,
@@ -32,6 +33,7 @@ const sections = [
     ],
   },
   {
+    id: 'project-management',
     title: 'PROJECT MANAGEMENT',
     imagePosition: 'left' as const,
     image: projectmanagement,
@@ -48,6 +50,7 @@ const sections = [
     ],
   },
   {
+    Id: 'lean-construction',
     title: 'LEAN CONSTRUCTION',
     imagePosition: 'right' as const,
     image: leanconstruction,
@@ -64,6 +67,7 @@ const sections = [
     ],
   },
   {
+      id: 'construction-management',
     title: 'CONSTRUCTION MANAGEMENT',
     imagePosition: 'left' as const,
     image: constructionmanagement,

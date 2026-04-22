@@ -46,11 +46,11 @@ export default function OtherHero({title, subtitle}: {title?: string, subtitle?:
 
 
       {/* Content */}
-      <div className="relative z-20 w-full pt-24">
+      <div className="relative z-20 w-full mt-24 h-[300px] flex flex-col justify-end ">
 
         {/* Headline */}
         <p className="font-montserrat text-amber-500">{title}</p>
-        <h1 className="font-bebas leading-none tracking-wide mb-8 text-[100px] text-white pt-8">
+        <h1 className="font-bebas uppercase leading-none tracking-wide mb-8 text-[100px] text-white pt-8">
          
          {subtitle }
           

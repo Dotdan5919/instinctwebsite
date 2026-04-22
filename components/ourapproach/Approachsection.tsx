@@ -13,6 +13,7 @@ interface ApproachSectionProps {
   /** 'left' = text left + image right | 'right' = image left + text right */
   imagePosition?: 'left' | 'right'
   index?: number
+  id?: string
 }
 
 function Tag({ label }: { label: string }) {
@@ -30,6 +31,7 @@ function Tag({ label }: { label: string }) {
 }
 
 export default function ApproachSection({
+  id,
   title,
   paragraphs,
   tags,
@@ -47,6 +49,7 @@ export default function ApproachSection({
       transition={{ duration: 0.55, delay: 0.1 }}
       viewport={{ once: true }}
       className="flex flex-col justify-center"
+      id={id}
     >
       <h2 className="font-bebas text-4xl sm:text-5xl uppercase tracking-tight text-slate-950 mb-5 leading-none">
         {title}
@@ -69,6 +72,7 @@ export default function ApproachSection({
       viewport={{ once: true }}
       className="relative rounded-xl overflow-hidden"
       style={{ aspectRatio: '4/3' }}
+      id={id}
     >
       <Image
         src={image}
@@ -80,8 +84,8 @@ export default function ApproachSection({
   )
 
   return (
-    <section className="bg-white py-12">
-      <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-14">
+    <section className="bg-white py-12" id={id}>
+      <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-14" id={id}>
         {/* Two-col grid — text and image swap sides per imagePosition */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center mb-10">
           {isImageLeft ? (

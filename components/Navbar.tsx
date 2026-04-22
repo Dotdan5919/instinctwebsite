@@ -131,7 +131,7 @@ function OurServicesMenu() {
     <div className="flex w-full">
       <LeftPanel
         title="Our Services"
-        href="/our-services"
+        href="/whatwedo"
         paragraphs={[
           'We provide comprehensive construction services, managing the full project lifecycle from early-stage planning through to execution and delivery.',
           'Our role is to bring structure to complexity, ensuring that all project components, design, cost, timelines, and execution, remain aligned.',
@@ -142,9 +142,9 @@ function OurServicesMenu() {
         heading="Approach"
         items={[
           { label: 'Preconstruction', href: '/ourapproach' },
-          { label: 'Project Management', href: '/our-services#project-management' },
-          { label: 'Lean Construction', href: '/our-services#lean-construction' },
-          { label: 'Construction Management', href: '/our-services#construction-management' },
+          { label: 'Project Management', href: '/ourapproach#project-management' },
+          { label: 'Lean Construction', href: '/ourapproach#lean-construction' },
+          { label: 'Construction Management', href: '/ourapproach#construction-management' },
         ]}
       />
       <LinkColumn
@@ -169,7 +169,7 @@ function OurProjectsMenu() {
     <div className="flex w-full">
       <LeftPanel
         title="Our Projects"
-        href="/our-projects"
+        href="/ourproject"
         paragraphs={[
           'Building History',
           'Scale. Complexity. Impact. Purpose.',
