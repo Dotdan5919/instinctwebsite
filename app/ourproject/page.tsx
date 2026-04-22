@@ -3,6 +3,7 @@ import FooterSection from '@/components/FooterSection'
 import Navbar from '@/components/Navbar'
 import Preheader from '@/components/Preheader'
 import OtherHero from '@/components/OtherHero'
+import OurProjectsBody from '@/components/ourprojects/Ourprojectsbody'
 
 export default function page() {
   return (
@@ -15,10 +16,10 @@ export default function page() {
                
                <Navbar />
        
-               <OtherHero title="Our Expertise" subtitle={<>Defined expertise. <br /> Controlled delivery</>} />
+               <OtherHero title="Our Expertise" subtitle={<>Defined expertise. <br /> Controlled delivery.</>} />
                </div>
 
-   
+   <OurProjectsBody/>
    
                <FooterSection/>
          
