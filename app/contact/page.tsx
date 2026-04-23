@@ -17,7 +17,7 @@ export default function page() {
               
               <Navbar />
       
-              <OtherHero title="Contact Us" subtitle={<>START THE CONVERSATION</>} />
+              <OtherHero title="Contact Us" subtitle="START THE CONVERSATION" />
             </div>
            
             <ContactBody />

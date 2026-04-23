@@ -18,7 +18,7 @@ export default function page() {
             
             <Navbar />
     
-            <OtherHero title="Our Leadership" subtitle={<>GROUNDED IN EXECUTION <br /> DEFINED BY RESPONSIBILITY</>} />
+            <OtherHero title="Our Leadership" subtitle="GROUNDED IN EXECUTION DEFINED BY RESPONSIBILITY" />
             </div>
 <OurLeadershipBody/>
 

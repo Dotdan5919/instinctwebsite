@@ -9,7 +9,13 @@ import building from '@/images/precision.jpg'
 import define from '@/images/define.jpg'
 import accountability from '@/images/accountability.jpg'
 
-export default function page() {
+export async function generateStaticParams() {
+  return [
+    { id: '1' },
+  ]
+}
+
+export default function page({ params }: { params: { id: string } }) {
   return (
    <div className="flex flex-col relative min-h-screen bg-slate-950 text-white ">
           <div className="absolute z-10 left-24 w-[1300px] h-full border-l border-r border-white/20 pointer-events-none" />

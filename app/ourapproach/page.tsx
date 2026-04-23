@@ -18,7 +18,7 @@ export default function page() {
            
            <Navbar />
    
-           <OtherHero title="Our Approach" subtitle={<>WE OPERATE THROGH A <br /> DEFINED   SYSTEM OF DELIVERY.</>} />
+           <OtherHero title="Our Approach" subtitle="WE OPERATE THROGH A DEFINED SYSTEM OF DELIVERY." />
          </div>
          <Ourapproachbody />
          <FooterSection/>
