@@ -4,12 +4,12 @@ import { motion } from 'framer-motion'
 
 // ─── Shared input style ───────────────────────────────────────────────────────
 const inputClass =
-  'w-full rounded-md border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm text-slate-700 placeholder:text-slate-400 outline-none focus:border-amber-400 focus:ring-1 focus:ring-amber-400 transition-colors'
+  'w-full rounded-md border border-gray-300 bg-gray-50 px-4 py-2.5 text-sm text-gray-900 placeholder:text-gray-500 outline-none focus:border-amber-400 focus:ring-1 focus:ring-amber-400 transition-colors'
 
 // ─── Label ───────────────────────────────────────────────────────────────────
 function Label({ children }: { children: React.ReactNode }) {
   return (
-    <label className="block text-sm font-semibold text-slate-800 mb-1.5">
+    <label className="block text-sm font-semibold text-gray-900 mb-1.5">
       {children}
     </label>
   )
@@ -145,8 +145,8 @@ function ContactFormFields() {
             <path d="M20 6L9 17l-5-5" />
           </svg>
         </div>
-        <h3 className="text-lg font-bold text-slate-900 mb-2">Message sent!</h3>
-        <p className="text-sm text-slate-500">We'll get back to you as soon as possible.</p>
+        <h3 className="text-lg font-bold text-black mb-2">Message sent!</h3>
+        <p className="text-sm text-gray-700">We'll get back to you as soon as possible.</p>
       </div>
     )
   }
@@ -231,7 +231,7 @@ function ContactFormFields() {
             <option value="other">Other</option>
           </select>
           {/* Chevron */}
-          <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-slate-400">
+          <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-gray-500">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
               <path d="M4 6l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>

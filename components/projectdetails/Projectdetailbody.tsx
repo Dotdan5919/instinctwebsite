@@ -11,7 +11,7 @@ import Navbar from '../Navbar'
 // ─── Tag pill ─────────────────────────────────────────────────────────────────
 function Tag({ label }: { label: string }) {
   return (
-    <span className="inline-block rounded-lg bg-[#fdf6e3]  text-slate-700 text-lg px-4 py-2.5 font-medium whitespace-nowrap">
+    <span className="inline-block rounded-lg bg-[#fdf6e3]  text-gray-900 text-lg px-4 py-2.5 font-medium whitespace-nowrap">
       {label}
     </span>
   )
@@ -35,10 +35,10 @@ function ContentBlock({
 }) {
   const textCol = (
     <div className="flex flex-col justify-center">
-      <h2 className="font-bebas text-4xl sm:text-5xl uppercase tracking-tight text-slate-950 leading-none mb-5">
+      <h2 className="font-bebas text-4xl sm:text-5xl uppercase tracking-tight text-black leading-none mb-5">
         {heading}
       </h2>
-      <p className="text-sm leading-7 text-slate-600 max-w-lg">{body}</p>
+      <p className="text-sm leading-7 text-gray-700 max-w-lg">{body}</p>
     </div>
   )
 
@@ -129,20 +129,20 @@ export default function ProjectDetailBody({ data }: { data: ProjectDetailData })
             className="bg-white rounded-t-xl px-8 pt-6 pb-8 max-w-xl w-full"
           >
             {/* Breadcrumbs */}
-            <p className="text-xs text-slate-500 mb-3">
+            <p className="text-xs text-gray-600 mb-3">
               {data.breadcrumbs.join(' · ')}
             </p>
             <div className="border-b border-slate-200 mb-4" />
 
             {/* Title */}
-            <h1 className="text-lg font-bold text-slate-900 mb-1">{data.title}</h1>
+            <h1 className="text-lg font-bold text-black mb-1">{data.title}</h1>
 
             {/* Location + See Overview */}
             <div className="flex items-center justify-between mb-3">
-              <p className="text-sm font-semibold text-slate-800">{data.subtitle}</p>
+              <p className="text-sm font-semibold text-gray-900">{data.subtitle}</p>
               <button
                 onClick={() => setOverviewOpen(true)}
-                className="flex items-center gap-2 text-sm font-medium text-slate-700 hover:text-slate-900 transition-colors group"
+                className="flex items-center gap-2 text-sm font-medium text-gray-800 hover:text-black transition-colors group"
               >
                 See Project Overview
                 <span className="w-8 h-8 rounded-full bg-[#e8a020] flex items-center justify-center shrink-0 group-hover:bg-[#c98a18] transition-colors">
@@ -155,7 +155,7 @@ export default function ProjectDetailBody({ data }: { data: ProjectDetailData })
 
             {/* Address */}
             {data.address.map((line, i) => (
-              <p key={i} className="text-xs text-slate-500 leading-relaxed">{line}</p>
+              <p key={i} className="text-xs text-gray-600 leading-relaxed">{line}</p>
             ))}
           </motion.div>
         </div>
@@ -165,7 +165,7 @@ export default function ProjectDetailBody({ data }: { data: ProjectDetailData })
       <section className="bg-white py-12">
         <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-14 space-y-4 max-w-3xl">
           {data.introParagraphs.map((p, i) => (
-            <p key={i} className="text-sm leading-7 text-slate-600">{p}</p>
+            <p key={i} className="text-sm leading-7 text-gray-800">{p}</p>
           ))}
         </div>
       </section>
@@ -206,10 +206,10 @@ export default function ProjectDetailBody({ data }: { data: ProjectDetailData })
       <section className="bg-white py-14 border-t border-slate-100">
         <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-14">
           <div className="flex items-center justify-between mb-8">
-            <h2 className="font-bebas text-4xl uppercase tracking-tight text-slate-950">
+            <h2 className="font-bebas text-4xl uppercase tracking-tight text-black">
               RELATED PROJECTS
             </h2>
-            <a href="/projects" className="text-sm text-slate-500 hover:text-slate-800 transition-colors">
+            <a href="/ourproject" className="text-sm text-gray-700 hover:text-black transition-colors">
               See all
             </a>
           </div>

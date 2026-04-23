@@ -11,7 +11,7 @@ export default function Mission() {
       whileInView={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.9, delay: 0.3 }}
       viewport={{ once: true }}
-      className="bg-white py-24 text-slate-950"
+      className="bg-white py-24 text-black"
     >
       <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-14">
 
@@ -42,13 +42,13 @@ export default function Mission() {
             {/* Floating vision card */}
             <div className="absolute inset-0 flex items-center justify-center p-15">
               <div className="bg-white rounded-[24px] p-8 shadow-xl max-w-lg w-full">
-                <h3 className="font-bebas text-5xl uppercase tracking-tight text-slate-950 sm:text-6xl">
+                <h3 className="font-bebas text-5xl uppercase tracking-tight text-black sm:text-6xl">
                   OUR VISION
                 </h3>
-                <p className="mt-5 text-sm leading-7 text-slate-700 font-montserrat">
+                <p className="mt-5 text-sm leading-7 text-gray-900 font-montserrat">
                   We aim to sustain and strengthen our reputation through a continued commitment to responsiveness, adaptability, and disciplined execution.
                 </p>
-                <p className="mt-4 text-sm leading-7 text-slate-700 font-montserrat">
+                <p className="mt-4 text-sm leading-7 text-gray-900 font-montserrat">
                   Our vision is to refine how construction is delivered — ensuring that every project reflects clarity in planning, coordination in execution, and confidence in outcome.
                 </p>
               </div>

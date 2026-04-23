@@ -63,16 +63,16 @@ export default function OurPartners() {
       whileInView={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.7, delay: 0.2 }}
       viewport={{ once: true }}
-      className="bg-white py-24 text-slate-950"
+      className="bg-white py-24 text-black"
     >
       <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-14">
 
         {/* Top — title left, description right */}
         <div className="grid gap-10 lg:grid-cols-[0.5fr_1fr] items-start mb-12">
-          <h2 className="font-bebas text-5xl uppercase tracking-tight text-slate-950 sm:text-6xl">
+          <h2 className="font-bebas text-5xl uppercase tracking-tight text-black sm:text-6xl">
             OUR PARTNERS
           </h2>
-          <p className="text-base leading-8 text-slate-700">
+          <p className="text-base leading-8 text-gray-900">
             Our work is strengthened through long-term partnerships with clients, consultants, and stakeholders who share a commitment to quality and structured execution. These relationships are built on trust, transparency, and consistent performance — enabling us to deliver projects that meet defined expectations across every stage of construction.
           </p>
         </div>

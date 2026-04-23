@@ -6,10 +6,10 @@ export default function Preheader() {
   const [stage, setStage] = useState<'enter' | 'visible' | 'exit' | 'reset'>('enter')
 
   useEffect(() => {
-    const enterDuration = 5000
-    const visibleDuration = 6000
-    const exitDuration = 5000
-    const resetDuration = 4000
+    const enterDuration = 16000
+    const visibleDuration = 14000
+    const exitDuration = 16000
+    const resetDuration = 8000
 
     if (stage === 'enter') {
       const t = setTimeout(() => setStage('visible'), enterDuration)
@@ -45,13 +45,13 @@ export default function Preheader() {
   const getTransition = () => {
     switch (stage) {
       case 'enter':
-        return 'transform 5s linear'
+        return 'transform 10s linear'
       case 'visible':
         return 'none'
       case 'exit':
-        return 'transform 5s linear'
+        return 'transform 10s linear'
       case 'reset':
-        return 'transform 4s linear'
+        return 'transform 8s linear'
     }
   }
 

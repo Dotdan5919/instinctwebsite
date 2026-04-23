@@ -124,7 +124,7 @@ function MobileProjects({
             className={`flex-shrink-0 rounded-full px-4 py-2 text-xs font-semibold tracking-wide transition-all duration-300 ${
               i === activeCategoryIndex
                 ? "bg-[#5b3900] text-white"
-                : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                : "bg-gray-100 text-gray-700 hover:bg-gray-200"
             }`}
           >
             {cat.label}
@@ -304,7 +304,7 @@ function DesktopProjects({
           transition={{ duration: 1.1 }}
           viewport={{ once: true }}
           ref={scrollRef}
-          className="flex gap-4 overflow-x-auto scroll-smooth flex-1 px-4"
+          className="flex gap-4 overflow-x-auto scroll-smooth flex-1 px-4 ml-4"
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
           {projects.map((project, i) => (
@@ -342,7 +342,7 @@ function DesktopProjects({
         <button
           type="button"
           onClick={canScrollLeft ? scrollLeft : scrollRight}
-          className="flex items-center gap-3 text-sm font-medium text-slate-700 hover:text-slate-950 transition-all duration-500 ease-in-out"
+          className="flex items-center gap-3 text-sm font-medium text-gray-800 hover:text-black transition-all duration-500 ease-in-out"
           style={{
             transform: canScrollRight ? "translateX(calc(100vw - 280px))" : "translateX(0)",
             paddingLeft: canScrollRight
@@ -376,7 +376,7 @@ export default function FeaturedProjectsSection() {
   const [activeCategoryIndex, setActiveCategoryIndex] = useState(0);
 
   return (
-    <section className="bg-white text-slate-950 pt-24 pb-0 overflow-hidden">
+    <section className="bg-white text-black pt-24 pb-0 overflow-hidden">
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: -50 }}
@@ -387,17 +387,17 @@ export default function FeaturedProjectsSection() {
       >
         <div className="grid gap-10 xl:grid-cols-[0.95fr_1.2fr_0.8fr] xl:items-start">
           <div>
-            <h2 className="font-bebas text-5xl uppercase leading-tight text-slate-950 sm:text-6xl">
+            <h2 className="font-bebas text-5xl uppercase leading-tight text-black sm:text-6xl">
               Our Featured
               <br />
               Projects
             </h2>
           </div>
           <div>
-            <p className="font-montserrat text-base font-semibold text-slate-600 sm:text-lg">
+            <p className="font-montserrat text-base font-semibold text-gray-700 sm:text-lg">
               Scale. Complexity. Performance. Impact.
             </p>
-            <p className="mt-5 font-montserrat text-base leading-7 text-slate-700">
+            <p className="mt-5 font-montserrat text-base leading-7 text-gray-800">
               We deliver projects that go beyond construction — creating structures that meet
               functional demands, uphold quality standards, and support long-term use across
               diverse environments.

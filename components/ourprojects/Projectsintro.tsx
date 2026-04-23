@@ -14,13 +14,13 @@ export default function ProjectsIntro() {
       <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-14">
         <div className="grid gap-10 lg:grid-cols-[260px_1fr] lg:gap-20 items-start">
           {/* Left — heading */}
-          <h1 className="font-bebas text-5xl sm:text-6xl uppercase tracking-tight text-slate-950 leading-none">
+          <h1 className="font-bebas text-5xl sm:text-6xl uppercase tracking-tight text-black leading-none">
             OUR PROJECTS
           </h1>
 
           {/* Right — copy */}
           <div className="space-y-4">
-            <p className="text-lg font-montserrat  text-slate-600">
+            <p className="text-lg font-montserrat  text-gray-700">
               This project involved the development of a multi-unit residential building designed to
               deliver functional, durable, and well-structured living spaces.
             </p>

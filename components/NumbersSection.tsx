@@ -137,9 +137,9 @@ export default function NumbersSection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="rounded-[1.5rem] bg-white p-8 text-slate-950 sm:p-10"
+            className="rounded-[1.5rem] bg-white p-8 text-black sm:p-10"
           >
-            <h2 className="font-bebas text-4xl uppercase tracking-tight text-slate-950 sm:text-5xl">
+            <h2 className="font-bebas text-4xl uppercase tracking-tight text-black sm:text-5xl">
               We Build History
             </h2>
             <p className="mt-5 font-montserrat max-w-3xl leading-8 text-slate-600 sm:text-md">

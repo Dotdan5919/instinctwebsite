@@ -9,18 +9,18 @@ export default function ApproachIntro() {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
-      className="bg-white py-16 text-slate-950"
+      className="bg-white py-16 text-black"
     >
       <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-14">
         <div className="grid gap-10 lg:grid-cols-[280px_1fr] lg:gap-20 items-start">
           {/* Left — heading */}
-          <h1 className="font-bebas text-5xl uppercase tracking-tight text-slate-950 sm:text-6xl leading-none">
+          <h1 className="font-bebas text-5xl uppercase tracking-tight text-black sm:text-6xl leading-none">
             HOW WE DELIVER
           </h1>
 
           {/* Right — copy */}
           <div className="space-y-4">
-            <p className="text-sm font-semibold leading-7 text-slate-700">
+            <p className="text-sm font-semibold leading-7 text-gray-900">
               Successful construction requires more than execution. It requires coordination across every stage of delivery.
             </p>
             <p className="text-sm leading-7 text-slate-600">

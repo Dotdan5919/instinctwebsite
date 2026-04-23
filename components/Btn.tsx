@@ -83,7 +83,7 @@ export default function Btn({text}: {text: string}) {
       `}</style>
 
       <span className="arrow-left">→</span>
-      <span className="btn-text font-montserrat">{text}</span>
+      <span className="btn-text font-montserrat font-semibold">{text}</span>
       <span className="arrow-right">→</span>
     </button>
   )

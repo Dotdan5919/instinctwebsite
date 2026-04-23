@@ -210,8 +210,8 @@ function CategoryRow({ cat }: { cat: Category }) {
       <div className="flex flex-col min-h-0 mt-10 w-[526px]">
         {/* Header */}
         <div className="flex items-center justify-between mb-4 flex-shrink-0">
-          <p className="text-sm font-semibold text-slate-800">Explore Projects on {cat.label}</p>
-          <button className="text-sm text-slate-500 hover:text-slate-800 transition-colors bg-transparent border-none cursor-pointer font-sans">
+          <p className="text-sm font-semibold text-gray-900">Explore Projects on {cat.label}</p>
+          <button className="text-sm text-gray-700 hover:text-black transition-colors bg-transparent border-none cursor-pointer font-montserrat">
             See all
           </button>
         </div>
@@ -254,12 +254,12 @@ export default function OurExpertise() {
       : categories.filter((c) => c.id === activeFilter)
 
   return (
-    <section className="bg-white font-sans">
+    <section className="bg-white font-montserrat">
 
       {/* ── WHAT WE DO intro ── */}
-      <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-14 py-16 border-b border-slate-200">
+      <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-14 py-16 border-b border-gray-300">
         <div className="grid gap-16 lg:grid-cols-[260px_1fr] items-start">
-          <h2 className="font-bebas text-5xl sm:text-6xl uppercase tracking-tight text-slate-950 leading-none">
+          <h2 className="font-bebas text-5xl sm:text-6xl uppercase tracking-tight text-black leading-none">
             WHAT WE DO
           </h2>
           <div className="space-y-4 font-montserrat">

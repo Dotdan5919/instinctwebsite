@@ -24,7 +24,7 @@ export default function LeadershipGrid({
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.45 }}
           viewport={{ once: true }}
-          className="font-montserrat font-bold text-2xl uppercase text-slate-950 mb-8"
+          className="font-montserrat font-bold text-2xl uppercase text-black mb-8"
         >
           {title}
         </motion.h2>

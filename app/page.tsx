@@ -32,8 +32,12 @@ export default function Home() {
     <div className="flex flex-col relative">
 
       {/* Vertical border lines — hidden on mobile, visible from lg up */}
-      <div className="hidden lg:block absolute z-10 left-14 xl:left-24 w-[calc(100%-7rem)] xl:w-[1300px] h-full border-l border-r border-white/20 pointer-events-none" />
-
+     <div className="hidden lg:block absolute inset-0 z-10 pointer-events-none">
+  <div className="mx-auto max-w-7xl h-full px-14 xl:px-24 relative">
+    <div className="absolute inset-y-0 left-5 right-5 
+                    border-l border-r border-white/20" />
+  </div>
+</div>
       {/* Hero wrapper */}
       <div
         id="hero-wrapper"

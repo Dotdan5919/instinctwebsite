@@ -18,9 +18,12 @@ export async function generateStaticParams() {
 export default function page({ params }: { params: { id: string } }) {
   return (
    <div className="flex flex-col relative min-h-screen bg-slate-950 text-white ">
-          <div className="absolute z-10 left-24 w-[1300px] h-full border-l border-r border-white/20 pointer-events-none" />
-      
-         
+       <div className="hidden lg:block absolute inset-0 z-10 pointer-events-none">
+  <div className="mx-auto max-w-7xl h-full px-14 xl:px-24 relative">
+    <div className="absolute inset-y-0 left-8 right-8 
+                    border-l border-r border-white/20" />
+  </div>
+</div>
    
   
 

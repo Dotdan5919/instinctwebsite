@@ -9,12 +9,12 @@ export default function LeadershipIntro() {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
-      className="bg-white py-16 text-slate-950"
+      className="bg-white py-16 text-black"
     >
       <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-14">
         <div className="grid gap-10 lg:grid-cols-[260px_1fr] lg:gap-20 items-start">
           {/* Left — heading */}
-          <h1 className="font-bebas text-5xl uppercase tracking-tight text-slate-950 sm:text-6xl">
+          <h1 className="font-bebas text-5xl uppercase tracking-tight text-black sm:text-6xl">
             OUR LEADERSHIP
           </h1>
 

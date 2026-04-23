@@ -178,7 +178,7 @@ export default function ProjectsGrid() {
                 <ProjectCard key={project.id} project={project} index={i} />
               ))
             ) : (
-              <div className="col-span-3 py-20 text-center text-slate-400 text-sm">
+              <div className="col-span-3 py-20 text-center text-gray-500 text-sm">
                 No projects found in this category.
               </div>
             )}

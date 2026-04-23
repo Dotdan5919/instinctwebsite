@@ -99,20 +99,20 @@ function JourneyIntro() {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
-      className="bg-white py-24 text-slate-950"
+      className="bg-white py-24 text-black"
     >
       <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-14">
         <div className="grid gap-10 lg:grid-cols-[260px_1fr] lg:gap-20 items-start px-6">
 
           {/* Left — big heading */}
-          <h1 className="font-bebas text-5xl uppercase tracking-tight text-slate-950 sm:text-6xl sticky top-24">
+          <h1 className="font-bebas text-5xl uppercase tracking-tight text-black sm:text-6xl sticky top-24">
             OUR JOURNEY
           </h1>
 
           {/* Right — copy + CTA */}
           <div className="space-y-5 font-montserrat">
-            <p className=" text-slate-700">Growth, measured over time.</p>
-            <p className=" text-slate-600 ">
+            <p className=" text-gray-900">Growth, measured over time.</p>
+            <p className=" text-gray-700 ">
               Our journey reflects steady growth in capability, experience, and project delivery.
               Each milestone represents a progression — refining our systems, strengthening our
               expertise, and expanding our ability to execute complex projects.
@@ -167,14 +167,14 @@ function TimelineItem({
 
       {/* ── Content ── */}
       <div className="pl-12 pb-16 pt-0 font-montserrat">
-        <h2 className="mb-5  font-bold text-[24px] uppercase  text-slate-800">
+        <h2 className="mb-5  font-bold text-[24px] uppercase  text-gray-900">
           {milestone.heading}
         </h2>
 
         {milestone.paragraphs.map((p, i) => (
           <p
             key={i}
-            className={` leading-7 text-slate-500 text-[18px]  ${
+            className={` leading-7 text-gray-700 text-[18px]  ${
               i < milestone.paragraphs.length - 1 ? 'mb-3' : 'mb-6'
             }`}
           >

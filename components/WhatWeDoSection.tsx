@@ -82,10 +82,10 @@ export default function WhatWeDoSection() {
 
         {/* Header - 3 columns */}
         <div className="grid gap-10 lg:grid-cols-[1fr_1.4fr_1.2fr] lg:items-center mb-12">
-          <h2 className="font-bebas text-5xl uppercase leading-tight text-slate-950 sm:text-6xl">
+          <h2 className="font-bebas text-5xl uppercase leading-tight text-black sm:text-6xl">
             WHAT WE DO.
           </h2>
-          <p className="text-lg leading-8 text-slate-700">
+          <p className="text-lg leading-8 text-black font-montserrat">
             We operate across key construction disciplines, applying structured
             processes that align planning, execution, and outcomes at every stage.
           </p>
@@ -142,7 +142,7 @@ export default function WhatWeDoSection() {
                 src={serviceImages[active] ?? extraordinary}
                 alt={services[active].name}
                 fill
-                className="object-cover transition-opacity duration-500"
+                className="object-cover"
               />
               <div className="absolute inset-0 bg-slate-950/50" />
               <div className="absolute inset-0 flex flex-col justify-center px-12 py-10">

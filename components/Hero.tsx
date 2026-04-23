@@ -65,16 +65,16 @@ export default function Hero({ currentStep = 0 }: { currentStep?: number }) {
       <div className="relative z-20 w-full pt-16 sm:pt-20 lg:pt-24">
 
         {/* ─── Headline ─── */}
-        <h1 className="font-bebas leading-none tracking-wide mb-6 sm:mb-8
-                        text-[52px] sm:text-[72px] md:text-[88px] lg:text-[100px]">
-          <span>BUILT WITH INTENT.<br /></span>
-          <span>
-            DELIVERED WITH{' '}
-            <span className="text-amber-500" style={wordStyle}>
-              {cyclingWords[wordIndex]}
-            </span>
-          </span>
-        </h1>
+      <h1 className="font-bebas leading-none tracking-wide mb-6 sm:mb-8
+                text-[52px] sm:text-[72px] md:text-[88px] lg:text-[100px] text-white">
+  <span>BUILT WITH INTENT.<br /></span>
+  <span>
+    DELIVERED WITH{' '}
+    <span className="text-amber-500" style={wordStyle}>
+      {cyclingWords[wordIndex]}
+    </span>
+  </span>
+</h1>
 
         {/* ─── Subtitle row ─── */}
         <div className="flex flex-col sm:flex-row sm:items-center mb-10 sm:mb-16

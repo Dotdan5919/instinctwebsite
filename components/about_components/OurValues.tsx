@@ -68,7 +68,7 @@ export default function OurValues() {
     <section 
       id="our-values"
     
-      className="bg-[#f0eeeb] py-24 text-slate-950"
+      className="bg-[#f0eeeb] py-24 text-black"
     >
       <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-14">
 
@@ -105,8 +105,8 @@ export default function OurValues() {
                 onClick={() => setActiveIndex(i)}
                 className={`text-left py-5 border-b border-slate-300 transition-all duration-200 ${
                   i === activeIndex
-                    ? 'text-slate-950 font-semibold'
-                    : 'text-slate-400 hover:text-slate-700'
+                    ? 'text-black font-semibold'
+                    : 'text-gray-500 hover:text-gray-900'
                 }`}
               >
                 <span className="text-xl font-montserrat">{v.label}</span>
@@ -121,7 +121,7 @@ export default function OurValues() {
             </p>
             <ul className="space-y-3">
               {active.bullets.map((b) => (
-                <li key={b} className="flex items-start gap-3 text-sm leading-7 text-slate-700">
+                <li key={b} className="flex items-start gap-3 text-sm leading-7 text-gray-900">
                   <span className="mt-2 w-2.5 h-2.5 flex-shrink-0 bg-slate-800 rounded-sm" />
                   {b}
                 </li>

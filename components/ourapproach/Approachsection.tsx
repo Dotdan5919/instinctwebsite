@@ -23,7 +23,7 @@ function Tag({ label }: { label: string }) {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
       viewport={{ once: true }}
-      className="inline-block rounded-lg bg-[#fdf6e3]  text-slate-700 text-lg px-4 py-2.5 font-medium"
+      className="inline-block rounded-lg bg-[#fdf6e3]  text-gray-900 text-lg px-4 py-2.5 font-medium"
     >
       {label}
     </motion.span>
@@ -51,12 +51,12 @@ export default function ApproachSection({
       className="flex flex-col justify-center"
       id={id}
     >
-      <h2 className="font-bebas text-4xl sm:text-5xl uppercase tracking-tight text-slate-950 mb-5 leading-none">
+      <h2 className="font-bebas text-4xl sm:text-5xl uppercase tracking-tight text-black mb-5 leading-none">
         {title}
       </h2>
       <div className="space-y-4 mb-8">
         {paragraphs.map((p, i) => (
-          <p key={i} className="text-sm leading-7 text-slate-600">
+          <p key={i} className="text-sm leading-7 text-gray-700">
             {p}
           </p>
         ))}

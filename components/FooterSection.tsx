@@ -36,7 +36,7 @@ export default function FooterSection() {
             <Btn text="Contact Us" />
             </div>
           
-            <p className="mt-2 text-sm text-slate-400">
+            <p className="mt-2 text-sm text-white">
               Let&apos;s discuss how we can collaborate
             </p>
             
@@ -65,7 +65,7 @@ export default function FooterSection() {
           {/* Nav links */}
           <nav className="hidden items-center gap-8 lg:flex">
             {["Our Company", "Our Services", "Our Projects", "News & Insights", "Careers", "Resources"].map((item) => (
-              <a key={item} href="#" className="text-sm text-slate-300 hover:text-yellow-500 transition-colors">
+              <a key={item} href="#" className="text-sm text-white hover:text-yellow-500 transition-colors">
                 {item}
               </a>
             ))}
@@ -105,10 +105,10 @@ export default function FooterSection() {
           {/* Col 1 — Office */}
           <div>
             <p className="text-sm font-bold text-white">Office</p>
-            <p className="mt-3 text-sm leading-6 text-slate-400">
+            <p className="mt-3 text-sm leading-6 text-white">
               6, Abosede Odebowale Close, Nepa B/ Stop, Ifako Gbagada, Lagos State.
             </p>
-            <p className="mt-4 text-sm font-semibold text-slate-300">Phone:</p>
+            <p className="mt-4 text-sm font-semibold text-white">Phone:</p>
             <a href="tel:+2348023050847" className="block text-sm text-[#E8950A] hover:underline mt-1">
               +2348023050847,
             </a>
@@ -119,14 +119,14 @@ export default function FooterSection() {
 
           {/* Col 2 — Description */}
           <div className="flex items-start">
-            <p className="text-sm leading-7 text-slate-400">
+            <p className="text-sm leading-7 text-white">
               We operate at the intersection of engineering expertise and construction discipline — ensuring that every project is delivered with clarity, control, and measurable performance.
             </p>
           </div>
 
           {/* Col 3 — Newsletter */}
           <div>
-            <p className="text-sm leading-6 text-slate-400">
+            <p className="text-sm leading-6 text-white">
               Subscribe to Our Newsletter to get Important News, Amazing Offers & Inside Scoops.
             </p>
             <p className="mt-4 text-sm font-semibold text-white">Email</p>
@@ -134,7 +134,7 @@ export default function FooterSection() {
               <input
                 type="email"
                 placeholder="Enter your email address"
-                className="flex-1 bg-transparent px-4 py-3 text-sm text-gray-500 placeholder:text-slate-500 outline-none"
+                className="flex-1 bg-transparent px-4 py-3 text-sm text-gray-500 placeholder:text-gray-600 outline-none"
               />
               <button className="px-4 text-sm font-medium text-gray-500 hover:text-amber-600 transition-colors">
                 Send
@@ -150,13 +150,13 @@ export default function FooterSection() {
 
       {/* Legal Row */}
       <div className="mx-auto max-w-7xl px-6 py-6 sm:px-10 lg:px-14">
-        <div className="flex flex-col items-center gap-3 text-center text-xs text-slate-500">
+        <div className="flex flex-col items-center gap-3 text-center text-xs text-gray-600">
           <div className="flex items-center gap-4">
-            <a href="#" className="hover:text-slate-300 transition-colors">Fraud Alert</a>
+            <a href="#" className="hover:text-white transition-colors">Fraud Alert</a>
             <span className="text-white/20">|</span>
-            <a href="#" className="hover:text-slate-300 transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
             <span className="text-white/20">|</span>
-            <a href="#" className="hover:text-slate-300 transition-colors">Cookie Settings</a>
+            <a href="#" className="hover:text-white transition-colors">Cookie Settings</a>
           </div>
           <p>© 2026. Instinct Engineering Constuction company Limited</p>
         </div>

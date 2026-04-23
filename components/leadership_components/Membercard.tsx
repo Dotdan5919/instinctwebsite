@@ -73,7 +73,7 @@ function MemberModal({ member, onClose }: { member: Member; onClose: () => void 
 
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-white/90 text-slate-600 hover:bg-slate-100 transition-colors text-lg font-light"
+            className="absolute top-4 right-4 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-white/90 text-gray-700 hover:bg-gray-100 transition-colors text-lg font-light"
             aria-label="Close"
           >
             ✕
@@ -103,10 +103,10 @@ function MemberModal({ member, onClose }: { member: Member; onClose: () => void 
                 )}
               </div>
               <div className="px-8 py-6">
-                <h2 className="text-xl font-bold text-slate-900">{member.name}</h2>
-                <p className="text-sm text-slate-500 mt-1 mb-4">{member.role}</p>
+                <h2 className="text-xl font-bold text-black">{member.name}</h2>
+                <p className="text-sm text-gray-600 mt-1 mb-4">{member.role}</p>
                 {member.bio && (
-                  <p className="text-sm leading-7 text-slate-600 whitespace-pre-line">{member.bio}</p>
+                  <p className="text-sm leading-7 text-gray-800 whitespace-pre-line">{member.bio}</p>
                 )}
               </div>
             </div>
@@ -232,8 +232,8 @@ export default function MemberCard({
         ) : (
           /* No-photo card: static label below silhouette */
           <div className="absolute bottom-0 left-0 right-0 px-4 py-4">
-            <p className="text-sm font-bold text-slate-900">{member.name}</p>
-            <p className="text-xs text-slate-500 mt-0.5">{member.role}</p>
+            <p className="text-sm font-bold text-black">{member.name}</p>
+            <p className="text-xs text-gray-600 mt-0.5">{member.role}</p>
           </div>
         )}
 

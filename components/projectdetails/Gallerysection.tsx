@@ -32,12 +32,12 @@ export default function GallerySection({ images }: GalleryProps) {
 
         {/* Header row */}
         <div className="flex items-center justify-between mb-7">
-          <h2 className="font-bebas text-4xl uppercase tracking-tight text-slate-950">GALLERY</h2>
+          <h2 className="font-bebas text-4xl uppercase tracking-tight text-black">GALLERY</h2>
           <div className="flex gap-2">
             {/* Prev */}
             <button
               onClick={() => scroll('left')}
-              className="w-10 h-10 rounded-full border border-slate-300 flex items-center justify-center text-slate-400 hover:border-slate-500 hover:text-slate-600 transition-colors"
+              className="w-10 h-10 rounded-full border border-gray-400 flex items-center justify-center text-gray-600 hover:border-gray-600 hover:text-gray-800 transition-colors"
             >
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <path d="M10 12L6 8l4-4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
