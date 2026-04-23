@@ -4,12 +4,13 @@ import Link from 'next/link'
 
 export default function NotFound() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-black px-6 py-12">
+    <>
       
+    <div className="flex flex-col items-center justify-center min-h-screen bg-black  ">
       <Preheader/>
       <Navbar/>
          {/* Vertical border lines — hidden on mobile, visible from lg up */}
-     <div className="hidden lg:block absolute inset-0 z-10 pointer-events-none">
+     <div className="hidden lg:block absolute inset-0 z-10 pointer-events-none ">
   <div className="mx-auto max-w-7xl h-full px-14 xl:px-24 relative">
     <div className="absolute inset-y-0 left-5 right-5 
                     border-l border-r border-white/20" />
@@ -18,8 +19,8 @@ export default function NotFound() {
       
       <div className="text-center max-w-2xl">
         {/* 404 Code */}
-        <div className="mb-6">
-          <h1 className="font-bebas text-9xl sm:text-[140px] md:text-[160px] text-amber-500 leading-none tracking-tighter">
+        <div className="mb-6 pt-4">
+          <h1 className="font-bebas pt-7 text-9xl sm:text-[140px] md:text-[160px] text-amber-500 leading-none tracking-tighter">
             404
           </h1>
         </div>
@@ -60,5 +61,6 @@ export default function NotFound() {
         </div>
       </div>
     </div>
+    </>
   )
 }
