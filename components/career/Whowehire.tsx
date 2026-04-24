@@ -1,6 +1,7 @@
 'use client'
 import { useState } from 'react'
 import Link from 'next/link'
+import Btn from '../Btn'
 
 const hireCategories = [
   {
@@ -9,51 +10,31 @@ const hireCategories = [
     title: 'Engineering',
     description:
       'Civil, structural, and site engineers responsible for technical execution and site coordination.',
-    details: [
-      'Civil & Structural Engineers',
-      'Site Engineers & Supervisors',
-      'MEP Engineers',
-      'Quality Control Engineers',
-    ],
+   
   },
   {
     id: 2,
     label: 'Project Delivery',
     title: 'Project Delivery',
     description:
-      'Project managers and coordinators who ensure timelines, budgets, and scope are consistently met.',
-    details: [
-      'Project Managers',
-      'Planning & Scheduling Officers',
-      'Contract Administrators',
-      'Site Coordinators',
-    ],
+      'Project managers and supervisors overseeing planning, coordination, and execution.',
+   
   },
   {
     id: 3,
     label: 'Skilled Workforce',
     title: 'Skilled Workforce',
     description:
-      'Trained tradespeople and artisans who deliver precision craftsmanship across all construction disciplines.',
-    details: [
-      'Masons & Concreters',
-      'Carpenters & Formworkers',
-      'Electricians & Plumbers',
-      'Heavy Equipment Operators',
-    ],
+      'Experienced tradespeople including masons, carpenters, tilers, and roofing specialists.',
+   
   },
   {
     id: 4,
     label: 'Business Support',
     title: 'Business Support',
     description:
-      'Administrative, financial, and operational professionals who keep the business running efficiently.',
-    details: [
-      'Finance & Accounting',
-      'Human Resources',
-      'Procurement & Logistics',
-      'Marketing & Communications',
-    ],
+      'Procurement, finance, and administrative roles supporting operational efficiency.',
+  
   },
 ]
 
@@ -66,7 +47,7 @@ export default function WhoWeHire() {
       <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-14">
 
         {/* Header */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-start mb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-5 items-start mb-12">
           <h2 className="font-bebas text-gray-900 text-[40px] sm:text-[52px] lg:text-[58px] leading-none tracking-wide">
             WHO WE HIRE
           </h2>
@@ -121,33 +102,28 @@ export default function WhoWeHire() {
             </div>
 
             {/* Right — text only, no image */}
-            <div className="bg-gray-900 px-8 sm:px-12 py-10 flex flex-col justify-between gap-8 min-h-[280px]">
-              <div className="flex flex-col gap-4">
-                <h3 className="font-bebas text-white text-[32px] sm:text-[40px] leading-none tracking-wide">
-                  {active.title}
-                </h3>
-                <p className="text-gray-300 text-sm font-montserrat leading-relaxed max-w-xl">
-                  {active.description}
-                </p>
-                <ul className="flex flex-col gap-2 mt-2">
-                  {active.details.map((d, i) => (
-                    <li key={i} className="flex items-center gap-3 text-gray-400 text-sm font-montserrat">
-                      <span className="w-1.5 h-1.5 rounded-full bg-amber-500 flex-shrink-0" />
-                      {d}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+           <div className="relative bg-gray-900 bg-[url('../images/building.jpg')] bg-cover bg-center bg-no-repeat px-8 sm:px-12 py-10 flex flex-col justify-between gap-8 min-h-[280px]">
+  
+  {/* Dark overlay */}
+  <div className="absolute inset-0 bg-black/50" />
 
-              <Link
-                href="/careers#open-roles"
-                className="inline-flex items-center gap-2 bg-amber-500 text-white text-xs
-                           font-semibold font-montserrat px-5 py-3 w-fit rounded
-                           hover:bg-amber-600 transition-colors"
-              >
-                See open roles <span>↗</span>
-              </Link>
-            </div>
+  {/* Content — z-10 puts it above the overlay */}
+  <div className="relative z-10 flex flex-col gap-4">
+    
+    <p className="text-white text-lg font-montserrat pt-5 leading-relaxed max-w-xl">
+      {active.description}
+    </p>
+   
+  </div>
+
+  {/* Button also needs z-10 */}
+ 
+
+   <div className="relative z-10 w-fit">
+    <Btn text="See open roles" href="/career/joblisting" />
+  </div>
+
+</div>
 
           </div>
         </div>

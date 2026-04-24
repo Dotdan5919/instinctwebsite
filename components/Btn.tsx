@@ -1,8 +1,9 @@
 import React from 'react'
+import Link from 'next/link'
 
-export default function Btn({text}: {text: string}) {
+export default function Btn({ text, href = '#' }: { text: string; href?: string }) {
   return (
-    <button className="vision-btn mt-3 inline-flex items-center gap-3 rounded-full pl-2 py-2 pr-3 font-montserrat text-xs uppercase transition-colors duration-300">
+    <Link href={href} className="vision-btn mt-3 inline-flex items-center gap-3 rounded-full pl-2 py-2 pr-3 font-montserrat text-xs uppercase transition-colors duration-300">
       <style>{`
         .vision-btn {
           position: relative;
@@ -85,6 +86,6 @@ export default function Btn({text}: {text: string}) {
       <span className="arrow-left">→</span>
       <span className="btn-text font-montserrat font-semibold">{text}</span>
       <span className="arrow-right">→</span>
-    </button>
+    </Link>
   )
 }

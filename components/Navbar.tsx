@@ -165,19 +165,19 @@ function OurProjectsMenu() {
       />
       <div className="flex flex-col lg:flex-row flex-1">
         <LinkColumn heading="Categories" items={[
-          { label: 'Projects', href: '/our-projects' },
-          { label: 'Residential Developments', href: '/our-projects#residential' },
-          { label: 'Commercial Projects', href: '/our-projects#commercial' },
-          { label: 'Infrastructure', href: '/our-projects#infrastructure' },
-          { label: 'Renovation & Reconstruction', href: '/our-projects#renovation' },
+          { label: 'Projects', href: '/ourproject' },
+          { label: 'Residential Developments', href: '/ourproject#residential' },
+          { label: 'Commercial Projects', href: '/ourproject#commercial' },
+          { label: 'Infrastructure', href: '/ourproject#infrastructure' },
+          { label: 'Renovation & Reconstruction', href: '/ourproject#renovation' },
         ]} />
         <div className="flex-1 px-6 lg:px-10 py-6 lg:py-10">
           <h3 className="text-gray-900 text-sm lg:text-base font-semibold mb-4 lg:mb-6">Latest Project</h3>
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
-            <ContentCard label="Residential" title="5 Bedroom Duplex, Magodo Phase 2" linkLabel="See details" href="/our-projects/magodo-duplex" />
-            <ContentCard label="Residential" title="5 Bedroom Duplex, Magodo Phase 2" linkLabel="See details" href="/our-projects/magodo-duplex" />
+            <ContentCard label="Residential" title="5 Bedroom Duplex, Magodo Phase 2" linkLabel="See details" href="/ourproject/magodo-duplex" />
+            <ContentCard label="Residential" title="5 Bedroom Duplex, Magodo Phase 2" linkLabel="See details" href="/ourproject/magodo-duplex" />
             <div className="hidden lg:block">
-              <ContentCard label="Residential" title="5 Bedroom Duplex, Magodo Phase 2" linkLabel="See details" href="/our-projects/magodo-duplex" />
+              <ContentCard label="Residential" title="5 Bedroom Duplex, Magodo Phase 2" linkLabel="See details" href="/ourproject/magodo-duplex" />
             </div>
           </div>
         </div>
@@ -225,7 +225,7 @@ function CareersMenu() {
   return (
     <div className="flex flex-col lg:flex-row w-full">
       <LeftPanel
-        title="Careers" href="/careers"
+        title="Careers" href="/career"
         paragraphs={[
           "Within Instincts, you'll find a world of possibility. As a global company with a reputation for taking on generation-defining projects, we provide unparalleled learning and growth opportunities.",
           'From engineers and project managers to skilled craft professionals and construction experts, we seek colleagues who are eager to make their mark on the world.',
@@ -234,15 +234,15 @@ function CareersMenu() {
       />
       <div className="flex flex-col lg:flex-row flex-1">
         <LinkColumn heading="Join the Team" items={[
-          { label: 'Life at Instinct', href: '/careers#life-at-instinct' },
-          { label: 'Internship', href: '/careers#internship' },
-          { label: 'Experienced professionals', href: '/careers#experienced' },
-          { label: 'Labor and skilled trade', href: '/careers#skilled-trade' },
+          { label: 'Life at Instinct', href: '/career#life-at-instinct' },
+          { label: 'Internship', href: '/career#internship' },
+          { label: 'Experienced professionals', href: '/career#experienced' },
+          { label: 'Labor and skilled trade', href: '/career#skilled-trade' },
         ]} />
         <div className="flex-1 px-6 lg:px-10 py-6 lg:py-10">
           <div className="flex items-center justify-between mb-4 lg:mb-6">
             <h3 className="text-gray-900 text-sm lg:text-base font-semibold">Careers</h3>
-            <Link href="/careers" className="text-gray-900 text-xs lg:text-sm font-semibold flex items-center gap-1 hover:text-amber-500 transition-colors">
+            <Link href="/career" className="text-gray-900 text-xs lg:text-sm font-semibold flex items-center gap-1 hover:text-amber-500 transition-colors">
               See all positions <span>↗</span>
             </Link>
           </div>
@@ -255,7 +255,7 @@ function CareersMenu() {
               <p className="text-gray-600 text-xs leading-relaxed hidden lg:block">
                 Are you driven by purpose, thrive on a team, and live for a challenge? Check out our job openings and learn more about joining our team.
               </p>
-              <Link href="/careers#opportunities" className="text-amber-500 text-xs font-semibold flex items-center gap-1 hover:gap-2 transition-all">
+              <Link href="/career#opportunities" className="text-amber-500 text-xs font-semibold flex items-center gap-1 hover:gap-2 transition-all">
                 Read More <span>↗</span>
               </Link>
             </div>

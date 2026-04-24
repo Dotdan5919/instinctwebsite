@@ -1,7 +1,7 @@
 'use client'
 import Image from 'next/image'
 import Btn from '../Btn'
-import building from '@/images/building.jpg'
+import building from '@/images/career/jointinstint.jpg'
 
 const reasons = [
   {
@@ -50,7 +50,7 @@ export default function WhyJoinInstinct() {
 
             {/* Button */}
             <div className="mb-6">
-              <Btn text="See More About Us" />
+              <Btn text="See More About Us" href='/ourcompany'  />
             </div>
 
             {/* Reasons list — each item in its own subtle box */}
