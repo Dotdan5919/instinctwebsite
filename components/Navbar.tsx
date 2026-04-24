@@ -191,7 +191,7 @@ function NewsInsightsMenu() {
   return (
     <div className="flex flex-col lg:flex-row w-full">
       <LeftPanel
-        title="News & Insights" href="/news"
+        title="News & Insights" href="/newsandinsights"
         paragraphs={[
           'Instinctive is a knowledge-led organisation that constantly creates thought leadership articles, whitepapers and case studies.',
           'Read the pathbreaking insights on topics of today.',
@@ -200,10 +200,10 @@ function NewsInsightsMenu() {
       />
       <div className="flex flex-col lg:flex-row flex-1">
         <LinkColumn heading="Approach" items={[
-          { label: 'News', href: '/news' },
-          { label: 'Reports', href: '/news#reports' },
-          { label: 'Blogs', href: '/news#blogs' },
-          { label: 'White Papers', href: '/news#white-papers' },
+          { label: 'News', href: '/newsandinsights' },
+          { label: 'Reports', href: '/newsandinsights#reports' },
+          { label: 'Blogs', href: '/newsandinsights#blogs' },
+          { label: 'White Papers', href: '/newsandinsights#white-papers' },
         ]} />
         <div className="flex-1 px-6 lg:px-10 py-6 lg:py-10">
           <h3 className="text-gray-900 text-sm lg:text-base font-semibold mb-4 lg:mb-6">Featured Insights</h3>
@@ -396,7 +396,7 @@ function MobileDrawer({ open, onClose }: { open: boolean; onClose: () => void })
                 <Link href="/contact" onClick={onClose} className="block text-gray-700 text-sm font-medium hover:text-amber-500 transition-colors">
                   Contact us
                 </Link>
-                <Link href="/become-a-vendor" onClick={onClose} className="block text-gray-700 text-sm font-medium hover:text-amber-500 transition-colors">
+                <Link href="/vendor" onClick={onClose} className="block text-gray-700 text-sm font-medium hover:text-amber-500 transition-colors">
                   Become a vendor
                 </Link>
               </div>
@@ -481,7 +481,7 @@ export default function Navbar() {
             <Link href="/contact" className="px-4 xl:px-5 text-[14px] xl:text-[15px] text-white whitespace-nowrap hover:text-amber-400 transition-colors duration-200">
               Contact us
             </Link>
-            <Link href="/become-a-vendor" className="px-4 xl:px-5 text-[14px] xl:text-[15px] text-white whitespace-nowrap hover:text-amber-400 transition-colors duration-200">
+            <Link href="/vendor" className="px-4 xl:px-5 text-[14px] xl:text-[15px] text-white whitespace-nowrap hover:text-amber-400 transition-colors duration-200">
               Become a vendor
             </Link>
           </li>
