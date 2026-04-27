@@ -8,6 +8,16 @@ import ProjectDetailBody from '@/components/projectdetails/Projectdetailbody'
 import building from '@/images/precision.jpg'
 import define from '@/images/define.jpg'
 import accountability from '@/images/accountability.jpg'
+import expertise_hero from '@/images/expertise_hero.jpg'
+import approach from '@/images/project/approach.png'
+import gallery_1 from '@/images/project/1.jpg'
+import gallery_2 from '@/images/project/536da87f24ce73449fe1e03eba6694237cb3a164.jpg'
+import gallery_3 from '@/images/project/Building_con_2.jpg'
+import gallery_4 from '@/images/project/Building_con_3.jpg'
+import project_1 from '@/images/whatwedo/building_con_1.jpg'
+import project_2 from '@/images/whatwedo/construction_1.jpg'
+import project_3 from '@/images/whatwedo/flooring_1.jpg'  
+
 
 export async function generateStaticParams() {
   return [
@@ -35,7 +45,7 @@ data={{
         title: 'Block of 8 Luxury Flats',
         subtitle: 'Ajah, Lagos',
         address: ['Lagos, State.', 'Nigeria.'],
-        heroImage: building,
+        heroImage: expertise_hero,
  
         // ── Project overview panel ─────────────────────────────────────────
         overview: {
@@ -65,14 +75,14 @@ data={{
         // ── Our Approach ───────────────────────────────────────────────────
         approachBody:
           'The project was delivered through a structured approach — beginning with preconstruction planning and continuing through coordinated execution and controlled site management.',
-        approachImage: accountability,
+        approachImage: approach,
  
         // ── Gallery ────────────────────────────────────────────────────────
         galleryImages: [
-          accountability,
-          accountability,
-          accountability,
-          accountability,
+          gallery_1,
+          gallery_2,
+          gallery_3,
+          gallery_4,
           accountability,
         ],
  
@@ -84,7 +94,7 @@ data={{
             location: 'Ajah, Lagos',
             category: 'building-construction',
             status: 'active',
-            image: define,
+            image: project_1,
           },
           {
             id: 'rel-2',
@@ -92,7 +102,7 @@ data={{
             location: 'Ajah, Lagos',
             category: 'building-construction',
             status: 'active',
-            image: define,
+            image: project_2,
           },
           {
             id: 'rel-3',
@@ -100,7 +110,7 @@ data={{
             location: 'Langbasa, Ajah',
             category: 'building-construction',
             status: 'active',
-            image: define,
+            image: project_3,
           },
         ],
       }}

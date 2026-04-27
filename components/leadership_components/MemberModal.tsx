@@ -49,7 +49,7 @@ export default function MemberModal({ member, onClose }: { member: Member; onClo
             <h2 className="text-xl font-bold text-black">{member.name}</h2>
             <p className="text-sm text-gray-600 mt-1 mb-4">{member.role}</p>
             {member.bio && (
-              <p className="text-sm leading-7 text-gray-800 whitespace-pre-line">{member.bio}</p>
+              <p className="text-sm leading-7 text-gray-800 whitespace-pre-line ">{member.bio}</p>
             )}
           </div>
         </motion.div>

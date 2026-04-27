@@ -20,7 +20,7 @@ export default function page() {
          
          <Navbar />
  
-         <OtherHero title="Our Journey" subtitle="EXPERIENCE, DEVELOPED THROUGH DELIVERY" />
+         <OtherHero title="Our Journey" subtitle={<>EXPERIENCE, DEVELOPED <br /> THROUGH DELIVERY</>} />
          </div>
 
 

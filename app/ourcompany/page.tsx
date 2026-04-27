@@ -26,7 +26,7 @@ export default function OurCompany() {
         
         <Navbar />
 
-        <OtherHero title="About Us" subtitle="MORE THAN CONSTRUCTION. A SYSTEM OF DELIVERY." />
+        <OtherHero title="About Us" subtitle={<>MORE THAN CONSTRUCTION.<br /> A SYSTEM OF DELIVERY.</>} />
       </div>
 
 

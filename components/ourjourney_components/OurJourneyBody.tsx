@@ -52,17 +52,12 @@ const milestones = [
   },
 ]
 
-// ─── Map-pin icon rotated to point LEFT ───────────────────────────────────────
-// The pin's tail points left toward the year label; the round head sits on the spine.
-// Achieved by drawing a standard top-pointing SVG pin and rotating -90deg.
+// ─── Map-pin icon ─────────────────────────────────────────────────────────────
 function LocationPin() {
   return (
     <div
       className="absolute z-10"
       style={{
-        // Centre the pin on the spine line at the year row's midpoint.
-        // The pin SVG is 28×34. Rotated -90deg: effective width=34, height=28.
-        // We want the pointy tail to touch left and the circle head on the spine.
         left: '50%',
         top: '50%',
         transform: 'translate(4%, -50%) rotate(90deg)',
@@ -70,26 +65,16 @@ function LocationPin() {
         height: 34,
       }}
     >
-      <svg
-  viewBox="0 0 28 34"
-  fill="none"
-  xmlns="http://www.w3.org/2000/svg"
-  width={28}
-  height={34}
->
-  {/* Pin body */}
-  <path
-    d="M14 0C7.373 0 2 5.373 2 12c0 9 12 22 12 22s12-13 12-22C26 5.373 20.627 0 14 0z"
-    fill="#e8a020"
-  />
-  {/* White filled circle — larger to clearly show as solid white */}
-  <circle cx="14" cy="12" r="5.5" fill="#ffffff" />
-</svg>
+      <svg viewBox="0 0 28 34" fill="none" xmlns="http://www.w3.org/2000/svg" width={28} height={34}>
+        <path
+          d="M14 0C7.373 0 2 5.373 2 12c0 9 12 22 12 22s12-13 12-22C26 5.373 20.627 0 14 0z"
+          fill="#e8a020"
+        />
+        <circle cx="14" cy="12" r="5.5" fill="#ffffff" />
+      </svg>
     </div>
   )
 }
-
-
 
 // ─── Intro section ────────────────────────────────────────────────────────────
 function JourneyIntro() {
@@ -99,26 +84,25 @@ function JourneyIntro() {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
-      className="bg-white py-24 text-black"
+      className="bg-white py-14 sm:py-20 md:py-24 text-black"
     >
       <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-14">
-        <div className="grid gap-10 lg:grid-cols-[260px_1fr] lg:gap-20 items-start px-6">
+        <div className="flex flex-col gap-8 lg:grid lg:grid-cols-[260px_1fr] lg:gap-20 items-start">
 
           {/* Left — big heading */}
-          <h1 className="font-bebas text-5xl uppercase tracking-tight text-black sm:text-6xl sticky top-24">
+          <h1 className="font-bebas text-4xl sm:text-5xl lg:text-6xl uppercase tracking-tight text-black lg:sticky lg:top-24">
             OUR JOURNEY
           </h1>
 
           {/* Right — copy + CTA */}
-          <div className="space-y-5 font-montserrat">
-            <p className=" text-gray-900">Growth, measured over time.</p>
-            <p className=" text-gray-700 ">
+          <div className="space-y-4 sm:space-y-5 font-montserrat">
+            <p className="text-gray-900">Growth, measured over time.</p>
+            <p className="text-gray-700 leading-7">
               Our journey reflects steady growth in capability, experience, and project delivery.
               Each milestone represents a progression — refining our systems, strengthening our
               expertise, and expanding our ability to execute complex projects.
             </p>
-           
-            <Btn text="See all projects"  />
+            <Btn text="See all projects" />
           </div>
         </div>
       </div>
@@ -142,60 +126,87 @@ function TimelineItem({
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.85, delay: index * 0.15 }}
       viewport={{ once: false, margin: '0px 0px -100px 0px' }}
-      className="grid"
-      style={{ gridTemplateColumns: '80px 0px 1fr' }}
     >
-      {/* ── Year label ── */}
-      <div className="flex items-center justify-end pr-8 self-center">
-        <div className="text-center  font-montserrat text-2xl font-bold text-black">
-          {milestone.year.map((line, i) => (
-            <div key={i}>{line}</div>
+      {/* ── Mobile layout (< md): stacked with left border as spine ── */}
+      <div className="md:hidden flex gap-4 pb-10">
+        {/* Left: spine + pin */}
+        <div className="flex flex-col items-center">
+          <div className="w-3 h-3 rounded-full bg-[#e8a020] mt-1 shrink-0" />
+          {!isLast && <div className="w-0.5 flex-1 bg-[#e8a020] mt-1" />}
+        </div>
+
+        {/* Right: year + content */}
+        <div className="flex-1 pb-2">
+          <div className="font-montserrat text-lg font-bold text-[#e8a020] mb-2">
+            {milestone.year.join(' ')}
+          </div>
+          <h2 className="font-montserrat font-bold text-base uppercase text-gray-900 mb-3">
+            {milestone.heading}
+          </h2>
+          {milestone.paragraphs.map((p, i) => (
+            <p key={i} className={`text-sm leading-7 text-gray-700 ${i < milestone.paragraphs.length - 1 ? 'mb-3' : 'mb-4'}`}>
+              {p}
+            </p>
           ))}
+          <div className="overflow-hidden rounded-lg bg-slate-300" style={{ aspectRatio: '16 / 5.2' }}>
+            <Image
+              width={800}
+              height={260}
+              src={milestone.image}
+              alt={milestone.heading}
+              className="h-full w-full object-cover"
+              style={{ filter: 'grayscale(15%) brightness(0.85)' }}
+            />
+          </div>
         </div>
       </div>
 
-      {/* ── Spine column (zero-width, overflows) ── */}
-      <div className="relative flex justify-center">
-        {/* vertical amber line */}
-        <div
-          className="absolute left-1/2 -translate-x-1/2 w-0.5 bg-[#e8a020]"
-          style={{ top: 0, bottom: isLast ? '50%' : 0 }}
-        />
-        {/* Map-pin marker at year midpoint */}
-        <LocationPin />
-      </div>
+      {/* ── Desktop layout (>= md): three-column grid ── */}
+      <div
+        className="hidden md:grid"
+        style={{ gridTemplateColumns: '80px 0px 1fr' }}
+      >
+        {/* Year label */}
+        <div className="flex items-center justify-end pr-8 self-center">
+          <div className="text-center font-montserrat text-2xl font-bold text-black">
+            {milestone.year.map((line, i) => (
+              <div key={i}>{line}</div>
+            ))}
+          </div>
+        </div>
 
-      {/* ── Content ── */}
-      <div className="pl-12 pb-16 pt-0 font-montserrat">
-        <h2 className="mb-5  font-bold text-[24px] uppercase  text-gray-900">
-          {milestone.heading}
-        </h2>
-
-        {milestone.paragraphs.map((p, i) => (
-          <p
-            key={i}
-            className={` leading-7 text-gray-700 text-[18px]  ${
-              i < milestone.paragraphs.length - 1 ? 'mb-3' : 'mb-6'
-            }`}
-          >
-            {p}
-          </p>
-        ))}
-
-        {/* Image */}
-        <div
-          className=" overflow-hidden rounded-lg bg-slate-300"
-          style={{ aspectRatio: '16 / 5.2' }}
-        >
-          <Image
-          width="100"
-          height="100"
-
-            src={milestone.image}
-            alt={milestone.heading}
-            className="h-full w-full object-cover"
-            style={{ filter: 'grayscale(15%) brightness(0.85)' }}
+        {/* Spine column */}
+        <div className="relative flex justify-center">
+          <div
+            className="absolute left-1/2 -translate-x-1/2 w-0.5 bg-[#e8a020]"
+            style={{ top: 0, bottom: isLast ? '50%' : 0 }}
           />
+          <LocationPin />
+        </div>
+
+        {/* Content */}
+        <div className="pl-12 pb-16 pt-0 font-montserrat">
+          <h2 className="mb-5 font-bold text-[24px] uppercase text-gray-900">
+            {milestone.heading}
+          </h2>
+          {milestone.paragraphs.map((p, i) => (
+            <p
+              key={i}
+              className={`leading-7 text-gray-700 text-[18px] ${i < milestone.paragraphs.length - 1 ? 'mb-3' : 'mb-6'}`}
+            >
+              {p}
+            </p>
+          ))}
+          <div className="overflow-hidden rounded-lg bg-slate-300" style={{ aspectRatio: '16 / 5.2' }}>
+            <Image
+              width={800}
+              height={260}
+              src={milestone.image}
+              alt={milestone.heading}
+              className="h-full w-full object-cover"
+              style={{ filter: 'grayscale(15%) brightness(0.85)' }}
+            />
+          </div>
         </div>
       </div>
     </motion.div>
@@ -205,14 +216,14 @@ function TimelineItem({
 // ─── Timeline section ─────────────────────────────────────────────────────────
 function JourneyTimeline() {
   return (
-    <motion.section 
+    <motion.section
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
       className="bg-[#f4f4ef]"
     >
-      <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-14 pt-16 pb-0">
+      <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-14 pt-12 sm:pt-16 pb-0">
         {milestones.map((m, i) => (
           <TimelineItem
             key={m.heading}

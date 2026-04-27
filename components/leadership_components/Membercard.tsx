@@ -93,6 +93,7 @@ function MemberModal({ member, onClose }: { member: Member; onClose: () => void 
                 msOverflowStyle: 'none',
                 maxHeight: '90vh',
                 paddingRight: '24px',
+                paddingBottom: '24px',
               } as React.CSSProperties}
             >
               <div className="mx-auto h-[250px] w-64 flex items-center justify-center rounded-t-xl relative border-l-4 border-amber-500">
