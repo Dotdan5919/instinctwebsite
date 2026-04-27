@@ -13,13 +13,13 @@ import FooterSection from "@/components/FooterSection";
 import LoadingScreen from "@/components/Loadingscreen";
 import { useEffect, useState } from "react";
 
-// These must be the resolved public paths to your images.
-// Next.js static imports give you an object with `.src`; use those directly here.
-const heroImagePaths = [
-  '/images/hero_bg.png',
-  '/images/hero_bg_2.png',
-  '/images/hero_bg_1.png',
-];
+// Static imports so Next.js gives us the real hashed /_next/static/media/... URLs
+import heroBg0 from "@/images/hero_bg.png";
+import heroBg1 from "@/images/hero_bg_2.png";
+import heroBg2 from "@/images/hero_bg_1.png";
+
+// Use the .src strings from the imports — these are the exact URLs the browser will fetch
+const heroImageSrcs = [heroBg0.src, heroBg1.src, heroBg2.src];
 
 function preloadImages(srcs: string[]): Promise<void[]> {
   return Promise.all(
@@ -39,6 +39,8 @@ export default function Home() {
   const [currentStep, setCurrentStep] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
 
+  // Tailwind JIT needs the full string present at build time, so keep these as literals.
+  // They correspond 1-to-1 with the imports above.
   const backgrounds = [
     "bg-[url('../images/hero_bg.png')]",
     "bg-[url('../images/hero_bg_2.png')]",
@@ -47,7 +49,7 @@ export default function Home() {
 
   // Preload all hero images before hiding the loader
   useEffect(() => {
-    preloadImages(heroImagePaths).then(() => {
+    preloadImages(heroImageSrcs).then(() => {
       // Small buffer so the exit animation feels intentional, not abrupt
       setTimeout(() => setIsLoading(false), 300);
     });
