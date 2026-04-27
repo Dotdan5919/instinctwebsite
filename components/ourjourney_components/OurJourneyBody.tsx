@@ -102,7 +102,7 @@ function JourneyIntro() {
               Each milestone represents a progression — refining our systems, strengthening our
               expertise, and expanding our ability to execute complex projects.
             </p>
-            <Btn text="See all projects" />
+            <Btn text="See all projects" href="/ourproject" />
           </div>
         </div>
       </div>

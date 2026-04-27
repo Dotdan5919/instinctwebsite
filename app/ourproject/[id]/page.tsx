@@ -31,7 +31,7 @@ export default function page({ params }: { params: { id: string } }) {
        <div className="hidden lg:block absolute inset-0 z-10 pointer-events-none">
   <div className="mx-auto max-w-7xl h-full px-14 xl:px-24 relative">
     <div className="absolute inset-y-0 left-8 right-8 
-                    border-l border-r border-white/20" />
+                    border-l border-r border-white/20 overflow-x-hidden" />
   </div>
 </div>
    
@@ -89,7 +89,7 @@ data={{
         // ── Related projects ───────────────────────────────────────────────
         relatedProjects: [
           {
-            id: 'rel-1',
+            id: '1',
             title: 'Block of 8 Luxury Flats',
             location: 'Ajah, Lagos',
             category: 'building-construction',
@@ -97,7 +97,7 @@ data={{
             image: project_1,
           },
           {
-            id: 'rel-2',
+            id: '2',
             title: 'Block of 8 Luxury Flats',
             location: 'Ajah, Lagos',
             category: 'building-construction',
@@ -105,7 +105,7 @@ data={{
             image: project_2,
           },
           {
-            id: 'rel-3',
+            id: '3',
             title: "St. Peter's Catholic Churc...",
             location: 'Langbasa, Ajah',
             category: 'building-construction',

@@ -90,7 +90,7 @@ export default function WhatWeDoSection() {
             processes that align planning, execution, and outcomes at every stage.
           </p>
           <div className="flex lg:justify-end">
-            <Btn text="Our Vision, Values & Commitment" />
+            <Btn text="Our Vision, Values & Commitment"  href="/ourcompany"/>
           </div>
         </div>
 
@@ -153,7 +153,7 @@ export default function WhatWeDoSection() {
                   {services[active].description}
                 </p>
                 <div className="mt-8">
-                  <Btn text={services[active].link} />
+                  <Btn text={services[active].link}  href="/whatwedo" />
                 </div>
               </div>
             </div>

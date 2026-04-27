@@ -32,7 +32,7 @@ export default function ExtraordinarySection() {
             </p>
      
 
-     <Btn text="Our Vision, Values & Commitment"/>
+     <Btn text="Our Vision, Values & Commitment" href="/ourcompany"/>
           </motion.div>
 
           <motion.div

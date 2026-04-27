@@ -1,5 +1,6 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { useSearchParams } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import ProjectCard, { type Project } from './Projectscard'
 import Image from 'next/image'
@@ -7,10 +8,15 @@ import type { StaticImport } from 'next/dist/shared/lib/get-img-props'
 import preconstruction from '@/images/precision.jpg'
 import constructionManagement from '@/images/precision.jpg'
 import buildingConstruction from '@/images/precision.jpg'
+import gallery_1 from '@/images/project/536da87f24ce73449fe1e03eba6694237cb3a164.jpg'
+import gallery_2 from '@/images/project/Building_con_2.jpg'
+import gallery_3 from '@/images/project/Building_con_3.jpg'
+import gallery_4 from '@/images/project/approach.png'
 
 // ─── Filter categories ────────────────────────────────────────────────────────
 const filters = [
   { id: 'all', label: 'All Projects' },
+  { id: 'active', label: 'Active Projects' },
   { id: 'preconstruction', label: 'Preconstruction' },
   { id: 'construction-management', label: 'Construction Management' },
   { id: 'building-construction', label: 'Building construction' },
@@ -24,102 +30,112 @@ const filters = [
 // ─── Projects data — replace images with real imports/paths ──────────────────
 const projects: Project[] = [
   {
-    id: 'proj-1',
+    id: '1',
     title: 'Shonibare Estate Reside...',
     location: 'Maryland, Lagos',
     category: 'building-construction',
     status: 'active',
-    image: buildingConstruction,
+    image:gallery_1,
   },
   {
-    id: 'proj-2',
+    id: '2',
     title: '3km Drainage Project',
     location: 'Ikire, Osun State',
     category: 'road-infrastructure',
-    image: preconstruction,
+    image: gallery_2,
   },
   {
-    id: 'proj-3',
+    id: '3',
     title: '5 Bedroom Duplex...',
     location: 'Magodo Phase 2, Lagos',
     category: 'building-construction',
     status: 'active',
-    image: buildingConstruction,
+    image: gallery_3,
   },
   {
-    id: 'proj-4',
+    id: '4',
     title: 'Block of 8 Luxury Flats',
     location: 'Ajah, Lagos',
     category: 'building-construction',
-    image: buildingConstruction,
+    image: gallery_4,
   },
   {
-    id: 'proj-5',
+    id: '5',
     title: 'Oshodi Cantonment Mar...',
     location: 'Oshodi, Lagos',
     category: 'road-infrastructure',
-    image: constructionManagement,
+    image: gallery_2,
   },
   {
-    id: 'proj-6',
+    id: '6',
     title: 'Preconstruction Survey',
     location: 'VI, Lagos',
     category: 'preconstruction',
-    image: preconstruction,
+    image: gallery_1,
   },
   {
-    id: 'proj-7',
+    id: '7',
     title: 'Magodo Phase 2 Villas',
     location: 'Magodo, Lagos',
     category: 'building-construction',
-    image: buildingConstruction,
+    image: gallery_3,
   },
   {
-    id: 'proj-8',
+    id: '8',
     title: 'Airport Road Expansion',
     location: 'Ikeja, Lagos',
     category: 'road-infrastructure',
-    image: constructionManagement,
+    image: gallery_2,
   },
   {
-    id: 'proj-9',
+    id: '9',
     title: 'Construction Management',
     location: 'Maryland, Lagos',
     category: 'construction-management',
     status: 'active',
-    image: constructionManagement,
+    image: gallery_2,
   },
   {
-    id: 'proj-10',
+    id: '10',
     title: 'Shonibare Estate Reside...',
     location: 'Maryland, Lagos',
     category: 'building-construction',
     status: 'active',
-    image: buildingConstruction,
+    image: gallery_4,
   },
   {
-    id: 'proj-11',
+    id: '11',
     title: '3km Drainage Project',
     location: 'Ikire, Osun State',
     category: 'road-infrastructure',
-    image: preconstruction,
+    image: gallery_2,
   },
   {
-    id: 'proj-12',
+    id: '12',
     title: '5 Bedroom Duplex...',
     location: 'Magodo Phase 2, Lagos',
     category: 'building-construction',
     status: 'active',
-    image: buildingConstruction,
+    image: gallery_3,
   },
 ]
 
 export default function ProjectsGrid() {
+  const searchParams = useSearchParams()
   const [activeFilter, setActiveFilter] = useState('all')
+
+  useEffect(() => {
+    const filter = searchParams.get('filter')
+    if (filter && filters.some(f => f.id === filter)) {
+      setActiveFilter(filter)
+    }
+  }, [searchParams])
 
   const displayed =
     activeFilter === 'all'
       ? projects
+      : activeFilter === 'active'
+      ? projects.filter((p) => p.status === 'active')
       : projects.filter((p) => p.category === activeFilter)
 
   return (

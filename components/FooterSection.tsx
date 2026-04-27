@@ -33,7 +33,7 @@ export default function FooterSection() {
               READY TO START A CONVERSATION ?
             </h2>
             
-            <Btn text="Contact Us" />
+            <Btn text="Contact Us" href="/contact" />
             </div>
           
             <p className="mt-2 text-sm text-white">

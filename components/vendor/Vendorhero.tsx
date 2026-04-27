@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import vendorHero from "@/images/vendor/2.jpg"; // replace with your actual image
+import Btn from "@/components/Btn";
 
 export default function VendorHero() {
   return (
@@ -42,17 +43,7 @@ export default function VendorHero() {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="mt-6"
         >
-          <Link
-            href="/about"
-            className="inline-flex items-center gap-2 font-montserrat text-sm font-semibold text-[#7a4f00] hover:text-[#5b3900] transition-colors"
-          >
-            <span className="flex h-6 w-6 items-center justify-center rounded-full bg-amber-400">
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                <path d="M2 6h8M6 2l4 4-4 4" stroke="white" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </span>
-            Our Vision, Mission &amp; Values
-          </Link>
+         <Btn text="Our Mission, Vision & Values" href="/about#mission" />
         </motion.div>
 
         {/* Full-width image */}

@@ -154,7 +154,7 @@ export default function NumbersSection() {
               tackle these challenges.
             </p>
             <div className="mt-8">
-              <Btn text="Learn more about our journey" />
+              <Btn text="Learn more about our journey"  href="/ourjourney"/>
             </div>
           </motion.div>
 

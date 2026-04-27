@@ -1,5 +1,6 @@
 'use client'
 import React, { useState, useEffect } from 'react'
+import Link from 'next/link'
 
 const cyclingWords = ['CERTAINTY.', 'CONTROL.', 'DISCIPLINE.']
 
@@ -86,13 +87,13 @@ export default function Hero({ currentStep = 0 }: { currentStep?: number }) {
               where planning, precision, and execution align to produce outcomes that endure.
             </p>
           </div>
-          <button className="self-start sm:self-auto flex-shrink-0 flex items-center gap-3 text-white
+          <Link href="/ourapproach" className="self-start sm:self-auto flex-shrink-0 flex items-center gap-3 text-white
                              font-semibold text-sm px-5 sm:px-6 py-3 rounded-lg border border-white/30
                              bg-white/10 backdrop-blur-md hover:bg-white/20 hover:border-white/50
                              hover:text-amber-500 font-montserrat transition-all duration-300 whitespace-nowrap">
             Explore our Approach
             <span className="text-base">↗</span>
-          </button>
+          </Link>
         </div>
 
         {/* ─── Steps ─── */}

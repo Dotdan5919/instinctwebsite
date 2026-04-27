@@ -78,7 +78,7 @@ function VendorPanel() {
       <div className="relative w-full h-[140px] rounded overflow-hidden bg-gray-200 mb-4">
         <Image src={projectImage} alt="Become a vendor" fill className="object-cover" />
       </div>
-      <Link href="/become-a-vendor" className="text-amber-500 text-sm font-semibold flex items-center gap-1 hover:gap-2 transition-all">
+      <Link href="/vendor" className="text-amber-500 text-sm font-semibold flex items-center gap-1 hover:gap-2 transition-all">
         Learn How <span>↗</span>
       </Link>
     </div>
@@ -131,7 +131,7 @@ function OurServicesMenu() {
       />
       <div className="flex flex-col sm:flex-row lg:flex-row flex-1">
         <LinkColumn heading="Approach" items={[
-          { label: 'Preconstruction', href: '/ourapproach' },
+          { label: 'Preconstruction', href: '/ourapproach#preconstruction' },
           { label: 'Project Management', href: '/ourapproach#project-management' },
           { label: 'Lean Construction', href: '/ourapproach#lean-construction' },
           { label: 'Construction Management', href: '/ourapproach#construction-management' },
@@ -201,9 +201,9 @@ function NewsInsightsMenu() {
       <div className="flex flex-col lg:flex-row flex-1">
         <LinkColumn heading="Approach" items={[
           { label: 'News', href: '/newsandinsights' },
-          { label: 'Reports', href: '/newsandinsights#reports' },
-          { label: 'Blogs', href: '/newsandinsights#blogs' },
-          { label: 'White Papers', href: '/newsandinsights#white-papers' },
+          { label: 'Reports', href: '/report' },
+          { label: 'Blogs', href: '/blog' },
+          { label: 'White Papers', href: '/whitepaper' },
         ]} />
         <div className="flex-1 px-6 lg:px-10 py-6 lg:py-10">
           <h3 className="text-gray-900 text-sm lg:text-base font-semibold mb-4 lg:mb-6">Featured Insights</h3>

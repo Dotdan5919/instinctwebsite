@@ -32,7 +32,7 @@ export default function Aboutus() {
               What distinguishes Instinct is a consistent ability to translate complex project requirements into structured execution — eliminating uncertainty and ensuring predictable outcomes.
             </p>
 
-            <Btn text="Check out our Journey" />
+            <Btn text="Check out our Journey" href="/ourjourney" />
           </div>
 
         </div>

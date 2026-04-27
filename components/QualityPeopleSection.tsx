@@ -37,7 +37,7 @@ export default function QualityPeopleSection() {
               <p className="text-sm leading-7 text-white/85 sm:text-base">
                 Our people bring technical excellence, ingenuity, drive, creativity, and experience to help our customers achieve their bold visions. We succeed through partnership and a shared desire to make a difference. Motivated by tomorrow's challenges, we push the limits of what's possible.
               </p>
-              <Btn text="The people behind the projects" />
+              <Btn text="The people behind the projects"  href="/ourleadership" />
             </div>
           </motion.div>
 

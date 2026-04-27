@@ -50,7 +50,7 @@ const sections = [
     ],
   },
   {
-    Id: 'lean-construction',
+    id: 'lean-construction',
     title: 'LEAN CONSTRUCTION',
     imagePosition: 'right' as const,
     image: leanconstruction,
@@ -100,6 +100,7 @@ export default function Ourapproachbody() {
           paragraphs={s.paragraphs}
           tags={s.tags}
           index={i}
+          id={s.id}
         />
       ))}
       <ApproachBanner />

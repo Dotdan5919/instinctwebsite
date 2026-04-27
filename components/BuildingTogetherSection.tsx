@@ -58,7 +58,7 @@ export default function BuildingTogetherSection() {
             </p>
 
             <div className="mt-8">
-              <Btn text="Join the Instinct Team" />
+              <Btn text="Join the Instinct Team" href="/vendor" />
             </div>
           </motion.div>
         </div>
@@ -114,7 +114,7 @@ export default function BuildingTogetherSection() {
             </p>
 
             <div className="mt-8">
-              <Btn text="Join the Instinct Team" />
+              <Btn text="Join the Instinct Team"  href="/vendor" />
             </div>
           </motion.div>
 

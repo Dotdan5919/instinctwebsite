@@ -47,7 +47,7 @@ export default function TrustedSection() {
               Every project follows a structured methodology —
               ensuring clarity before execution and control throughout delivery.
             </p>
-            <Btn text="Explore Our Approach" />
+            <Btn text="Explore Our Approach" href="/ourapproach" />
           </motion.div>
         </div>
 
@@ -93,7 +93,7 @@ export default function TrustedSection() {
               Every project follows a structured methodology —
               ensuring clarity before execution and control throughout delivery.
             </p>
-            <Btn text="Explore Our Approach" />
+            <Btn text="Explore Our Approach" href="/ourapproach" />
           </motion.div>
 
         </div>

@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import type { StaticImport } from 'next/dist/shared/lib/get-img-props'
+import Link from 'next/link'
 
 export interface Project {
   id: string
@@ -33,6 +34,7 @@ export default function ProjectCard({
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
+      <Link href={`/ourproject/${project.id}`} className="absolute inset-0 z-10" >
       {/* Image */}
       {project.image ? (
         <Image
@@ -92,6 +94,7 @@ export default function ProjectCard({
           </svg>
         </div>
       </div>
+      </Link >
     </motion.div>
   )
 }

@@ -160,7 +160,7 @@ function MobileProjects({
                 {projects[activeCard].details}
               </p>
               <div className="mt-4">
-                <Btn text="View Details" />
+                <Btn text="View Details"  href={'/ourprojects/1'} />
               </div>
             </div>
           </motion.div>
@@ -330,7 +330,7 @@ function DesktopProjects({
                     {project.details}
                   </p>
                 </div>
-                <Btn text="View Details" />
+                <Btn text="View Details"  href={'/ourprojects/1'} />
               </div>
             </div>
           ))}
@@ -404,7 +404,7 @@ export default function FeaturedProjectsSection() {
             </p>
           </div>
           <div className="flex items-center xl:justify-end">
-            <Btn text="See all Projects" />
+            <Btn text="See all Projects" href="/ourprojects" />
           </div>
         </div>
       </motion.div>

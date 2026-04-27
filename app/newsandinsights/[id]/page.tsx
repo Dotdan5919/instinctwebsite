@@ -27,8 +27,7 @@ export default function page({ params }: { params: { id: string } }) {
          <div className={`flex w-screen overflow-hidden flex-col bg-[url('../images/career/career2.jpg')] bg-cover bg-no-repeat bg-center min-h-screen`}>
            <Preheader />
            <Navbar />
-                <OtherHero title="News & Insights" subtitle="Insight that informs execution." />
-                             
+                         
          </div>
 
          <NewsDetailSection/>

@@ -2,6 +2,7 @@
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
+import Link from 'next/link'
 import type { StaticImport } from 'next/dist/shared/lib/get-img-props'
 import preconstruction from '@/images/whatwedo/preconstruction_1.jpg'
 import preconstruction1 from '@/images/whatwedo/preconstruction1.jpg'
@@ -45,9 +46,9 @@ const categories: Category[] = [
     description: 'Establishing clarity at the outset — defining scope, cost, timelines, and execution strategy to ensure every project begins with a coordinated foundation.',
     coverImage: preconstruction,
     projects: [
-      { id: 'p1', title: 'Block of 8 Luxury Flats', location: 'Ajah, Lagos', image: preconstruction1 },
-      { id: 'p2', title: 'Twin Tower Office Complex', location: 'VI, Lagos', image: preconstruction_2 },
-      { id: 'p3', title: 'Twin Tower Office Complex', location: 'VI, Lagos', image: preconstruction_3 },
+      { id: '1', title: 'Block of 8 Luxury Flats', location: 'Ajah, Lagos', image: preconstruction1 },
+      { id: '2', title: 'Twin Tower Office Complex', location: 'VI, Lagos', image: preconstruction_2 },
+      { id: '3', title: 'Twin Tower Office Complex', location: 'VI, Lagos', image: preconstruction_3 },
     ],
   },
   {
@@ -56,8 +57,8 @@ const categories: Category[] = [
     description: 'Providing structured oversight across all phases — aligning planning, resources, and site execution to ensure consistency, and control.',
     coverImage: construction,
     projects: [
-      { id: 'c1', title: 'Shonibare Estate Reside...', location: 'Maryland, Lagos', status: 'active', image: construction_2 },
-      { id: 'c2', title: 'Magodo Phase 2 Villas', location: 'Magodo, Lagos', image: construction_3 },
+      { id: '1', title: 'Shonibare Estate Reside...', location: 'Maryland, Lagos', status: 'active', image: construction_2 },
+      { id: '2', title: 'Magodo Phase 2 Villas', location: 'Magodo, Lagos', image: construction_3 },
     ],
   },
   {
@@ -66,8 +67,8 @@ const categories: Category[] = [
     description: 'Delivering residential and commercial developments to defined specifications, ensuring structural integrity, functionality and long-term performance.',
     coverImage: building_con_1,
     projects: [
-      { id: 'b1', title: 'Blocks of Flats', location: 'Ikota, Ofada, Maryland', status: 'active', image: building_con_2 },
-      { id: 'b2', title: 'Commercial Plaza', location: 'Surulere, Lagos', image: building_con_3 },
+      { id: '1', title: 'Blocks of Flats', location: 'Ikota, Ofada, Maryland', status: 'active', image: building_con_2 },
+      { id: '2', title: 'Commercial Plaza', location: 'Surulere, Lagos', image: building_con_3 },
     ],
   },
   {
@@ -76,8 +77,8 @@ const categories: Category[] = [
     description: 'Executing road and infrastructure projects designed to deliver efficiency, and long-term usability across varying environments.',
     coverImage: road_1,
     projects: [
-      { id: 'r1', title: 'Oshodi Cantonment Mar...', location: 'Oshodi, Lagos', image: road_1 },
-      { id: 'r2', title: 'Airport Road Expansion', location: 'Ikeja, Lagos', image: road_2 },
+      { id: '1', title: 'Oshodi Cantonment Mar...', location: 'Oshodi, Lagos', image: road_1 },
+      { id: '2', title: 'Airport Road Expansion', location: 'Ikeja, Lagos', image: road_2 },
     ],
   },
   {
@@ -86,8 +87,8 @@ const categories: Category[] = [
     description: 'Working alongside developers, investors, and public agencies to co-deliver projects that exceed scope and delivery expectations.',
     coverImage: projectmanagement,
     projects: [
-      { id: 'pp1', title: 'JV Mixed-Use Tower', location: 'Ikoyi, Lagos', image: projectmanagement },
-      { id: 'pp2', title: 'PPP Road Maintenance', location: 'Lekki Corridor', image: projectmanagement },
+      { id: '1', title: 'JV Mixed-Use Tower', location: 'Ikoyi, Lagos', image: projectmanagement },
+      { id: '2', title: 'PPP Road Maintenance', location: 'Lekki Corridor', image: projectmanagement },
     ],
   },
   {
@@ -96,8 +97,8 @@ const categories: Category[] = [
     description: 'Working alongside developers, investors, and public agencies to co-deliver projects that exceed scope and delivery expectations.',
     coverImage: roofingsystem,
     projects: [
-      { id: 'rs1', title: 'JV Mixed-Use Tower', location: 'Ikoyi, Lagos', image: roofingsystem },
-      { id: 'rs2', title: 'PPP Road Maintenance', location: 'Lekki Corridor', image: roofingsystem },
+      { id: '1', title: 'JV Mixed-Use Tower', location: 'Ikoyi, Lagos', image: roofingsystem },
+      { id: '2', title: 'PPP Road Maintenance', location: 'Lekki Corridor', image: roofingsystem },
     ],
   },
   {
@@ -106,8 +107,8 @@ const categories: Category[] = [
     description: 'Working alongside developers, investors, and public agencies to co-deliver projects that exceed scope and delivery expectations.',
     coverImage: flooring_1,
     projects: [
-      { id: 'fl1', title: 'JV Mixed-Use Tower', location: 'Ikoyi, Lagos', image: flooring_1 },
-      { id: 'fl2', title: 'PPP Road Maintenance', location: 'Lekki Corridor', image: flooring_1 },
+      { id: '1', title: 'JV Mixed-Use Tower', location: 'Ikoyi, Lagos', image: flooring_1 },
+      { id: '2', title: 'PPP Road Maintenance', location: 'Lekki Corridor', image: flooring_1 },
     ],
   },
   {
@@ -116,8 +117,8 @@ const categories: Category[] = [
     description: 'Working alongside developers, investors, and public agencies to co-deliver projects that exceed scope and delivery expectations.',
     coverImage: reconstruction_1,
     projects: [
-      { id: 'ru1', title: 'JV Mixed-Use Tower', location: 'Ikoyi, Lagos', image: reconstruction_1 },
-      { id: 'ru2', title: 'PPP Road Maintenance', location: 'Lekki Corridor', image: reconstruction_1 },
+      { id: '1', title: 'JV Mixed-Use Tower', location: 'Ikoyi, Lagos', image: reconstruction_1 },
+      { id: '2', title: 'PPP Road Maintenance', location: 'Lekki Corridor', image: reconstruction_1 },
     ],
   },
 ]
@@ -127,18 +128,17 @@ function ProjectCard({ project }: { project: Project }) {
   const [hovered, setHovered] = useState(false)
 
   return (
-    <div
-      className="relative w-full rounded-xl overflow-hidden mb-8 last:mb-0 flex-shrink-0 cursor-pointer"
-      // Desktop: fixed 478px. Mobile/tablet: 16:9 aspect ratio via padding trick
-      style={{ height: 'var(--card-h, 260px)' }}
+    <Link
+      href={`/ourproject/${project.id}`}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
+      className="block mb-12 last:mb-0 rounded-xl overflow-hidden"
     >
-      <style>{`
-        @media (min-width: 1024px) {
-          .project-card-inner { --card-h: 478px; }
-        }
-      `}</style>
+      <div
+        className="relative w-full rounded-xl overflow-hidden mb-20 last:mb-0 flex-shrink-0"
+        // Desktop: fixed 478px. Mobile/tablet: 16:9 aspect ratio via padding trick
+        style={{ height: 'var(--card-h, 260px)' }}
+      >
       {project.image ? (
         <Image
           src={project.image}
@@ -173,8 +173,9 @@ function ProjectCard({ project }: { project: Project }) {
             <path d="M3 11L11 3M11 3H5M11 3v6" stroke="#111" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </div>
+        </div>
       </div>
-    </div>
+    </Link>
   )
 }
 
@@ -220,13 +221,16 @@ function CategoryRow({ cat }: { cat: Category }) {
         <div>
           <div className="flex items-center justify-between mb-4">
             <p className="text-sm font-semibold text-gray-900">Explore Projects on {cat.label}</p>
-            <button className="text-sm text-gray-700 hover:text-black transition-colors bg-transparent border-none cursor-pointer font-montserrat">
-              See all
-            </button>
+            <Link href={`/ourproject?filter=${cat.id}`}>
+              <button className="text-sm text-gray-700 hover:text-black transition-colors bg-transparent border-none cursor-pointer font-montserrat">
+                See all
+              </button>
+            </Link>
           </div>
           <div className="flex flex-col gap-4">
             {cat.projects.map((p) => (
-              <div key={p.id} className="relative w-full rounded-xl overflow-hidden cursor-pointer group" style={{ aspectRatio: '16 / 9' }}>
+              <Link key={p.id} href={`/ourproject/${p.id}`}>
+                <div className="relative w-full rounded-xl overflow-hidden cursor-pointer group" style={{ aspectRatio: '16 / 9' }}>
                 {p.image ? (
                   <Image
                     src={p.image}
@@ -255,6 +259,7 @@ function CategoryRow({ cat }: { cat: Category }) {
                   )}
                 </div>
               </div>
+              </Link>
             ))}
           </div>
         </div>
@@ -286,9 +291,11 @@ function CategoryRow({ cat }: { cat: Category }) {
         <div className="flex flex-col min-h-0 mt-10" style={{ width: 526 }}>
           <div className="flex items-center justify-between mb-4 flex-shrink-0">
             <p className="text-sm font-semibold text-gray-900">Explore Projects on {cat.label}</p>
-            <button className="text-sm text-gray-700 hover:text-black transition-colors bg-transparent border-none cursor-pointer font-montserrat">
-              See all
-            </button>
+            <Link href={`/ourproject?filter=${cat.id}`}>
+              <button className="text-sm text-gray-700 hover:text-black transition-colors bg-transparent border-none cursor-pointer font-montserrat">
+                See all
+              </button>
+            </Link>
           </div>
           <div id={`scroll-${cat.id}`} style={{ height: 680 }}>
             {cat.projects.map((p) => (
