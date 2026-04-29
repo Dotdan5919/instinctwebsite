@@ -4,7 +4,6 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "prebuild": "powershell -Command \"Copy-Item -Path './images' -Destination './public/images' -Recurse -Force -ErrorAction SilentlyContinue\"",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"
