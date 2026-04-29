@@ -24,7 +24,7 @@ export default function page() {
                   
                   <Navbar />
           
-                  <OtherHero title="Career" subtitle="Build your expertise.Shape what is next." />
+                  <OtherHero title="Career" subtitle={<>Build your expertise.<br /> Shape what is next.</>} />
                <div className="  absolute inset-0 z-0 bg-linear-to-r from-[#000000] via-[#0a0f1a]/75 to-[#6666664D]/10 pointer-events-none  w-screen " />
        
                 </div>

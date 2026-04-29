@@ -22,7 +22,7 @@ export default function WhoWeWorkWith() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
-          className="rounded-3xl bg-[#FFF8ED] px-8 py-12 sm:px-10 lg:px-14"
+          className="rounded-3xl bg-[#FFF6E6] px-8 py-12 sm:px-10 lg:px-14"
         >
           <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:gap-12">
 
@@ -40,9 +40,9 @@ export default function WhoWeWorkWith() {
               <Btn text="See More About us" href="/about" />
 
               {/* Partner type list */}
-              <div className="mt-8 divide-y divide-amber-100">
+              <div className="mt-8 divide-y flex flex-col gap-6">
                 {partnerTypes.map((type) => (
-                  <div key={type.label} className="py-4">
+                  <div key={type.label} className="p-6 bg-[#FFF2D9]">
                     <p className="font-montserrat text-sm font-bold text-slate-800">{type.label}</p>
                     <p className="mt-0.5 font-montserrat text-sm text-slate-500">{type.detail}</p>
                   </div>
@@ -74,10 +74,10 @@ export default function WhoWeWorkWith() {
         viewport={{ once: true }}
         className="
           relative mt-6 w-full rounded-3xl overflow-hidden
-          lg:absolute lg:inset-y-0 lg:right-0 lg:mt-0 lg:w-[40%]
-          lg:rounded-l-3xl lg:rounded-r-none
+          lg:absolute lg:inset-y-0 lg:right-0 lg:mt-19 lg:w-[40%]
+          lg:rounded-l-3xl lg:rounded-r-none 
         "
-        style={{ height: "clamp(260px, 50vw, 9999px)" }}
+        style={{ height: "clamp(260px, 50vw, 700px)" }}
       >
         <Image
           src={partnersImg}

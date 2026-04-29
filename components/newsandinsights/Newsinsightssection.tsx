@@ -10,7 +10,7 @@ import blog_1 from '@/images/news&insights/blog_1.jpg'
 import blog_2 from '@/images/news&insights/blog_2.jpg'
 import blog_3 from '@/images/news&insights/blog_3.jpg'
 
-const tabs = ['Featured', 'News', 'Reports', 'Blogs', 'White Papers']
+const tabs = [ 'News', 'Reports', 'Blogs', 'White Papers']
 
 const articles = [
   {
@@ -111,7 +111,7 @@ const articles = [
 ]
 
 const tabDescriptions: Record<string, string> = {
-  Featured: 'Curated highlights from across our latest news, reports, insights, and thought leadership.',
+
   News: 'Stay informed on our latest projects, industry perspectives, technical insights, and company updates, reflecting how we think, operate, and deliver across construction and infrastructure.',
   Reports: 'Our reports provide structured insights into how we plan, execute, and deliver projects.From project-level documentation to company-wide performance reviews, each report reflects our commitment to clarity, accountability, and continuous improvement across all aspects of construction delivery.',
   Blogs: 'Read thought leadership articles written by our team on construction methods, project delivery, and industry trends.',
@@ -126,12 +126,12 @@ export default function NewsInsightsSection({ defaultTab = 'News' }: NewsInsight
   const [activeTab, setActiveTab] = useState(defaultTab)
 
   const filtered = activeTab === 'News'
-    ? articles.filter((a) => a.tab === 'News' || a.featured)
+    ? articles.filter((a) => a.tab === 'News' )
     : articles.filter((a) => a.tab === activeTab)
 
   return (
     <section className="w-full bg-white py-16 lg:py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-14">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-14 mb-32">
 
         {/* ── Tab filters ── */}
         <div className="flex flex-wrap gap-3 mb-10">
@@ -158,7 +158,7 @@ export default function NewsInsightsSection({ defaultTab = 'News' }: NewsInsight
           <h2 className="font-bebas text-gray-900 text-[40px] leading-none tracking-wide">
             {activeTab.toUpperCase()}
           </h2>
-          <p className="text-gray-600 text-sm font-montserrat leading-relaxed max-w-2xl">
+          <p className="text-gray-600 text-sm font-montserrat leading-relaxed max-w-5xl">
             {tabDescriptions[activeTab]}
           </p>
         </div>

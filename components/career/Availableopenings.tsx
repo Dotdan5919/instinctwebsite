@@ -63,11 +63,11 @@ export default function AvailableOpenings() {
 
         {/* Job grid */}
         {filtered.length > 0 ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7 ">
             {filtered.map((job) => (
               <div
                 key={job.id}
-                className="flex flex-col gap-3 p-6 bg-[#FAFAFA]"
+                className="flex flex-col gap-3 p-6 bg-[#FAFAFA] hover:bg-[#FFF6E6] hover:border hover:border-[#FFE3B0] rounded-lg"
               >
                 {/* Title */}
                 <p className="text-gray-900 text-[15px] font-bold font-montserrat">

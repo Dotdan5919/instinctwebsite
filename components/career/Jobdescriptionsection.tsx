@@ -248,8 +248,8 @@ export default function JobDescriptionSection() {
               <div className="flex items-center gap-3">
                 <label
                   htmlFor="cv-upload"
-                  className="cursor-pointer bg-amber-600 hover:bg-amber-700 transition-colors
-                             text-white text-xs font-montserrat font-medium px-4 py-2 rounded"
+                  className="cursor-pointer bg-[#FFFFFF] border border-[#D0D5DD] transition-colors
+                             text-[#98A2B3] text-xs font-montserrat font-medium px-4 py-2 rounded"
                 >
                   Choose file
                 </label>

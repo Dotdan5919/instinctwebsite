@@ -32,10 +32,10 @@ export default function WhyJoinInstinct() {
       <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-14">
 
         {/* Outer wrapper — relative so image can break out */}
-        <div className="relative bg-[#FAF6EE] rounded-2xl w-11/12">
+        <div className="relative bg-[#FFF2D9] rounded-2xl w-11/12">
 
           {/* Cream card — only takes left ~55% of width */}
-          <div className="bg-[#FAF6EE] rounded-2xl p-8 lg:p-10 w-full lg:w-[55%]">
+          <div className="bg-[#FFF2D9] rounded-2xl p-8 lg:p-10 w-full lg:w-[55%]">
 
             {/* Heading */}
             <h2 className="font-bebas text-gray-900 text-[32px] sm:text-[40px] leading-none tracking-wide mb-3">
@@ -58,7 +58,7 @@ export default function WhyJoinInstinct() {
               {reasons.map((reason, i) => (
                 <div
                   key={i}
-                  className="bg-[#FFF2D9] rounded-lg px-4 py-3 flex flex-col gap-1"
+                  className="bg-[#FFE3B04D] rounded-lg px-4 py-3 flex flex-col gap-1"
                 >
                   <p className="text-gray-900 text-sm font-bold font-montserrat">
                     {reason.title}
