@@ -122,11 +122,11 @@ interface NewsInsightsSectionProps {
   defaultTab?: string
 }
 
-export default function NewsInsightsSection({ defaultTab = 'Featured' }: NewsInsightsSectionProps) {
+export default function NewsInsightsSection({ defaultTab = 'News' }: NewsInsightsSectionProps) {
   const [activeTab, setActiveTab] = useState(defaultTab)
 
-  const filtered = activeTab === 'Featured'
-    ? articles.filter((a) => a.featured)
+  const filtered = activeTab === 'News'
+    ? articles.filter((a) => a.tab === 'News' || a.featured)
     : articles.filter((a) => a.tab === activeTab)
 
   return (

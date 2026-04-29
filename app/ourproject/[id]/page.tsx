@@ -10,22 +10,27 @@ import define from '@/images/define.jpg'
 import accountability from '@/images/accountability.jpg'
 import expertise_hero from '@/images/expertise_hero.jpg'
 import approach from '@/images/project/approach.png'
-import gallery_1 from '@/images/project/1.jpg'
-import gallery_2 from '@/images/project/536da87f24ce73449fe1e03eba6694237cb3a164.jpg'
-import gallery_3 from '@/images/project/Building_con_2.jpg'
-import gallery_4 from '@/images/project/Building_con_3.jpg'
 import project_1 from '@/images/whatwedo/building_con_1.jpg'
 import project_2 from '@/images/whatwedo/construction_1.jpg'
-import project_3 from '@/images/whatwedo/flooring_1.jpg'  
-
+import project_3 from '@/images/whatwedo/flooring_1.jpg'
+import { getAllProjects, getProjectImages } from '@/lib/projects'
 
 export async function generateStaticParams() {
-  return [
-    { id: '1' },
-  ]
+  const projects = getAllProjects()
+  return projects.map(p => ({ id: p.id }))
 }
 
-export default function page({ params }: { params: { id: string } }) {
+export default async function page({ params }: { params: Promise<{ id: string }> }) {
+  const { id: projectId } = await params
+  
+  // Get gallery images directly from the file system
+  const galleryImages = getProjectImages(projectId)
+  
+  // Get project title for the page
+  const projects = getAllProjects()
+  const project = projects.find(p => p.id === projectId)
+  const projectTitle = project?.title || 'Project'
+
   return (
    <div className="flex flex-col relative min-h-screen bg-slate-950 text-white ">
        <div className="hidden lg:block absolute inset-0 z-10 pointer-events-none">
@@ -42,8 +47,8 @@ export default function page({ params }: { params: { id: string } }) {
 data={{
         // ── Hero card ──────────────────────────────────────────────────────
         breadcrumbs: ['Residential', 'Construction Management', 'Multi-Unit'],
-        title: 'Block of 8 Luxury Flats',
-        subtitle: 'Ajah, Lagos',
+        title: projectTitle,
+        subtitle: 'Lagos State',
         address: ['Lagos, State.', 'Nigeria.'],
         heroImage: expertise_hero,
  
@@ -78,13 +83,7 @@ data={{
         approachImage: approach,
  
         // ── Gallery ────────────────────────────────────────────────────────
-        galleryImages: [
-          gallery_1,
-          gallery_2,
-          gallery_3,
-          gallery_4,
-          accountability,
-        ],
+        galleryImages: galleryImages.length > 0 ? galleryImages : [expertise_hero],
  
         // ── Related projects ───────────────────────────────────────────────
         relatedProjects: [

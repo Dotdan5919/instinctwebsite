@@ -14,13 +14,15 @@ export default function page() {
                           border-l border-r border-white/20" />
         </div>
       </div>
-      <div className="absolute inset-0 z-0 bg-linear-to-r from-[#000000] via-[#0a0f1a]/75 to-[#6666664D]/10 pointer-events-none h-screen" />
-      <div className={`flex w-screen overflow-hidden flex-col bg-[url('../images/career/careerhero.png')] bg-cover bg-no-repeat bg-center min-h-screen`}>
+    
+    <div className={`flex w-screen overflow-hidden flex-col bg-[url('../images/career/careerhero.png')] bg-cover bg-no-repeat bg-center min-h-screen relative`}>
         <Preheader />
         
         <Navbar />
 
         <OtherHero title="News & Insights" subtitle="Insight that informs execution." />
+      <div className="  absolute inset-0 z-0 bg-linear-to-r from-[#000000] via-[#0a0f1a]/75 to-[#6666664D]/10 pointer-events-none  w-screen " />
+       
       </div>
 
       <NewsInsightsSection defaultTab="Blogs" />

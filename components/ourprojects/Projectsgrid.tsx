@@ -1,17 +1,8 @@
 'use client'
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { useSearchParams } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import ProjectCard, { type Project } from './Projectscard'
-import Image from 'next/image'
-import type { StaticImport } from 'next/dist/shared/lib/get-img-props'
-import preconstruction from '@/images/precision.jpg'
-import constructionManagement from '@/images/precision.jpg'
-import buildingConstruction from '@/images/precision.jpg'
-import gallery_1 from '@/images/project/536da87f24ce73449fe1e03eba6694237cb3a164.jpg'
-import gallery_2 from '@/images/project/Building_con_2.jpg'
-import gallery_3 from '@/images/project/Building_con_3.jpg'
-import gallery_4 from '@/images/project/approach.png'
 
 // ─── Filter categories ────────────────────────────────────────────────────────
 const filters = [
@@ -27,104 +18,13 @@ const filters = [
   { id: 'reconstruction-upgrade', label: 'Reconstruction and Upgrade' },
 ]
 
-// ─── Projects data — replace images with real imports/paths ──────────────────
-const projects: Project[] = [
-  {
-    id: '1',
-    title: 'Shonibare Estate Reside...',
-    location: 'Maryland, Lagos',
-    category: 'building-construction',
-    status: 'active',
-    image:gallery_1,
-  },
-  {
-    id: '2',
-    title: '3km Drainage Project',
-    location: 'Ikire, Osun State',
-    category: 'road-infrastructure',
-    image: gallery_2,
-  },
-  {
-    id: '3',
-    title: '5 Bedroom Duplex...',
-    location: 'Magodo Phase 2, Lagos',
-    category: 'building-construction',
-    status: 'active',
-    image: gallery_3,
-  },
-  {
-    id: '4',
-    title: 'Block of 8 Luxury Flats',
-    location: 'Ajah, Lagos',
-    category: 'building-construction',
-    image: gallery_4,
-  },
-  {
-    id: '5',
-    title: 'Oshodi Cantonment Mar...',
-    location: 'Oshodi, Lagos',
-    category: 'road-infrastructure',
-    image: gallery_2,
-  },
-  {
-    id: '6',
-    title: 'Preconstruction Survey',
-    location: 'VI, Lagos',
-    category: 'preconstruction',
-    image: gallery_1,
-  },
-  {
-    id: '7',
-    title: 'Magodo Phase 2 Villas',
-    location: 'Magodo, Lagos',
-    category: 'building-construction',
-    image: gallery_3,
-  },
-  {
-    id: '8',
-    title: 'Airport Road Expansion',
-    location: 'Ikeja, Lagos',
-    category: 'road-infrastructure',
-    image: gallery_2,
-  },
-  {
-    id: '9',
-    title: 'Construction Management',
-    location: 'Maryland, Lagos',
-    category: 'construction-management',
-    status: 'active',
-    image: gallery_2,
-  },
-  {
-    id: '10',
-    title: 'Shonibare Estate Reside...',
-    location: 'Maryland, Lagos',
-    category: 'building-construction',
-    status: 'active',
-    image: gallery_4,
-  },
-  {
-    id: '11',
-    title: '3km Drainage Project',
-    location: 'Ikire, Osun State',
-    category: 'road-infrastructure',
-    image: gallery_2,
-  },
-  {
-    id: '12',
-    title: '5 Bedroom Duplex...',
-    location: 'Magodo Phase 2, Lagos',
-    category: 'building-construction',
-    status: 'active',
-    image: gallery_3,
-  },
-]
-
-export default function ProjectsGrid() {
+export default function ProjectsGridClient({ projects: initialProjects }: { projects: Project[] }) {
   const searchParams = useSearchParams()
   const [activeFilter, setActiveFilter] = useState('all')
+  const projects = initialProjects
 
-  useEffect(() => {
+  // Handle filter changes
+  React.useEffect(() => {
     const filter = searchParams.get('filter')
     if (filter && filters.some(f => f.id === filter)) {
       setActiveFilter(filter)

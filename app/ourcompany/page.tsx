@@ -20,13 +20,15 @@ export default function OurCompany() {
                     border-l border-r border-white/20" />
   </div>
 </div>
-<div className="  absolute inset-0 z-0 bg-linear-to-r from-[#000000] via-[#0a0f1a]/75 to-[#6666664D]/10 pointer-events-none h-screen" />
-      <div className={`flex w-screen overflow-hidden flex-col bg-[url('../images/about-hero.jpg')] bg-cover bg-no-repeat bg-center min-h-screen`}>
+
+    <div className={`flex w-screen overflow-hidden flex-col bg-[url('../images/about-hero.jpg')] bg-cover bg-no-repeat bg-center min-h-screen relative`}>
         <Preheader />
         
         <Navbar />
 
         <OtherHero title="About Us" subtitle={<>MORE THAN CONSTRUCTION.<br /> A SYSTEM OF DELIVERY.</>} />
+     <div className="  absolute inset-0 z-0 bg-linear-to-r from-[#000000] via-[#0a0f1a]/75 to-[#6666664D]/10 pointer-events-none  w-screen " />
+       
       </div>
 
 

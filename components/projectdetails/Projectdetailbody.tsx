@@ -115,12 +115,12 @@ export default function ProjectDetailBody({ data }: { data: ProjectDetailData })
         </div>
 
         {/* Info card — flush to bottom, white card */}
-        <div className="relative z-10 flex items-end h-full min-h-[480px] px-4 sm:px-8 lg:px-48 pb-0">
+        <div className="relative z-10 flex items-end h-full min-h-[480px] px-4 sm:px-8   pb-0">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="bg-white rounded-t-xl px-5 sm:px-8 pt-5 sm:pt-6 pb-6 sm:pb-8 w-full max-w-sm sm:max-w-md lg:max-w-xl"
+            className="absolute bg-white rounded-t-xl px-5 sm:px-8 pt-5 sm:pt-6 pb-6 sm:pb-8 ml-15 w-full max-w-sm sm:max-w-md lg:max-w-xl"
           >
             {/* Breadcrumbs */}
             <p className="text-xs text-gray-600 mb-3 leading-relaxed">
@@ -158,7 +158,7 @@ export default function ProjectDetailBody({ data }: { data: ProjectDetailData })
 
       {/* ── INTRO PARAGRAPHS ── */}
       <section className="bg-white py-10 sm:py-12">
-        <div className="mx-auto max-w-3xl px-6 sm:px-10 lg:px-14 space-y-4">
+        <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-14 space-y-4">
           {data.introParagraphs.map((p, i) => (
             <p key={i} className="text-sm leading-7 text-gray-800">{p}</p>
           ))}
