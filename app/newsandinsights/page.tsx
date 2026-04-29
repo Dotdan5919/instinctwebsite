@@ -15,7 +15,7 @@ export default function page() {
           </div>
         </div>
              
-                    <div className={`flex w-screen overflow-hidden flex-col bg-[url('../images/news&insights/newsandinsight.jpg')] bg-cover bg-no-repeat bg-center min-h-screen relative`}>
+                    <div className={`flex w-screen overflow-hidden flex-col bg-[url('/images/news&insights/newsandinsight.jpg')] bg-cover bg-no-repeat bg-center min-h-screen relative`}>
                       <Preheader />
                       
                       <Navbar />
@@ -35,3 +35,4 @@ export default function page() {
     </div>
   )
 }
+

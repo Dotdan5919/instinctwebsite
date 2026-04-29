@@ -3,16 +3,16 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import img1 from "@/images/project1.png";
-import img2 from "@/images/project2.png";
-import img3 from "@/images/project3.png";
-import img4 from "@/images/project2.png";
-import img5 from "@/images/project1.png";
-import img6 from "@/images/project2.png";
-import img7 from "@/images/project3.png";
-import img8 from "@/images/project1.png";
-import img9 from "@/images/project2.png";
-import img10 from "@/images/project3.png";
+const img1 = "/images/project1.png";
+const img2 = "/images/project2.png";
+const img3 = "/images/project3.png";
+const img4 = "/images/project2.png";
+const img5 = "/images/project1.png";
+const img6 = "/images/project2.png";
+const img7 = "/images/project3.png";
+const img8 = "/images/project1.png";
+const img9 = "/images/project2.png";
+const img10 = "/images/project3.png";
 import Btn from "./Btn";
 
 type CategoryKey = "residential" | "commercial" | "infrastructure" | "renovation";

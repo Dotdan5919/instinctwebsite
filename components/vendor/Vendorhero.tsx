@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import vendorHero from "@/images/vendor/2.jpg"; // replace with your actual image
+const vendorHero = "/images/vendor/2.jpg"; // replace with your actual image
 import Btn from "@/components/Btn";
 
 export default function VendorHero() {

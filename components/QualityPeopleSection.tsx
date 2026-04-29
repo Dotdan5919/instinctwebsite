@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
-import extraordinary from "@/images/define.jpg";
+const extraordinary = "/images/define.jpg";
 import Btn from "./Btn";
 
 export default function QualityPeopleSection() {

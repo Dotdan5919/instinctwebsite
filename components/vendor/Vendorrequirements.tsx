@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import requirementsImg from "@/images/vendor/4.jpg"; // replace with your actual image
+const requirementsImg = "/images/vendor/4.jpg"; // replace with your actual image
 
 const requirements = [
   "Registered business (CAC documentation)",

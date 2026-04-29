@@ -3,7 +3,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Btn from '../Btn'
-import Timeline_1 from '@/images/Discipline.jpg'    
+const Timeline_1 = "/images/Discipline.jpg"    
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 const milestones = [

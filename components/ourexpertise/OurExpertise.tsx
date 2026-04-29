@@ -4,22 +4,22 @@ import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
 import type { StaticImport } from 'next/dist/shared/lib/get-img-props'
-import preconstruction from '@/images/whatwedo/preconstruction_1.jpg'
-import preconstruction1 from '@/images/whatwedo/preconstruction1.jpg'
-import preconstruction_2 from '@/images/whatwedo/preconstruction2.jpg'
-import preconstruction_3 from '@/images/whatwedo/preconstruction3.jpg'
-import construction from '@/images/whatwedo/construction_1.jpg'
-import construction_2 from '@/images/whatwedo/construction_2.jpg'
-import construction_3 from '@/images/whatwedo/construction_3.jpg'
-import building_con_1 from '@/images/whatwedo/building_con_1.jpg'
-import building_con_2 from '@/images/whatwedo/building_con_2.jpg'
-import building_con_3 from '@/images/whatwedo/building_con_3.jpg'
-import road_1 from '@/images/whatwedo/road_1.jpg'
-import road_2 from '@/images/whatwedo/road_2.jpg'
-import projectmanagement from '@/images/whatwedo/project-management.jpg'
-import roofingsystem from '@/images/whatwedo/roofing-system.jpg'
-import flooring_1 from '@/images/whatwedo/flooring_1.jpg'
-import reconstruction_1 from '@/images/whatwedo/reconstruction_1.png'
+const preconstruction = "/images/whatwedo/preconstruction_1.jpg"
+const preconstruction1 = "/images/whatwedo/preconstruction1.jpg"
+const preconstruction_2 = "/images/whatwedo/preconstruction2.jpg"
+const preconstruction_3 = "/images/whatwedo/preconstruction3.jpg"
+const construction = "/images/whatwedo/construction_1.jpg"
+const construction_2 = "/images/whatwedo/construction_2.jpg"
+const construction_3 = "/images/whatwedo/construction_3.jpg"
+const building_con_1 = "/images/whatwedo/building_con_1.jpg"
+const building_con_2 = "/images/whatwedo/building_con_2.jpg"
+const building_con_3 = "/images/whatwedo/building_con_3.jpg"
+const road_1 = "/images/whatwedo/road_1.jpg"
+const road_2 = "/images/whatwedo/road_2.jpg"
+const projectmanagement = "/images/whatwedo/project-management.jpg"
+const roofingsystem = "/images/whatwedo/roofing-system.jpg"
+const flooring_1 = "/images/whatwedo/flooring_1.jpg"
+const reconstruction_1 = "/images/whatwedo/reconstruction_1.png"
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 interface Project {

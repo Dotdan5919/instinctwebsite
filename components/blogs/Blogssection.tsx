@@ -4,11 +4,11 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 // ── Replace these with your actual blog images ──────────────────────────────
-import blog_1 from '@/images/news&insights/blog_1.jpg'
-import blog_2 from '@/images/news&insights/blog_2.jpg'
-import blog_3 from '@/images/news&insights/blog_3.jpg'
-import blogHero from '@/images/news&insights/blog_1.jpg' // swap for a dedicated hero image
-import blogInline from '@/images/news&insights/blog_2.jpg' // mid-article image
+const blog_1 = "/images/news&insights/blog_1.jpg"
+const blog_2 = "/images/news&insights/blog_2.jpg"
+const blog_3 = "/images/news&insights/blog_3.jpg"
+const blogHero = "/images/news&insights/blog_1.jpg" // swap for a dedicated hero image
+const blogInline = "/images/news&insights/blog_2.jpg" // mid-article image
 // ────────────────────────────────────────────────────────────────────────────
 
 // ── Arrow SVG (same as NewsInsightsSection) ──────────────────────────────────

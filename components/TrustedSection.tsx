@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
-import TrustedImage from "@/images/Trusted.png";
+const TrustedImage = "/images/Trusted.png";
 import Btn from "./Btn";
 
 export default function TrustedSection() {
@@ -23,7 +23,6 @@ export default function TrustedSection() {
               src={TrustedImage}
               alt="Trusted partnership"
               className="object-cover object-center"
-              placeholder="blur"
               fill
             />
           </motion.div>
@@ -67,7 +66,6 @@ export default function TrustedSection() {
                 src={TrustedImage}
                 alt="Trusted partnership"
                 className="object-cover object-center"
-                placeholder="blur"
                 fill
               />
             </div>

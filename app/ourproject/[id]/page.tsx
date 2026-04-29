@@ -5,14 +5,14 @@ import Preheader from '@/components/Preheader'
 import OtherHero from '@/components/OtherHero'
 import OurProjectsBody from '@/components/ourprojects/Ourprojectsbody'
 import ProjectDetailBody from '@/components/projectdetails/Projectdetailbody'
-import building from '@/images/precision.jpg'
-import define from '@/images/define.jpg'
-import accountability from '@/images/accountability.jpg'
-import expertise_hero from '@/images/expertise_hero.jpg'
-import approach from '@/images/project/approach.png'
-import project_1 from '@/images/whatwedo/building_con_1.jpg'
-import project_2 from '@/images/whatwedo/construction_1.jpg'
-import project_3 from '@/images/whatwedo/flooring_1.jpg'
+const building = "/images/precision.jpg"
+const define = "/images/define.jpg"
+const accountability = "/images/accountability.jpg"
+const expertise_hero = "/images/expertise_hero.jpg"
+const approach = "/images/project/approach.png"
+const project_1 = "/images/whatwedo/building_con_1.jpg"
+const project_2 = "/images/whatwedo/construction_1.jpg"
+const project_3 = "/images/whatwedo/flooring_1.jpg"
 import { getAllProjects, getProjectImages } from '@/lib/projects'
 
 export async function generateStaticParams() {

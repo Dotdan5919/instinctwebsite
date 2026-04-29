@@ -102,7 +102,7 @@ export default function WhoWeHire() {
             </div>
 
             {/* Right — text only, no image */}
-           <div className="relative bg-gray-900 bg-[url('../images/building.jpg')] bg-cover bg-center bg-no-repeat px-8 sm:px-12 py-10 flex flex-col justify-between gap-8 min-h-[280px]">
+           <div className="relative bg-gray-900 bg-[url('/images/building.jpg')] bg-cover bg-center bg-no-repeat px-8 sm:px-12 py-10 flex flex-col justify-between gap-8 min-h-[280px]">
   
   {/* Dark overlay */}
   <div className="absolute inset-0 bg-black/50" />

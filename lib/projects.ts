@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 
-const PROJECTS_DIR = path.join(process.cwd(), 'images', 'project', 'PROJECTS')
+const PROJECTS_DIR = path.join(process.cwd(), 'public', 'images', 'project', 'PROJECTS')
 
 export interface ProjectData {
   id: string

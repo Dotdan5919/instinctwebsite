@@ -2,14 +2,14 @@
 import React, { useEffect, useRef } from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import lafarge from '@/images/lafarge.png'
-import dangote from '@/images/dangote.png'
-import dulux from '@/images/dulux.png'
-import plascon from '@/images/Plascon.png'
-import royal from '@/images/Royal.png'
-import virony from '@/images/vivory.png'
-import arium from '@/images/arium.png'
-import president from '@/images/PP.png'
+const lafarge = "/images/lafarge.png"
+const dangote = "/images/dangote.png"
+const dulux = "/images/dulux.png"
+const plascon = "/images/Plascon.png"
+const royal = "/images/Royal.png"
+const virony = "/images/vivory.png"
+const arium = "/images/arium.png"
+const president = "/images/PP.png"
 
 const partners = [
   { name: 'Lafarge', logo: lafarge },

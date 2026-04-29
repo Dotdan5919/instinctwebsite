@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import processImg from "@/images/vendor/3.jpg"; // replace with your actual image
+const processImg = "/images/vendor/3.jpg"; // replace with your actual image
 
 export default function VendorProcess() {
   return (

@@ -25,7 +25,7 @@ export default function page({ params }: { params: { id: string } }) {
          </div>
       
       
-        <div className={`flex w-screen overflow-hidden flex-col bg-[url('../images/career/career2.jpg')] bg-cover bg-no-repeat bg-center min-h-screen relative`}>
+        <div className={`flex w-screen overflow-hidden flex-col bg-[url('/images/career/career2.jpg')] bg-cover bg-no-repeat bg-center min-h-screen relative`}>
            <Preheader />
            <Navbar />
              <div className="  absolute inset-0 z-0 bg-linear-to-r from-[#000000] via-[#0a0f1a]/75 to-[#6666664D]/10 pointer-events-none  w-screen " />

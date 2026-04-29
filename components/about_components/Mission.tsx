@@ -2,7 +2,7 @@
 import React from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import vision from "@/images/vision.jpg"
+const vision = "/images/vision.jpg"
 
 export default function Mission() {
   return (

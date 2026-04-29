@@ -2,14 +2,14 @@
 import { useState } from "react";
 import Image from "next/image";
 import Btn from "./Btn";
-import extraordinary from "@/images/extraordinary.png";
-import whatwedo1 from "@/images/whatwedo1.jpg";
-import whatwedo2 from "@/images/whatwedo2.jpg";
-import whatwedo3 from "@/images/whatwedo3.jpg";
-import whatwedo4 from "@/images/whatwedo4.jpg";
-import whatwedo5 from "@/images/whatwedo5.jpg";
-import whatwedo6 from "@/images/whatwedo6.jpg";
-import whatwedo7 from "@/images/whatwedo7.jpg";
+const extraordinary = "/images/extraordinary.png";
+const whatwedo1 = "/images/whatwedo1.jpg";
+const whatwedo2 = "/images/whatwedo2.jpg";
+const whatwedo3 = "/images/whatwedo3.jpg";
+const whatwedo4 = "/images/whatwedo4.jpg";
+const whatwedo5 = "/images/whatwedo5.jpg";
+const whatwedo6 = "/images/whatwedo6.jpg";
+const whatwedo7 = "/images/whatwedo7.jpg";
 
 const services = [
   {

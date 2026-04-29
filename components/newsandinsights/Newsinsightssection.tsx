@@ -2,13 +2,13 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import building from '@/images/building.jpg'
-import news_1 from '@/images/news&insights/news_2.jpg'
-import news_2 from '@/images/news&insights/news_1.jpg'
-import report from '@/images/news&insights/reports.jpg'
-import blog_1 from '@/images/news&insights/blog_1.jpg'
-import blog_2 from '@/images/news&insights/blog_2.jpg'
-import blog_3 from '@/images/news&insights/blog_3.jpg'
+const building = "/images/building.jpg"
+const news_1 = "/images/news&insights/news_2.jpg"
+const news_2 = "/images/news&insights/news_1.jpg"
+const report = "/images/news&insights/reports.jpg"
+const blog_1 = "/images/news&insights/blog_1.jpg"
+const blog_2 = "/images/news&insights/blog_2.jpg"
+const blog_3 = "/images/news&insights/blog_3.jpg"
 
 const tabs = [ 'News', 'Reports', 'Blogs', 'White Papers']
 

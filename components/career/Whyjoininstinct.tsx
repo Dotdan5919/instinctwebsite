@@ -1,7 +1,7 @@
 'use client'
 import Image from 'next/image'
 import Btn from '../Btn'
-import building from '@/images/career/jointinstint.jpg'
+const building = "/images/career/jointinstint.jpg"
 
 const reasons = [
   {

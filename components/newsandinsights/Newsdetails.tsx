@@ -2,13 +2,13 @@
 import { useState, useRef, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import building from '@/images/building.jpg'
+const building = "/images/building.jpg"
 import GallerySection from '../projectdetails/Gallerysection'
-import gallery_1 from '@/images/news&insights/news_2.jpg'
-import gallery_2 from '@/images/news&insights/news_1.jpg'
-import gallery_3 from '@/images/precision.jpg'
-import news_1 from '@/images/news&insights/news_2.jpg'
-import news_2 from '@/images/news&insights/news_1.jpg'
+const gallery_1 = "/images/news&insights/news_2.jpg"
+const gallery_2 = "/images/news&insights/news_1.jpg"
+const gallery_3 = "/images/precision.jpg"
+const news_1 = "/images/news&insights/news_2.jpg"
+const news_2 = "/images/news&insights/news_1.jpg"
 
 const article = {
   title: 'Completion of Residential Development in Ajah',

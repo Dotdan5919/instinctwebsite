@@ -2,7 +2,7 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import Btn from '../Btn'
-import careerpathway from '@/images/career/careerpathway.jpg'
+const careerpathway = "/images/career/careerpathway.jpg"
 
 const pathways = [
   {

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
-import heroBg from "@/images/building.jpg";
+const heroBg = "/images/building.jpg";
 import Btn from "./Btn";
 
 export default function BuildingTogetherSection() {

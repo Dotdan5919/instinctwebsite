@@ -13,13 +13,12 @@ import FooterSection from "@/components/FooterSection";
 import LoadingScreen from "@/components/Loadingscreen";
 import { useEffect, useState } from "react";
 
-// Static imports so Next.js gives us the real hashed /_next/static/media/... URLs
-import heroBg0 from "@/images/hero_bg.png";
-import heroBg1 from "@/images/hero_bg_2.png";
-import heroBg2 from "@/images/hero_bg_1.png";
+// Static image paths for public assets
+const heroBg0 = "/images/hero_bg.png";
+const heroBg1 = "/images/hero_bg_2.png";
+const heroBg2 = "/images/hero_bg_1.png";
 
-// Use the .src strings from the imports — these are the exact URLs the browser will fetch
-const heroImageSrcs = [heroBg0.src, heroBg1.src, heroBg2.src];
+const heroImageSrcs = [heroBg0, heroBg1, heroBg2];
 
 function preloadImages(srcs: string[]): Promise<void[]> {
   return Promise.all(
@@ -42,9 +41,9 @@ export default function Home() {
   // Tailwind JIT needs the full string present at build time, so keep these as literals.
   // They correspond 1-to-1 with the imports above.
   const backgrounds = [
-    "bg-[url('../images/hero_bg.png')]",
-    "bg-[url('../images/hero_bg_2.png')]",
-    "bg-[url('../images/hero_bg_1.png')]",
+    "bg-[url('/images/hero_bg.png')]",
+    "bg-[url('/images/hero_bg_2.png')]",
+    "bg-[url('/images/hero_bg_1.png')]",
   ];
 
   // Preload all hero images before hiding the loader

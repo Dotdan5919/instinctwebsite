@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import partnersImg from "@/images/vendor/3.jpg";
+const partnersImg = "/images/vendor/3.jpg";
 import Btn from "@/components/Btn";
 
 const partnerTypes = [

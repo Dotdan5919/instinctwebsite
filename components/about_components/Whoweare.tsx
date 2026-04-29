@@ -1,6 +1,6 @@
 'use client'
 import Image from "next/image";
-import buildingHero from "@/images/whoweare.jpg";
+const buildingHero = "/images/whoweare.jpg";
 import React from 'react'
 import { motion } from 'framer-motion'
 

@@ -2,15 +2,15 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import precision from "@/images/precision.jpg";
-import accountability from "@/images/accountability.jpg";
-import discipline from "@/images/Discipline.jpg";
-import integrity from "@/images/integrity.jpg";
-import improvement from "@/images/improvement.jpg";
+const precision = "/images/precision.jpg";
+const accountability = "/images/accountability.jpg";
+const discipline = "/images/Discipline.jpg";
+const integrity = "/images/integrity.jpg";
+const improvement = "/images/improvement.jpg";
 
 
 
-import buildingHero from "@/images/building.jpg";
+const buildingHero = "/images/building.jpg";
 
 const values = [
   {

@@ -2,7 +2,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import onesystem from "@/images/ourapproach/onesystem.jpg";
+const onesystem = "/images/ourapproach/onesystem.jpg";
 import Btn from '../Btn';
 
 export default function ApproachBanner() {

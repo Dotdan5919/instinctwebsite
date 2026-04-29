@@ -5,10 +5,10 @@ import ApproachSection from '@/components/ourapproach/Approachsection'
 import ApproachBanner from '@/components/ourapproach/Approachbanner'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import constructionmanagement from "@/images/ourapproach/constructionmanagement.jpg";
-import leanconstruction from "@/images/ourapproach/leanconstruction.jpg";
-import preconstruction from "@/images/ourapproach/preconstruction.jpg";
-import projectmanagement from "@/images/ourapproach/project-management.jpg";
+const constructionmanagement = "/images/ourapproach/constructionmanagement.jpg";
+const leanconstruction = "/images/ourapproach/leanconstruction.jpg";
+const preconstruction = "/images/ourapproach/preconstruction.jpg";
+const projectmanagement = "/images/ourapproach/project-management.jpg";
 
 // ─── Section data ─────────────────────────────────────────────────────────────
 // Replace image URLs with your actual project photos
