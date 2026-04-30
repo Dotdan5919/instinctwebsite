@@ -71,7 +71,7 @@ export default function Preheader() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: 0.1 }}
-      className="bg-[#0d0d0d] py-2 overflow-hidden "
+      className="bg-[#0d0d0d] py-2 overflow-hidden z-20 "
     >
       <div className="relative h-8 overflow-hidden">
         <span className="text-sm font-medium font-montserrat text-white" style={animationStyles}>
