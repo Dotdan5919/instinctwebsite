@@ -539,7 +539,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Desktop mega dropdown */}
+      {/* Desktop mega dropdown  */}
       {activeMenu && menuComponents[activeMenu] && (
         <div
           className="hidden lg:block absolute top-full left-0 w-full bg-white shadow-2xl z-50 overflow-hidden"
