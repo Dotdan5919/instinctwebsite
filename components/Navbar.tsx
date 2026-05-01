@@ -2,11 +2,30 @@
 import React, { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import logo from '@/icons/instinct-logo.png'
 const projectImage = "/images/building.jpg"
 
 const navItems = ['Our Company', 'Our Services', 'Our Projects', 'News & Insights', 'Careers', 'Resources']
+
+// Map nav labels to their base routes for active detection
+const navRoutes: Record<string, string[]> = {
+  'Our Company':    ['/ourcompany', '/ourleadership', '/ourjourney', '/whatwedo'],
+  'Our Services':   ['/our-services', '/ourapproach'],
+  'Our Projects':   ['/ourproject'],
+  'News & Insights':['/newsandinsights', '/report', '/blog', '/whitepaper', '/news'],
+  'Careers':        ['/career'],
+  'Resources':      ['/resources'],
+}
+
+function useActiveNav() {
+  const pathname = usePathname()
+  return (item: string) => {
+    const routes = navRoutes[item] ?? []
+    return routes.some(route => pathname === route || pathname.startsWith(route + '/') || pathname.startsWith(route + '#'))
+  }
+}
 
 // ─── Left amber panel ──────────────────────────────────────────────────
 function LeftPanel({ title, paragraphs, linkLabel, href = '#' }: {
@@ -331,6 +350,7 @@ function HamburgerIcon({ open }: { open: boolean }) {
 // ─── Mobile drawer ─────────────────────────────────────────────────────
 function MobileDrawer({ open, onClose }: { open: boolean; onClose: () => void }) {
   const [expandedItem, setExpandedItem] = useState<string | null>(null)
+  const isActive = useActiveNav()
 
   const toggle = (item: string) => setExpandedItem(prev => prev === item ? null : item)
 
@@ -357,39 +377,46 @@ function MobileDrawer({ open, onClose }: { open: boolean; onClose: () => void })
             {/* Drawer header */}
             <div className="flex items-center justify-between px-6 py-5 bg-white">
               <Image src={logo} alt="Instinct Logo" width={48} height={48} />
-              <button onClick={onClose} className="text-white text-2xl font-light leading-none">✕</button>
+              <button onClick={onClose} className="text-gray-800 text-2xl font-light leading-none">✕</button>
             </div>
 
             {/* Nav items accordion */}
             <nav className="divide-y divide-gray-100">
-              {navItems.map((item) => (
-                <div key={item}>
-                  <button
-                    onClick={() => toggle(item)}
-                    className="w-full flex items-center justify-between px-6 py-4 text-gray-900 font-semibold text-sm hover:bg-gray-50 transition-colors"
-                  >
-                    {item}
-                    <span className={`transition-transform duration-200 text-amber-500 ${expandedItem === item ? 'rotate-180' : ''}`}>
-                      ▾
-                    </span>
-                  </button>
-                  <AnimatePresence>
-                    {expandedItem === item && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: 'auto', opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.2 }}
-                        className="overflow-hidden bg-gray-50"
-                      >
-                        <div className="px-6 py-4 max-h-[60vh] overflow-y-auto">
-                          {menuComponents[item]}
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
-              ))}
+              {navItems.map((item) => {
+                const active = isActive(item)
+                return (
+                  <div key={item}>
+                    <button
+                      onClick={() => toggle(item)}
+                      className={`w-full flex items-center justify-between px-6 py-4 font-semibold text-sm transition-colors
+                        ${active
+                          ? 'text-amber-500 border-l-2 border-amber-500 bg-amber-50'
+                          : 'text-gray-900 hover:bg-gray-50'
+                        }`}
+                    >
+                      {item}
+                      <span className={`transition-transform duration-200 text-amber-500 ${expandedItem === item ? 'rotate-180' : ''}`}>
+                        ▾
+                      </span>
+                    </button>
+                    <AnimatePresence>
+                      {expandedItem === item && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: 'auto', opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.2 }}
+                          className="overflow-hidden bg-gray-50"
+                        >
+                          <div className="px-6 py-4 max-h-[60vh] overflow-y-auto">
+                            {menuComponents[item]}
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                )
+              })}
 
               {/* Contact / Vendor */}
               <div className="px-6 py-4 space-y-3">
@@ -413,6 +440,7 @@ export default function Navbar() {
   const [activeMenu, setActiveMenu] = useState<string | null>(null)
   const [hoveredItem, setHoveredItem] = useState<string | null>(null)
   const [mobileOpen, setMobileOpen] = useState(false)
+  const isActive = useActiveNav()
 
   // Close mobile drawer on resize to desktop
   useEffect(() => {
@@ -449,8 +477,10 @@ export default function Navbar() {
         {/* Desktop nav links */}
         <ul className="hidden lg:flex h-full items-stretch font-montserrat font-medium flex-1">
           {navItems.map((item) => {
-            const isActive = activeMenu === item
+            const isMenuOpen = activeMenu === item
             const isHovered = hoveredItem === item
+            const isCurrentPage = isActive(item)
+
             return (
               <li
                 key={item}
@@ -461,14 +491,21 @@ export default function Navbar() {
                 <span
                   className={`
                     relative flex items-center px-4 xl:px-5 cursor-pointer whitespace-nowrap text-[14px] xl:text-[15px] transition-colors duration-150
-                    ${isActive ? 'bg-white text-gray-900' : 'text-white'}
+                    ${isMenuOpen
+                      ? 'bg-white text-gray-900'
+                      : isCurrentPage
+                        ? 'text-amber-400'
+                        : 'text-white'
+                    }
                   `}
                 >
                   {item}
+
+                  {/* Hover indicator: amber bar (shown on hover or when dropdown is open) */}
                   <span
                     className={`
                       absolute bottom-0 left-0 right-0 h-[3px] bg-amber-500 transition-opacity duration-150
-                      ${isActive || isHovered ? 'opacity-100' : 'opacity-0'}
+                      ${isMenuOpen || isHovered ? 'opacity-100' : 'opacity-0'}
                     `}
                   />
                 </span>
