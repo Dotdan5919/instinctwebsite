@@ -166,9 +166,7 @@ export default function NewsDetailSection() {
 
         {/* Title + intro */}
         <div className="w-full mb-8">
-          <h1 className="text-gray-900 text-2xl sm:text-3xl font-bold font-montserrat leading-snug mb-6">
-            {article.title}
-          </h1>
+          
           <p className="text-gray-600 text-sm font-montserrat leading-relaxed">
             {article.intro}
           </p>

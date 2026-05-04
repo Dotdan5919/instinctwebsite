@@ -63,13 +63,15 @@ export default function FooterSection() {
           </div>
 
           {/* Nav links */}
-          <nav className="hidden items-center gap-8 lg:flex">
-            {["Our Company", "Our Services", "Our Projects", "News & Insights", "Careers", "Resources"].map((item) => (
-              <a key={item} href="#" className="text-sm text-white hover:text-yellow-500 transition-colors">
-                {item}
-              </a>
-            ))}
-          </nav>
+        {/* Nav links */}
+<nav className="hidden items-center gap-8 lg:flex">
+  <a href="/ourcompany" className="text-sm text-white hover:text-yellow-500 transition-colors">Our Company</a>
+  <a href="/whatwedo" className="text-sm text-white hover:text-yellow-500 transition-colors">Our Services</a>
+  <a href="/ourproject" className="text-sm text-white hover:text-yellow-500 transition-colors">Our Projects</a>
+  <a href="/newsandinsights" className="text-sm text-white hover:text-yellow-500 transition-colors">News & Insights</a>
+  <a href="/career" className="text-sm text-white hover:text-yellow-500 transition-colors">Careers</a>
+  <a href="#" className="text-sm text-white hover:text-yellow-500 transition-colors">Resources</a>
+</nav>
 
           {/* Social icons */}
           <div className="flex items-center gap-3">

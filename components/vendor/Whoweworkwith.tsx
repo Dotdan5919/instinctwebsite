@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-const partnersImg = "/images/vendor/3.jpg";
+const partnersImg = "/images/vendor/whoweworkwith.jpg";
 import Btn from "@/components/Btn";
 
 const partnerTypes = [
@@ -15,32 +15,32 @@ const partnerTypes = [
 export default function WhoWeWorkWith() {
   return (
     /* Outer section is the positioning context for the breakout image */
-    <section className="relative bg-white py-12 px-6 sm:px-10 lg:px-14 overflow-hidden mb-24">
-      <div className="mx-auto max-w-7xl">
+    <section className="relative bg-white py-12 px-6 sm:px-10 lg:px-43 mb-24">
+      <div className="mx-auto max-w-7xl ">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
-          className="rounded-3xl bg-[#FFF6E6] px-8 py-12 sm:px-10 lg:px-14"
+          className="rounded-3xl bg-[#FFF6E6] px-8 py-28 sm:px-10 lg:px-14"
         >
           <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:gap-12">
 
             {/* Left: text + list */}
-            <div className="flex-1 min-w-0">
+            <div className="flex flex-col gap-2 min-w-0">
               <h2 className="font-bebas text-[36px] sm:text-[46px] lg:text-[52px] uppercase leading-none tracking-wide text-slate-900">
                 Who We Work With
               </h2>
 
-              <p className="mt-4 font-montserrat text-sm leading-6 text-slate-600 max-w-sm">
-                Every project follows a structured methodology —
+              <p className="mt-4 font-montserrat text-sm leading-6 text-slate-600 max-w-xl">
+                Every project follows a structured methodology — <br/>
                 ensuring clarity before execution and control throughout delivery.
               </p>
-
+    <div className="flex w-fit">
               <Btn text="See More About us" href="/about" />
-
+</div>
               {/* Partner type list */}
-              <div className="mt-8 divide-y flex flex-col gap-6">
+              <div className="mt-8 divide-y flex flex-col gap-2">
                 {partnerTypes.map((type) => (
                   <div key={type.label} className="p-6 bg-[#FFF2D9]">
                     <p className="font-montserrat text-sm font-bold text-slate-800">{type.label}</p>
@@ -73,8 +73,8 @@ export default function WhoWeWorkWith() {
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
         className="
-          relative mt-6 w-full rounded-3xl overflow-hidden
-          lg:absolute lg:inset-y-0 lg:right-0 lg:mt-19 lg:w-[40%]
+          relative mt-9 w-full rounded-3xl overflow-hidden
+          lg:absolute lg:inset-y-0 lg:-right-9 lg:mt-30 lg:w-[40%]
           lg:rounded-l-3xl lg:rounded-r-none 
         "
         style={{ height: "clamp(260px, 50vw, 700px)" }}

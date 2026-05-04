@@ -1,7 +1,7 @@
 import Image from "next/image"
 import { motion } from "framer-motion"
 
-const extraordinary = "/images/extraordinary.png"
+const extraordinary = "/images/extraordinary.jpg"
 import Btn from "./Btn"
 
 export default function ExtraordinarySection() {

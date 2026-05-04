@@ -28,8 +28,15 @@ export default function page() {
        
                    </div>
                    <div className="flex flex-col px-30 bg-white">
+
                    <VendorHero />
+                   </div>
+                 
+
+<div className="flex flex-col bg-white">
   <WhoWeWorkWith />
+  </div>
+                   <div className="flex flex-col px-30 bg-white">
       <VendorRequirements />
       <VendorProcess />
 </div>

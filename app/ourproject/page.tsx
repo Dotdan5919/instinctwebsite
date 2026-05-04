@@ -19,7 +19,7 @@ export default function page() {
                
                <Navbar />
        
-               <OtherHero title="Our Expertise" subtitle={<>Defined expertise.<br /> Controlled delivery.</>} />
+               <OtherHero title="Our Projects" subtitle={<>Defined expertise.<br /> Controlled delivery.</>} />
 <div className="  absolute inset-0 z-0 bg-linear-to-r from-[#000000] via-[#0a0f1a]/75 to-[#6666664D]/10 pointer-events-none  w-screen " />
        
                </div>

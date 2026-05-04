@@ -1,7 +1,7 @@
 'use client'
 import Image from 'next/image'
 import Btn from '../Btn'
-const building = "/images/career/jointinstint.jpg"
+const building = "/images/career/career_work.jpg"
 
 const reasons = [
   {
@@ -28,14 +28,14 @@ const reasons = [
 
 export default function WhyJoinInstinct() {
   return (
-    <section className="w-full py-16 lg:py-20 bg-white overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-14">
+    <section className="w-full py-16 lg:py-20 bg-white ">
+      <div className="w-full px-4 sm:px-8 lg:px-24 ">
 
         {/* Outer wrapper — relative so image can break out */}
-        <div className="relative bg-[#FFF2D9] rounded-2xl w-11/12">
+        <div className="relative bg-[#FFF2D9] rounded-2xl w-11/12 py-15 ">
 
           {/* Cream card — only takes left ~55% of width */}
-          <div className="bg-[#FFF2D9] rounded-2xl p-8 lg:p-10 w-full lg:w-[55%]">
+          <div className="bg-[#FFF2D9] rounded-2xl p-8  py-14 lg:p-10 w-full lg:w-[55%]">
 
             {/* Heading */}
             <h2 className="font-bebas text-gray-900 text-[32px] sm:text-[40px] leading-none tracking-wide mb-3">
@@ -75,8 +75,8 @@ export default function WhyJoinInstinct() {
           <div
             className="
               hidden lg:block
-              absolute top-8 -right-14
-              w-[48%] h-full
+              absolute top-20 -right-50
+              w-[58%] h-[682px]
               rounded-2xl overflow-hidden
             "
           >
@@ -89,7 +89,7 @@ export default function WhyJoinInstinct() {
           </div>
 
           {/* Mobile image — shows below on small screens */}
-          <div className="lg:hidden  h-[280px] rounded-2xl overflow-hidden mt-6">
+          <div className="lg:hidden  rounded-2xl overflow-hidden mt-6">
             <Image
               src={building}
               alt="Why join Instinct"

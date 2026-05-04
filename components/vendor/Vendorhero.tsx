@@ -3,12 +3,12 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
-const vendorHero = "/images/vendor/2.jpg"; // replace with your actual image
+const vendorHero = "/images/vendor/vendorpartnership.jpg"; // replace with your actual image
 import Btn from "@/components/Btn";
 
 export default function VendorHero() {
   return (
-    <section className="bg-white pt-16 pb-12 px-6 sm:px-10 lg:px-14">
+    <section className="bg-white pt-16 pb-12 px-6 sm:px-10 lg:px-14 ">
       <div className="mx-auto max-w-7xl">
 
         {/* Heading */}

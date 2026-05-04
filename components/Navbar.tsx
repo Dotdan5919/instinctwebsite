@@ -11,8 +11,8 @@ const navItems = ['Our Company', 'Our Services', 'Our Projects', 'News & Insight
 
 // Map nav labels to their base routes for active detection
 const navRoutes: Record<string, string[]> = {
-  'Our Company':    ['/ourcompany', '/ourleadership', '/ourjourney', '/whatwedo'],
-  'Our Services':   ['/our-services', '/ourapproach'],
+  'Our Company':    ['/ourcompany', '/ourleadership', '/ourjourney'],
+  'Our Services':   ['/whatwedo', '/ourapproach'],
   'Our Projects':   ['/ourproject'],
   'News & Insights':['/newsandinsights', '/report', '/blog', '/whitepaper', '/news'],
   'Careers':        ['/career'],
@@ -80,7 +80,7 @@ function ContentCard({ label, title, linkLabel = 'See details', href = '#' }: {
       <div className="relative w-full h-[90px] lg:h-[110px] rounded overflow-hidden bg-gray-200">
         <Image src={projectImage} alt={title} fill className="object-cover" />
       </div>
-      {label && <p className="text-amber-500 text-xs font-semibold">{label}</p>}
+      {label && <p className="text-[#CC8400] text-xs font-semibold">{label}</p>}
       <p className="text-gray-800 text-xs font-semibold leading-snug">{title}</p>
       <Link href={href} className="text-amber-500 text-xs font-semibold flex items-center gap-1 hover:gap-2 transition-all">
         {linkLabel} <span>↗</span>
@@ -156,12 +156,12 @@ function OurServicesMenu() {
           { label: 'Construction Management', href: '/ourapproach#construction-management' },
         ]} />
         <LinkColumn heading="Expertise" items={[
-          { label: 'Construction Management', href: '/our-services#construction-management' },
-          { label: 'Road Construction', href: '/our-services#road-construction' },
-          { label: 'Project Partnering', href: '/our-services#project-partnering' },
-          { label: 'Flooring', href: '/our-services#flooring' },
-          { label: 'Roofing', href: '/our-services#roofing' },
-          { label: 'Reconstruction Services', href: '/our-services#reconstruction' },
+          { label: 'Construction Management', href: '/whatwedo#construction-management' },
+          { label: 'Road Construction', href: '/whatwedo#road-construction' },
+          { label: 'Project Partnering', href: '/whatwedo#project-partnering' },
+          { label: 'Flooring', href: '/whatwedo#flooring' },
+          { label: 'Roofing', href: '/whatwedo#roofing' },
+          { label: 'Reconstruction Services', href: '/whatwedo#reconstruction' },
         ]} />
         <VendorPanel />
       </div>
@@ -514,14 +514,15 @@ export default function Navbar() {
           })}
 
           {/* Divider + Contact / Vendor */}
-          <li className="flex items-center border-l border-white/20 ml-2">
-            <Link href="/contact" className="px-4 xl:px-5 text-[14px] xl:text-[15px] text-white whitespace-nowrap hover:text-amber-400 transition-colors duration-200">
-              Contact us
-            </Link>
-            <Link href="/vendor" className="px-4 xl:px-5 text-[14px] xl:text-[15px] text-white whitespace-nowrap hover:text-amber-400 transition-colors duration-200">
-              Become a vendor
-            </Link>
-          </li>
+       <li className="flex items-center ml-2 relative">
+  <span className="absolute left-0 top-0 h-[95px] w-px bg-white/20" />
+  <Link href="/contact" className="pl-4 xl:pl-5 pr-4 xl:pr-5 text-[14px] xl:text-[15px] text-white whitespace-nowrap hover:text-amber-400 transition-colors duration-200">
+    Contact us
+  </Link>
+  <Link href="/vendor" className="px-4 xl:px-5 text-[14px] xl:text-[15px] text-white whitespace-nowrap hover:text-amber-400 transition-colors duration-200">
+    Become a vendor
+  </Link>
+</li>
         </ul>
 
         {/* Mobile right: contact link + hamburger */}
