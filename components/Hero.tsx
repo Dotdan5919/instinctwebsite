@@ -43,7 +43,7 @@ export default function Hero({ currentStep = 0 }: { currentStep?: number }) {
   }
 
   return (
-    <section className="px-4 sm:px-8 md:px-12 lg:px-14 mx-auto w-full max-w-7xl relative min-h-screen flex flex-col items-center">
+    <section className="px-6 sm:px-10 lg:px-14 mx-auto w-full max-w-7xl relative min-h-screen flex flex-col items-center">
       <style>{`
         @keyframes fillLine {
           from { width: 0%; }

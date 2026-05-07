@@ -7,7 +7,7 @@ import Btn from "./Btn"
 export default function ExtraordinarySection() {
   return (
     <section className="bg-white text-black py-24 z-10">
-      <div className="mx-auto max-w-7xl px-14 md:px-16">
+      <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-14">
         <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr] items-center">
           <motion.div
             initial={{ opacity: 0, x: -50 }}

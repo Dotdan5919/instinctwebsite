@@ -3,16 +3,16 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-const img1 = "/images/project1.png";
+const img1 = "/images/project1.jpg";
 const img2 = "/images/project2.png";
-const img3 = "/images/project3.png";
-const img4 = "/images/project2.png";
+const img3 = "/images/project3.jpg";
+const img4 = "/images/chisco-3.jpg";
 const img5 = "/images/project1.png";
 const img6 = "/images/project2.png";
-const img7 = "/images/project3.png";
+const img7 = "/images/project3.jpg";
 const img8 = "/images/project1.png";
 const img9 = "/images/project2.png";
-const img10 = "/images/project3.png";
+const img10 = "/images/project3.jpg";
 import Btn from "./Btn";
 
 type CategoryKey = "residential" | "commercial" | "infrastructure" | "renovation";
@@ -29,55 +29,43 @@ type Project = { location: string; title: string; details: string; image: any };
 const projectCollections: Record<CategoryKey, Project[]> = {
   residential: [
     {
-      location: "Lagos, Nigeria",
-      title: "5 Bedroom Duplex with Penthouse, Magodo Phase 2",
-      details: "Delivered through a structured construction process ensuring alignment between architectural intent, structural integrity, and long-term performance.",
+      location: "Abiola Close, Shonibare Estate",
+      title: "A Block of 6-Unit Luxury Flats",
+      details: "Premium luxury flats built to the highest standards, blending elegant design with structural integrity and long-term performance.",
       image: img1,
     },
     {
-      location: "Abuja, Nigeria",
-      title: "Modern Townhouse Cluster, Jabi",
-      details: "Compact villas designed for family comfort, daylight, and privacy with premium landscaping.",
+      location: "Oduduwa Way, Ikeja GRA",
+      title: "A Block of 13 Units of 3-Bedroom Flats",
+      details: "Thoughtfully designed 3-bedroom flats offering generous living spaces, abundant natural light, and privacy within a serene GRA setting.",
       image: img2,
     },
     {
-      location: "Port Harcourt, Nigeria",
-      title: "Seafront Mansion, Lekki Peninsula",
-      details: "High-end waterfront living with panoramic glass facades and resort-grade amenities.",
+      location: "Lekki Peninsula II",
+      title: "4-Bedroom Terrace with 1-Room BQ",
+      details: "Stylish terrace home featuring spacious living areas, modern finishes, and a self-contained boys' quarters in one of Lekki's prime addresses.",
       image: img3,
     },
   ],
   commercial: [
     {
-      location: "Ikeja, Nigeria",
-      title: "Retail Arcade & Office Campus",
-      details: "Mixed-use workspace with flexible retail galleries and landscaped plazas.",
+      location: "Lekki Peninsula II",
+      title: "Chisco Mall",
+      details: "A vibrant commercial destination offering diverse retail spaces, flexible gallery units, and beautifully landscaped public plazas.",
       image: img4,
-    },
-    {
-      location: "Victoria Island, Nigeria",
-      title: "Corporate Headquarters Tower",
-      details: "A landmark office building with sustainable energy systems and smart infrastructure.",
-      image: img5,
-    },
-    {
-      location: "Yaba, Nigeria",
-      title: "Technology Innovation Hub",
-      details: "Agile workspace for startups and creative teams with modular floor plans.",
-      image: img6,
     },
   ],
   infrastructure: [
     {
       location: "Lagos, Nigeria",
       title: "Bridge Expansion & Access Interchange",
-      details: "Improved traffic flow with modern structural design and advanced safety systems.",
+      details: "Large-scale bridge expansion improving traffic flow and connectivity through modern structural engineering and advanced safety systems.",
       image: img7,
     },
     {
       location: "Port Harcourt, Nigeria",
       title: "Urban Transit Depot Upgrade",
-      details: "A resilient transport hub with modern passenger amenities and smart routing.",
+      details: "Comprehensive upgrade of a major transit depot delivering improved passenger facilities, smart routing systems, and enhanced operational resilience.",
       image: img8,
     },
   ],
@@ -85,18 +73,17 @@ const projectCollections: Record<CategoryKey, Project[]> = {
     {
       location: "Ibadan, Nigeria",
       title: "Heritage Hotel Restoration",
-      details: "Sensitive renovation conserving historic character while delivering modern comfort.",
+      details: "A careful restoration of a historic hotel property, preserving its architectural character while upgrading interiors to meet modern hospitality standards.",
       image: img9,
     },
     {
       location: "Kaduna, Nigeria",
       title: "Industrial Warehouse Retrofit",
-      details: "Adaptive reuse project for updated logistics and storage operations.",
+      details: "Full retrofit of an existing industrial warehouse, adapting the structure for improved logistics flow, storage capacity, and operational efficiency.",
       image: img10,
     },
   ],
 };
-
 // ─── Mobile: stacked card carousel ───────────────────────────────────────────
 function MobileProjects({
   activeCategoryIndex,

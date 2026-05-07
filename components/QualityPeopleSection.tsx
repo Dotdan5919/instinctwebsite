@@ -5,7 +5,7 @@ import Btn from "./Btn";
 
 export default function QualityPeopleSection() {
   return (
-    <section className="bg-white py-24 px-6 sm:px-10 lg:px-14">
+    <section className="bg-white sm:py-24 py-12  sm:px-10 lg:px-14">
       <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-14">
         <div className="relative overflow-hidden rounded-[28px] min-h-[500px]">
           

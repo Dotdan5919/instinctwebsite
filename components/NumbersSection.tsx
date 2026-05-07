@@ -99,8 +99,8 @@ export default function NumbersSection() {
   }, []);
 
   return (
-    <section className="bg-white py-24" ref={sectionRef}>
-      <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-14">
+    <section className="bg-white sm:py-24 py-6" ref={sectionRef}>
+      <div className="mx-auto max-w-7xl px-5 sm:px-10 lg:px-14">
         <div className="flex flex-col gap-10 rounded-[2rem] border border-white/10 bg-[#5b3900] p-8 sm:p-10 lg:p-12">
 
           {/* Stats row */}

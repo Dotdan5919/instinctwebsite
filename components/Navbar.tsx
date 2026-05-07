@@ -465,7 +465,7 @@ export default function Navbar() {
       <div className="flex absolute border h-24 w-[3000px] -left-96 border-white/20" />
 
       {/* Navbar row */}
-      <div className="relative flex items-center h-[72px] lg:h-[88px] px-4 sm:px-6 lg:px-14 mx-auto max-w-7xl">
+      <div className="relative flex items-center h-[72px] lg:h-[88px] px-6 sm:px-10 lg:px-14 mx-auto max-w-7xl">
 
         {/* Logo */}
         <div className="flex-shrink-0 mr-4 lg:mr-8">
