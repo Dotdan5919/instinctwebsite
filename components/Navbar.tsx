@@ -5,16 +5,22 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import logo from '@/icons/instinct-logo.png'
+
 const projectImage = "/images/building.jpg"
+const opportunityImage = "/images/oppotunity.jpg"
+const img1 = "/images/project1.jpg"
+const img2 = "/images/project2.png"
+const img4 = "/images/chisco-3.jpg"
+const blog_1 = "/images/news&insights/blog_1.jpg"
+const blog_2 = "/images/news&insights/blog_2.jpg"
 
 const navItems = ['Our Company', 'Our Services', 'Our Projects', 'News & Insights', 'Careers', 'Resources']
 
-// Map nav labels to their base routes for active detection
 const navRoutes: Record<string, string[]> = {
   'Our Company':    ['/ourcompany', '/ourleadership', '/ourjourney'],
   'Our Services':   ['/whatwedo', '/ourapproach'],
   'Our Projects':   ['/ourproject'],
-  'News & Insights':['/newsandinsights', '/report', '/blog', '/whitepaper', '/news'],
+  'News & Insights':['/blog', '/report'],
   'Careers':        ['/career'],
   'Resources':      ['/resources'],
 }
@@ -72,13 +78,13 @@ function LinkColumn({ heading, items }: { heading: string; items: { label: strin
 }
 
 // ─── Content card ──────────────────────────────────────────────────────
-function ContentCard({ label, title, linkLabel = 'See details', href = '#' }: {
-  label?: string; title: string; linkLabel?: string; href?: string
+function ContentCard({ label, title, linkLabel = 'See details', href = '#', image }: {
+  label?: string; title: string; linkLabel?: string; href?: string; image?: string
 }) {
   return (
     <div className="flex flex-col gap-2">
       <div className="relative w-full h-[90px] lg:h-[110px] rounded overflow-hidden bg-gray-200">
-        <Image src={projectImage} alt={title} fill className="object-cover" />
+        <Image src={image || projectImage} alt={title} fill className="object-cover" />
       </div>
       {label && <p className="text-[#CC8400] text-xs font-semibold">{label}</p>}
       <p className="text-gray-800 text-xs font-semibold leading-snug">{title}</p>
@@ -148,7 +154,7 @@ function OurServicesMenu() {
         ]}
         linkLabel="Get to know us"
       />
-      <div className="flex flex-col sm:flex-row lg:flex-row flex-1">
+      <div className="flex flex-col lg:flex-row flex-1">
         <LinkColumn heading="Approach" items={[
           { label: 'Preconstruction', href: '/ourapproach#preconstruction' },
           { label: 'Project Management', href: '/ourapproach#project-management' },
@@ -193,10 +199,28 @@ function OurProjectsMenu() {
         <div className="flex-1 px-6 lg:px-10 py-6 lg:py-10">
           <h3 className="text-gray-900 text-sm lg:text-base font-semibold mb-4 lg:mb-6">Latest Project</h3>
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
-            <ContentCard label="Residential" title="5 Bedroom Duplex, Magodo Phase 2" linkLabel="See details" href="/ourproject/magodo-duplex" />
-            <ContentCard label="Residential" title="5 Bedroom Duplex, Magodo Phase 2" linkLabel="See details" href="/ourproject/magodo-duplex" />
+            <ContentCard
+              label="Residential"
+              title="A Block of 6-Unit Luxury Flats"
+              linkLabel="See details"
+              href="/ourproject/5"
+              image={img1}
+            />
+            <ContentCard
+              label="Residential"
+              title="A Block of 13 Units of 3-Bedroom Flats"
+              linkLabel="See details"
+              href="/ourproject/4"
+              image={img2}
+            />
             <div className="hidden lg:block">
-              <ContentCard label="Residential" title="5 Bedroom Duplex, Magodo Phase 2" linkLabel="See details" href="/ourproject/magodo-duplex" />
+              <ContentCard
+                label="Commercial"
+                title="Chisco Mall"
+                linkLabel="See details"
+                href="/ourproject/9"
+                image={img4}
+              />
             </div>
           </div>
         </div>
@@ -210,7 +234,7 @@ function NewsInsightsMenu() {
   return (
     <div className="flex flex-col lg:flex-row w-full">
       <LeftPanel
-        title="News & Insights" href="/newsandinsights"
+        title="News & Insights" href="/blog"
         paragraphs={[
           'Instinctive is a knowledge-led organisation that constantly creates thought leadership articles, whitepapers and case studies.',
           'Read the pathbreaking insights on topics of today.',
@@ -218,20 +242,25 @@ function NewsInsightsMenu() {
         linkLabel="Learn More"
       />
       <div className="flex flex-col lg:flex-row flex-1">
-        <LinkColumn heading="Approach" items={[
-          { label: 'News', href: '/newsandinsights' },
-          { label: 'Reports', href: '/report' },
+        <LinkColumn heading="Explore" items={[
           { label: 'Blogs', href: '/blog' },
-          { label: 'White Papers', href: '/whitepaper' },
+          { label: 'Reports', href: '/report' },
         ]} />
         <div className="flex-1 px-6 lg:px-10 py-6 lg:py-10">
           <h3 className="text-gray-900 text-sm lg:text-base font-semibold mb-4 lg:mb-6">Featured Insights</h3>
-          <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
-            <ContentCard title="2026 Construction Outlook: From Caution to Clarity" linkLabel="See More" href="/news/construction-outlook-2026" />
-            <ContentCard title="2026 Construction Outlook: From Caution to Clarity" linkLabel="See More" href="/news/construction-outlook-2026" />
-            <div className="hidden lg:block">
-              <ContentCard title="2026 Construction Outlook: From Caution to Clarity" linkLabel="See More" href="/news/construction-outlook-2026" />
-            </div>
+          <div className="grid grid-cols-2 lg:grid-cols-2 gap-4 lg:gap-5">
+            <ContentCard
+              title="Why Preconstruction Defines the Success of Every Project"
+              linkLabel="Read article"
+              href="/blogs/9"
+              image={blog_1}
+            />
+            <ContentCard
+              title="Structured Methodology in Nigerian Construction"
+              linkLabel="Read article"
+              href="/blogs/10"
+              image={blog_2}
+            />
           </div>
         </div>
       </div>
@@ -254,21 +283,21 @@ function CareersMenu() {
       <div className="flex flex-col lg:flex-row flex-1">
         <LinkColumn heading="Join the Team" items={[
           { label: 'Life at Instinct', href: '/career#life-at-instinct' },
-          { label: 'Internship', href: '/career#internship' },
+          { label: 'Internship', href: '/career/joblisting' },
           { label: 'Experienced professionals', href: '/career#experienced' },
           { label: 'Labor and skilled trade', href: '/career#skilled-trade' },
         ]} />
         <div className="flex-1 px-6 lg:px-10 py-6 lg:py-10">
           <div className="flex items-center justify-between mb-4 lg:mb-6">
-            <h3 className="text-gray-900 text-sm lg:text-base font-semibold">Careers</h3>
-            <Link href="/career" className="text-gray-900 text-xs lg:text-sm font-semibold flex items-center gap-1 hover:text-amber-500 transition-colors">
+            <h3 className="text-gray-900 text-sm lg:text-base font-semibold">Open Positions</h3>
+            <Link href="/career/joblisting" className="text-gray-900 text-xs lg:text-sm font-semibold flex items-center gap-1 hover:text-amber-500 transition-colors">
               See all positions <span>↗</span>
             </Link>
           </div>
           <div className="grid grid-cols-2 gap-4 lg:gap-6">
             <div className="flex flex-col gap-2">
               <div className="relative w-full h-[100px] lg:h-[150px] rounded overflow-hidden bg-gray-200">
-                <Image src={projectImage} alt="Career Opportunities" fill className="object-cover" />
+                <Image src={opportunityImage} alt="Career Opportunities" fill className="object-cover" />
               </div>
               <p className="text-amber-500 text-xs font-semibold mt-1">Career Opportunities</p>
               <p className="text-gray-600 text-xs leading-relaxed hidden lg:block">
@@ -278,18 +307,7 @@ function CareersMenu() {
                 Read More <span>↗</span>
               </Link>
             </div>
-            <div className="flex flex-col gap-2">
-              <div className="relative w-full h-[100px] lg:h-[150px] rounded overflow-hidden bg-gray-200">
-                <Image src={projectImage} alt="Hear from our people" fill className="object-cover" />
-              </div>
-              <p className="text-amber-500 text-xs font-semibold mt-1">Hear From our people</p>
-              <p className="text-gray-600 text-xs leading-relaxed hidden lg:block">
-                Our colleagues around the world share why they chose to build their careers with Instinct.
-              </p>
-              <Link href="/careers#our-people" className="text-amber-500 text-xs font-semibold flex items-center gap-1 hover:gap-2 transition-all">
-                Read More <span>↗</span>
-              </Link>
-            </div>
+           
           </div>
         </div>
       </div>
@@ -358,7 +376,6 @@ function MobileDrawer({ open, onClose }: { open: boolean; onClose: () => void })
     <AnimatePresence>
       {open && (
         <>
-          {/* Backdrop */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -366,7 +383,6 @@ function MobileDrawer({ open, onClose }: { open: boolean; onClose: () => void })
             className="fixed inset-0 bg-black/50 z-40"
             onClick={onClose}
           />
-          {/* Drawer */}
           <motion.div
             initial={{ x: '100%' }}
             animate={{ x: 0 }}
@@ -374,13 +390,11 @@ function MobileDrawer({ open, onClose }: { open: boolean; onClose: () => void })
             transition={{ type: 'tween', duration: 0.3 }}
             className="fixed top-0 right-0 h-full w-[85vw] max-w-[360px] bg-white z-50 overflow-y-auto shadow-2xl"
           >
-            {/* Drawer header */}
             <div className="flex items-center justify-between px-6 py-5 bg-white">
               <Image src={logo} alt="Instinct Logo" width={48} height={48} />
               <button onClick={onClose} className="text-gray-800 text-2xl font-light leading-none">✕</button>
             </div>
 
-            {/* Nav items accordion */}
             <nav className="divide-y divide-gray-100">
               {navItems.map((item) => {
                 const active = isActive(item)
@@ -418,7 +432,6 @@ function MobileDrawer({ open, onClose }: { open: boolean; onClose: () => void })
                 )
               })}
 
-              {/* Contact / Vendor */}
               <div className="px-6 py-4 space-y-3">
                 <Link href="/contact" onClick={onClose} className="block text-gray-700 text-sm font-medium hover:text-amber-500 transition-colors">
                   Contact us
@@ -442,14 +455,12 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const isActive = useActiveNav()
 
-  // Close mobile drawer on resize to desktop
   useEffect(() => {
     const onResize = () => { if (window.innerWidth >= 1024) setMobileOpen(false) }
     window.addEventListener('resize', onResize)
     return () => window.removeEventListener('resize', onResize)
   }, [])
 
-  // Prevent body scroll when drawer is open
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? 'hidden' : ''
     return () => { document.body.style.overflow = '' }
@@ -464,17 +475,14 @@ export default function Navbar() {
     >
       <div className="flex absolute border h-24 w-[3000px] -left-96 border-white/20" />
 
-      {/* Navbar row */}
       <div className="relative flex items-center h-[72px] lg:h-[88px] px-6 sm:px-10 lg:px-14 mx-auto max-w-7xl">
 
-        {/* Logo */}
         <div className="flex-shrink-0 mr-4 lg:mr-8">
           <Link href="/">
             <Image src={logo} alt="Instinct Logo" width={56} height={56} className="lg:w-[72px] lg:h-[72px]" />
           </Link>
         </div>
 
-        {/* Desktop nav links */}
         <ul className="hidden lg:flex h-full items-stretch font-montserrat font-medium flex-1">
           {navItems.map((item) => {
             const isMenuOpen = activeMenu === item
@@ -500,8 +508,6 @@ export default function Navbar() {
                   `}
                 >
                   {item}
-
-                  {/* Hover indicator: amber bar (shown on hover or when dropdown is open) */}
                   <span
                     className={`
                       absolute bottom-0 left-0 right-0 h-[3px] bg-amber-500 transition-opacity duration-150
@@ -513,19 +519,17 @@ export default function Navbar() {
             )
           })}
 
-          {/* Divider + Contact / Vendor */}
-       <li className="flex items-center ml-2 relative">
-  <span className="absolute left-0 top-0 h-[95px] w-px bg-white/20" />
-  <Link href="/contact" className="pl-4 xl:pl-5 pr-4 xl:pr-5 text-[14px] xl:text-[15px] text-white whitespace-nowrap hover:text-amber-400 transition-colors duration-200">
-    Contact us
-  </Link>
-  <Link href="/vendor" className="px-4 xl:px-5 text-[14px] xl:text-[15px] text-white whitespace-nowrap hover:text-amber-400 transition-colors duration-200">
-    Become a vendor
-  </Link>
-</li>
+          <li className="flex items-center ml-2 relative">
+            <span className="absolute left-0 top-0 h-[95px] w-px bg-white/20" />
+            <Link href="/contact" className="pl-4 xl:pl-5 pr-4 xl:pr-5 text-[14px] xl:text-[15px] text-white whitespace-nowrap hover:text-amber-400 transition-colors duration-200">
+              Contact us
+            </Link>
+            <Link href="/vendor" className="px-4 xl:px-5 text-[14px] xl:text-[15px] text-white whitespace-nowrap hover:text-amber-400 transition-colors duration-200">
+              Become a vendor
+            </Link>
+          </li>
         </ul>
 
-        {/* Mobile right: contact link + hamburger */}
         <div className="flex lg:hidden items-center gap-4 ml-auto">
           <Link href="/contact" className="text-white text-sm font-medium hidden sm:block hover:text-amber-400 transition-colors">
             Contact us
@@ -540,7 +544,6 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Desktop mega dropdown  */}
       {activeMenu && menuComponents[activeMenu] && (
         <div
           className="hidden lg:block absolute top-full left-0 w-full bg-white shadow-2xl z-50 overflow-hidden"
@@ -551,7 +554,6 @@ export default function Navbar() {
         </div>
       )}
 
-      {/* Mobile drawer */}
       <MobileDrawer open={mobileOpen} onClose={() => setMobileOpen(false)} />
     </motion.div>
   )

@@ -1,5 +1,6 @@
 'use client'
 import React, { useState } from 'react'
+import {  useEffect } from 'react'
 import { useSearchParams } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import ProjectCard, { type Project } from './Projectscard'
@@ -17,19 +18,48 @@ const filters = [
   { id: 'flooring', label: 'Flooring' },
   { id: 'reconstruction-upgrade', label: 'Reconstruction and Upgrade' },
 ]
+// ─── Filter Button ────────────────────────────────────────────────────────────
+function FilterButton({
+  label,
+  isActive,
+  onClick,
+}: {
+  label: string
+  isActive: boolean
+  onClick: () => void
+}) {
+  const [isHovered, setIsHovered] = useState(false)
 
+  return (
+    <button
+      onClick={onClick}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      className="px-4 py-2 text-sm rounded-lg cursor-pointer whitespace-nowrap flex-shrink-0 border-0"
+      style={{
+        background: isActive ? '#fde68a' : isHovered ? '#f2d852' : '#ebebea',
+        color: isActive ? '#92400e' : isHovered ? '#333' : '#555',
+        fontWeight: isActive || isHovered ? 500 : 400,
+        fontFamily: 'inherit',
+        transition: 'background 0.18s, color 0.18s',
+      }}
+    >
+      {label}
+    </button>
+  )
+}
 export default function ProjectsGridClient({ projects: initialProjects }: { projects: Project[] }) {
   const searchParams = useSearchParams()
   const [activeFilter, setActiveFilter] = useState('all')
   const projects = initialProjects
 
   // Handle filter changes
-  React.useEffect(() => {
-    const filter = searchParams.get('filter')
-    if (filter && filters.some(f => f.id === filter)) {
-      setActiveFilter(filter)
-    }
-  }, [searchParams])
+ useEffect(() => {
+  const category = searchParams.get('category') // ← was 'filter'
+  if (category && filters.some(f => f.id === category)) {
+    setActiveFilter(category)
+  }
+}, [searchParams])
 
   const displayed =
     activeFilter === 'all'
@@ -59,19 +89,12 @@ export default function ProjectsGridClient({ projects: initialProjects }: { proj
             {filters.map((f) => {
               const isActive = activeFilter === f.id
               return (
-                <button
+                <FilterButton
                   key={f.id}
-                  onClick={() => setActiveFilter(f.id)}
-                  className="px-4 py-2 text-sm rounded-lg transition-colors duration-150 cursor-pointer whitespace-nowrap flex-shrink-0 border-0"
-                  style={{
-                    background: isActive ? '#fde68a' : '#ebebea',
-                    color: isActive ? '#92400e' : '#555',
-                    fontWeight: isActive ? 500 : 400,
-                    fontFamily: 'inherit',
-                  }}
-                >
-                  {f.label}
-                </button>
+    label={f.label}
+    isActive={activeFilter === f.id}
+    onClick={() => setActiveFilter(f.id)}
+  />
               )
             })}
           </div>

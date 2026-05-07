@@ -5,14 +5,14 @@ import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 const img1 = "/images/project1.jpg";
 const img2 = "/images/project2.png";
-const img3 = "/images/project3.jpg";
+const img3 = "/images/project3.png";
 const img4 = "/images/chisco-3.jpg";
 const img5 = "/images/project1.png";
 const img6 = "/images/project2.png";
-const img7 = "/images/project3.jpg";
+const img7 = "/images/project3.png";
 const img8 = "/images/project1.png";
 const img9 = "/images/project2.png";
-const img10 = "/images/project3.jpg";
+const img10 = "/images/project3.png";
 import Btn from "./Btn";
 
 type CategoryKey = "residential" | "commercial" | "infrastructure" | "renovation";
@@ -24,7 +24,7 @@ const categories: { label: string; key: CategoryKey }[] = [
   { label: "Renovation & Reconstruction", key: "renovation" },
 ];
 
-type Project = { location: string; title: string; details: string; image: any };
+type Project = { location: string; title: string; details: string; image: any; id: number };
 
 const projectCollections: Record<CategoryKey, Project[]> = {
   residential: [
@@ -33,18 +33,21 @@ const projectCollections: Record<CategoryKey, Project[]> = {
       title: "A Block of 6-Unit Luxury Flats",
       details: "Premium luxury flats built to the highest standards, blending elegant design with structural integrity and long-term performance.",
       image: img1,
+      id: 5,
     },
     {
       location: "Oduduwa Way, Ikeja GRA",
       title: "A Block of 13 Units of 3-Bedroom Flats",
       details: "Thoughtfully designed 3-bedroom flats offering generous living spaces, abundant natural light, and privacy within a serene GRA setting.",
       image: img2,
+      id: 4,
     },
     {
-      location: "Lekki Peninsula II",
-      title: "4-Bedroom Terrace with 1-Room BQ",
+      location: "OMOLE PHASE 1",
+      title: "2 BLOCKS OF 5 AND 4 BEDROOM DUPLEX",
       details: "Stylish terrace home featuring spacious living areas, modern finishes, and a self-contained boys' quarters in one of Lekki's prime addresses.",
       image: img3,
+      id: 1,
     },
   ],
   commercial: [
@@ -53,6 +56,7 @@ const projectCollections: Record<CategoryKey, Project[]> = {
       title: "Chisco Mall",
       details: "A vibrant commercial destination offering diverse retail spaces, flexible gallery units, and beautifully landscaped public plazas.",
       image: img4,
+      id: 9,
     },
   ],
   infrastructure: [
@@ -61,12 +65,14 @@ const projectCollections: Record<CategoryKey, Project[]> = {
       title: "Bridge Expansion & Access Interchange",
       details: "Large-scale bridge expansion improving traffic flow and connectivity through modern structural engineering and advanced safety systems.",
       image: img7,
+      id: 9,
     },
     {
       location: "Port Harcourt, Nigeria",
       title: "Urban Transit Depot Upgrade",
       details: "Comprehensive upgrade of a major transit depot delivering improved passenger facilities, smart routing systems, and enhanced operational resilience.",
       image: img8,
+      id: 10,
     },
   ],
   renovation: [
@@ -75,12 +81,14 @@ const projectCollections: Record<CategoryKey, Project[]> = {
       title: "Heritage Hotel Restoration",
       details: "A careful restoration of a historic hotel property, preserving its architectural character while upgrading interiors to meet modern hospitality standards.",
       image: img9,
+      id: 11,
     },
     {
       location: "Kaduna, Nigeria",
       title: "Industrial Warehouse Retrofit",
       details: "Full retrofit of an existing industrial warehouse, adapting the structure for improved logistics flow, storage capacity, and operational efficiency.",
       image: img10,
+      id: 12,
     },
   ],
 };
@@ -147,7 +155,7 @@ function MobileProjects({
                 {projects[activeCard].details}
               </p>
               <div className="mt-4">
-                <Btn text="View Details"  href={'/ourprojects/1'} />
+                <Btn text="View Details"  href={'/ourproject/1'} />
               </div>
             </div>
           </motion.div>
@@ -317,7 +325,7 @@ function DesktopProjects({
                     {project.details}
                   </p>
                 </div>
-                <Btn text="View Details"  href={'/ourprojects/1'} />
+                <Btn text="View Details"  href={'/ourproject/'+project.id} />
               </div>
             </div>
           ))}

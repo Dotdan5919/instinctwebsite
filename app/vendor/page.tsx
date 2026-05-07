@@ -27,7 +27,7 @@ export default function page() {
                      <div className="  absolute inset-0 z-0 bg-linear-to-r from-[#000000] via-[#0a0f1a]/75 to-[#6666664D]/10 pointer-events-none  w-screen " />
        
                    </div>
-                   <div className="flex flex-col px-30 bg-white">
+                   <div className="flex flex-col lg:px-30 bg-white">
 
                    <VendorHero />
                    </div>
@@ -36,7 +36,7 @@ export default function page() {
 <div className="flex flex-col bg-white">
   <WhoWeWorkWith />
   </div>
-                   <div className="flex flex-col px-30 bg-white">
+                   <div className="flex flex-col lg:px-30 bg-white">
       <VendorRequirements />
       <VendorProcess />
 </div>

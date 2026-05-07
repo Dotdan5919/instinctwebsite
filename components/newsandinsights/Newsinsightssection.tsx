@@ -10,7 +10,7 @@ const blog_1 = "/images/news&insights/blog_1.jpg"
 const blog_2 = "/images/news&insights/blog_2.jpg"
 const blog_3 = "/images/news&insights/blog_3.jpg"
 
-const tabs = [ 'News', 'Reports', 'Blogs', 'White Papers']
+const tabs = [ 'Blogs', 'Reports']
 
 const articles = [
   {
@@ -122,11 +122,11 @@ interface NewsInsightsSectionProps {
   defaultTab?: string
 }
 
-export default function NewsInsightsSection({ defaultTab = 'News' }: NewsInsightsSectionProps) {
+export default function NewsInsightsSection({ defaultTab = 'Blogs' }: NewsInsightsSectionProps) {
   const [activeTab, setActiveTab] = useState(defaultTab)
 
-  const filtered = activeTab === 'News'
-    ? articles.filter((a) => a.tab === 'News' )
+  const filtered = activeTab === 'Blogs'
+    ? articles.filter((a) => a.tab === 'Blogs')
     : articles.filter((a) => a.tab === activeTab)
 
   return (

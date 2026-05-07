@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Btn from '../Btn'
 
 
-const categories = ['All Roles', 'Internship', 'Apprenticeship', 'New graduates and students', 'Professionals']
+const categories = [ 'Internship', 'Apprenticeship', 'New graduates and students', 'Professionals']
 
 const jobs = [
   { id: 1,  title: 'Site Project Manager', location: 'Epe, Lagos state.', date: '4/23/2026', category: 'Professionals' },
@@ -25,9 +25,9 @@ const jobs = [
 ]
 
 export default function AvailableOpenings() {
-  const [activeCategory, setActiveCategory] = useState('All Roles')
+  const [activeCategory, setActiveCategory] = useState('Internship')
 
-  const filtered = activeCategory === 'All Roles'
+  const filtered = activeCategory === 'Internship'
     ? jobs
     : jobs.filter((job) => job.category === activeCategory)
 
