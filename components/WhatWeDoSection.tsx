@@ -17,7 +17,7 @@ const services = [
     name: "Construction Management",
     description:
       "We provide coordinated oversight across all phases of construction — aligning design, resources, and site execution to deliver projects with precision and control.",
-    link: "Learn about Construction Management with Instinct",
+    link: "Learn about Construction Management",
   },
   {
     num: "02",
@@ -152,7 +152,7 @@ export default function WhatWeDoSection() {
                 >
                   {services[active].description}
                 </p>
-                <div className="mt-8">
+                <div className="mt-8 ">
                   <Btn text={services[active].link}  href="/whatwedo" />
                 </div>
               </div>

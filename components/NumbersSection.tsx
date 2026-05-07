@@ -153,7 +153,7 @@ export default function NumbersSection() {
               unique expertise and experience, Instinct is purpose-built to
               tackle these challenges.
             </p>
-            <div className="mt-8">
+            <div className="mt-8 sm:scale-100 scale-90 sm:ml-0 -ml-5 ">
               <Btn text="Learn more about our journey"  href="/ourjourney"/>
             </div>
           </motion.div>
