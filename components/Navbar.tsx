@@ -128,8 +128,7 @@ function OurCompanyMenu() {
           { label: 'What we do', href: '/whatwedo' },
           { label: 'Our Leadership', href: '/ourleadership' },
           { label: 'Our Values', href: '/ourcompany#our-values' },
-          { label: 'Our Clients', href: '/ourcompany#clients' },
-          { label: 'Our Journey', href: '/ourjourney' },
+                    { label: 'Our Journey', href: '/ourjourney' },
         ]} />
         <LinkColumn heading="Our Culture" items={[
           { label: 'Nigerian Content Execution strategy', href: '/ourcompany#nigerian-content' },
@@ -248,7 +247,7 @@ function NewsInsightsMenu() {
         ]} />
         <div className="flex-1 px-6 lg:px-10 py-6 lg:py-10">
           <h3 className="text-gray-900 text-sm lg:text-base font-semibold mb-4 lg:mb-6">Featured Insights</h3>
-          <div className="grid grid-cols-2 lg:grid-cols-2 gap-4 lg:gap-5">
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
             <ContentCard
               title="Why Preconstruction Defines the Success of Every Project"
               linkLabel="Read article"

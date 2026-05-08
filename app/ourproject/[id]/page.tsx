@@ -10,9 +10,6 @@ const define = "/images/define.jpg"
 const accountability = "/images/accountability.jpg"
 const expertise_hero = "/images/expertise_hero.jpg"
 const approach = "/images/project/approach.png"
-const project_1 = "/images/whatwedo/building_con_1.jpg"
-const project_2 = "/images/whatwedo/construction_1.jpg"
-const project_3 = "/images/whatwedo/flooring_1.jpg"
 import { getAllProjects, getProjectImages } from '@/lib/projects'
 
 export async function generateStaticParams() {
@@ -30,6 +27,19 @@ export default async function page({ params }: { params: Promise<{ id: string }>
   const projects = getAllProjects()
   const project = projects.find(p => p.id === projectId)
   const projectTitle = project?.title || 'Project'
+  
+  // Get related projects (exclude current project)
+  const relatedProjects = projects
+    .filter(p => p.id !== projectId)
+    .slice(0, 3)
+    .map(p => ({
+      id: p.id,
+      title: p.title,
+      location: 'Lagos, Nigeria',
+      category: 'construction',
+      status: 'active' as const,
+      image: p.images.length > 0 ? `/images/project/PROJECTS/${encodeURIComponent(p.folderName)}/${p.images[0]}` : undefined,
+    }))
 
   return (
    <div className="flex flex-col relative min-h-screen bg-slate-950 text-white ">
@@ -86,32 +96,7 @@ data={{
         galleryImages: galleryImages.length > 0 ? galleryImages : [expertise_hero],
  
         // ── Related projects ───────────────────────────────────────────────
-        relatedProjects: [
-          {
-            id: '1',
-            title: 'Block of 8 Luxury Flats',
-            location: 'Ajah, Lagos',
-            category: 'building-construction',
-            status: 'active',
-            image: project_1,
-          },
-          {
-            id: '2',
-            title: 'Block of 8 Luxury Flats',
-            location: 'Ajah, Lagos',
-            category: 'building-construction',
-            status: 'active',
-            image: project_2,
-          },
-          {
-            id: '3',
-            title: "St. Peter's Catholic Churc...",
-            location: 'Langbasa, Ajah',
-            category: 'building-construction',
-            status: 'active',
-            image: project_3,
-          },
-        ],
+        relatedProjects: relatedProjects,
       }}
 
 

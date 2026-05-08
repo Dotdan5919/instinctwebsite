@@ -3,7 +3,14 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Btn from '../Btn'
-const Timeline_1 = "/images/Discipline.jpg"    
+const Timeline_1 = "/images/ourjourney/Journey_1.jpg"  
+const Timeline_2 = "/images/ourjourney/Journey_2.jpg"  
+const Timeline_3 = "/images/ourjourney/Journey_3.jpg"  
+const Timeline_4 = "/images/ourjourney/Journey_4.jpg"  
+const Timeline_5 = "/images/ourjourney/Journey_5.jpg"  
+
+  
+  
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 const milestones = [
@@ -22,7 +29,7 @@ const milestones = [
       'Delivery of road construction within LSDPC Estate, Iba, and institutional projects including banking facilities and residential developments across Lagos and other states.',
       "This phase marked the company's expansion into infrastructure and multi-sector project delivery.",
     ],
-    image: Timeline_1,
+    image: Timeline_2,
   },
   {
     year: ['2014', 'To', '2015'],
@@ -31,7 +38,7 @@ const milestones = [
       'Execution of drainage systems, structural works, and high-end residential developments including luxury duplexes and estate projects in Lagos.',
       'Demonstrated capability in managing technically demanding and multi-phase projects.',
     ],
-    image: Timeline_1,
+    image: Timeline_3,
   },
   {
     year: ['2016', 'To', '2018'],
@@ -40,7 +47,7 @@ const milestones = [
       'Delivery of multiple residential developments, including duplexes, apartment blocks, and renovation projects across Lekki, Ajah, Magodo, and surrounding areas.',
       'This period reflects strong growth in residential and mixed-use project execution.',
     ],
-    image: Timeline_1,
+    image: Timeline_4,
   },
   {
     year: ['2020'],
@@ -48,7 +55,7 @@ const milestones = [
     paragraphs: [
       'Each phase of our journey has strengthened our ability to deliver — refining the systems, expertise, and coordination that define our work today.',
     ],
-    image: Timeline_1,
+    image: Timeline_5,
   },
 ]
 

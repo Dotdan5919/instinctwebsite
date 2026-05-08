@@ -193,71 +193,132 @@ export default function OurExpertise() {
     <section className="bg-white font-montserrat">
 
       {/* ── FILTER BAR ── */}
-      <div className="border-b border-slate-200">
-        <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-14">
-          <style>{`
-            #filter-bar {
-              overflow-x: auto;
-              scrollbar-width: none;
-              -ms-overflow-style: none;
-            }
-            #filter-bar::-webkit-scrollbar { display: none; }
-          `}</style>
-      
+{/* ── FILTER BAR ── */}
+<div className="border-b border-slate-200">
+  <div className="mx-auto max-w-7xl relative">
+    <style>{`
+      #filter-bar {
+        overflow-x: auto;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+      }
+      #filter-bar::-webkit-scrollbar { display: none; }
+    `}</style>
 
-<div id="filter-bar" className="flex gap-2 py-5" style={{ flexWrap: 'nowrap' }}>
-  {/* ── All button ── */}
-  {(() => {
-    const isActive = activeFilter === 'all'
-    const isHovered = hoveredFilter === 'all'
-    return (
-      <button
-        key="all"
-        onClick={() => setActiveFilter('all')}
-        onMouseEnter={() => setHoveredFilter('all')}
-        onMouseLeave={() => setHoveredFilter(null)}
-        className="px-4 py-2 text-sm rounded-lg cursor-pointer whitespace-nowrap flex-shrink-0 border-0 flex items-center gap-2"
-        style={{
-          background: isActive ? '#fde68a' : isHovered ? '#e0e0de' : '#ebebea',
-          color: isActive ? '#92400e' : isHovered ? '#333' : '#555',
-          fontFamily: 'inherit',
-          fontWeight: isActive || isHovered ? 500 : 400,
-          transition: 'background 0.18s, color 0.18s, font-weight 0.18s',
-        }}
-      >
-        All
-       
-      </button>
-    )
-  })()}
+    <div
+      id="filter-bar"
+      className="flex gap-2 py-5 px-6 sm:px-10 lg:px-14"
+      style={{ flexWrap: 'nowrap' }}
+      onScroll={(e) => {
+        const el = e.currentTarget
+        const left = document.getElementById('scroll-arrow-left')
+        const right = document.getElementById('scroll-arrow-right')
+        const atStart = el.scrollLeft <= 4
+        const atEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 4
+        if (left) {
+          left.style.opacity = atStart ? '0' : '1'
+          left.style.pointerEvents = atStart ? 'none' : 'auto'
+        }
+        if (right) {
+          right.style.opacity = atEnd ? '0' : '1'
+          right.style.pointerEvents = atEnd ? 'none' : 'auto'
+        }
+      }}
+    >
+      {/* All button */}
+      {(() => {
+        const isActive = activeFilter === 'all'
+        const isHovered = hoveredFilter === 'all'
+        return (
+          <button
+            key="all"
+            onClick={() => setActiveFilter('all')}
+            onMouseEnter={() => setHoveredFilter('all')}
+            onMouseLeave={() => setHoveredFilter(null)}
+            className="px-4 py-2 text-sm rounded-lg cursor-pointer whitespace-nowrap flex-shrink-0 border-0 flex items-center gap-2"
+            style={{
+              background: isActive ? '#fde68a' : isHovered ? '#e0e0de' : '#ebebea',
+              color: isActive ? '#92400e' : isHovered ? '#333' : '#555',
+              fontFamily: 'inherit',
+              fontWeight: isActive || isHovered ? 500 : 400,
+              transition: 'background 0.18s, color 0.18s, font-weight 0.18s',
+            }}
+          >
+            All
+          </button>
+        )
+      })()}
 
-  {/* ── Category buttons ── */}
-  {categories.map((cat) => {
-    const isActive = activeFilter === cat.id
-    const isHovered = hoveredFilter === cat.id
-    return (
-      <button
-        key={cat.id}
-        onClick={() => setActiveFilter(cat.id)}
-        onMouseEnter={() => setHoveredFilter(cat.id)}
-        onMouseLeave={() => setHoveredFilter(null)}
-        className="px-4 py-2 text-sm rounded-lg cursor-pointer whitespace-nowrap flex-shrink-0 border-0 flex items-center gap-2"
-        style={{
-          background: isActive ? '#fde68a' : isHovered ? '#f2d852' : '#ebebea',
-          color: isActive ? '#92400e' : isHovered ? '#333' : '#555',
-          fontFamily: 'inherit',
-          fontWeight: isActive || isHovered ? 500 : 400,
-          transition: 'background 0.18s, color 0.18s, font-weight 0.18s',
-        }}
-      >
-        {cat.label}
-      
-      </button>
-    )
-  })}
-</div>
-        </div>
+      {/* Category buttons */}
+      {categories.map((cat) => {
+        const isActive = activeFilter === cat.id
+        const isHovered = hoveredFilter === cat.id
+        return (
+          <button
+            key={cat.id}
+            onClick={() => setActiveFilter(cat.id)}
+            onMouseEnter={() => setHoveredFilter(cat.id)}
+            onMouseLeave={() => setHoveredFilter(null)}
+            className="px-4 py-2 text-sm rounded-lg cursor-pointer whitespace-nowrap flex-shrink-0 border-0 flex items-center gap-2"
+            style={{
+              background: isActive ? '#fde68a' : isHovered ? '#f2d852' : '#ebebea',
+              color: isActive ? '#92400e' : isHovered ? '#333' : '#555',
+              fontFamily: 'inherit',
+              fontWeight: isActive || isHovered ? 500 : 400,
+              transition: 'background 0.18s, color 0.18s, font-weight 0.18s',
+            }}
+          >
+            {cat.label}
+          </button>
+        )
+      })}
+    </div>
+
+    {/* ── Left arrow (hidden at start) ── */}
+    <div
+      id="scroll-arrow-left"
+      className="absolute left-0 top-0 bottom-0 flex items-center pl-2 transition-opacity duration-300"
+      style={{
+        background: 'linear-gradient(to left, transparent, white 40%)',
+        paddingRight: '3rem',
+        opacity: 0,
+        pointerEvents: 'none',
+      }}
+      onClick={() => {
+        const el = document.getElementById('filter-bar')
+        if (el) el.scrollBy({ left: -160, behavior: 'smooth' })
+      }}
+    >
+      <div className="w-8 h-8 rounded-full bg-white border border-slate-200 shadow-sm flex items-center justify-center cursor-pointer hover:bg-slate-50 transition-colors">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <path d="M9 3L5 7l4 4" stroke="#555" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
       </div>
+    </div>
+
+    {/* ── Right arrow (visible at start) ── */}
+    <div
+      id="scroll-arrow-right"
+      className="absolute right-0 top-0 bottom-0 flex items-center pr-2 transition-opacity duration-300"
+      style={{
+        background: 'linear-gradient(to right, transparent, white 40%)',
+        paddingLeft: '3rem',
+        pointerEvents: 'auto',
+      }}
+      onClick={() => {
+        const el = document.getElementById('filter-bar')
+        if (el) el.scrollBy({ left: 160, behavior: 'smooth' })
+      }}
+    >
+      <div className="w-8 h-8 rounded-full bg-white border border-slate-200 shadow-sm flex items-center justify-center cursor-pointer hover:bg-slate-50 transition-colors">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <path d="M5 3l4 4-4 4" stroke="#555" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      </div>
+    </div>
+
+  </div>
+</div>
 
       {/* ── CATEGORY SECTIONS ── */}
       <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-14 py-10">
