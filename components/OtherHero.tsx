@@ -1,7 +1,6 @@
 'use client'
 import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import Navbar from './Navbar'
 
 const steps = [
   { num: '01', label: 'Defined Before Build' },
@@ -37,28 +36,23 @@ export default function OtherHero({ title, subtitle }: { title?: string; subtitl
       viewport={{ once: true }}
       className="px-6 sm:px-10 md:px-14 lg:px-16 pt-16 mx-auto w-full max-w-7xl relative overflow-hidden flex flex-col items-center bg-cover bg-center transition-all duration-1000 z-10"
     >
-      {/* Dark overlay */}
       <div className="absolute inset-0 z-10" />
 
-      {/* Content */}
-      <div className="relative z-20 w-full mt-16 sm:mt-20 md:mt-24 h-auto min-h-[200px] sm:min-h-[260px] md:min-h-[300px] flex flex-col justify-end">
+      <div className="relative z-20 w-full mt-10 sm:mt-20 md:mt-24 min-h-0 sm:min-h-[260px] md:min-h-[300px] flex flex-col justify-end">
 
-        {/* Eyebrow label */}
         <p className="font-montserrat text-amber-500 text-sm sm:text-base">
           {title}
         </p>
 
-        {/* Headline — scales fluidly from mobile to desktop */}
         <h1
           className="
-            font-bebas uppercase leading-none tracking-wide mb-6 sm:mb-8 text-white pt-4 sm:pt-6 md:pt-8
-            text-[clamp(48px,12vw,100px)]
+            font-bebas uppercase leading-none tracking-wide mb-3 sm:mb-8 text-white pt-2 sm:pt-6 md:pt-8
+            text-[clamp(36px,10vw,100px)]
           "
         >
           {subtitle}
         </h1>
       </div>
-       
     </motion.section>
   )
 }

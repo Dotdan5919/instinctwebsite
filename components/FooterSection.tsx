@@ -19,31 +19,35 @@ export default function FooterSection() {
       }}
     >
       {/* CTA Row */}
-      <motion.div
-        initial={{ opacity: 0, y: -50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-        className="mx-auto max-w-7xl px-6 pt-12 pb-10 sm:px-10 lg:px-14"
-      >
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-          <div>
-            <div className="flex items-center gap-5">
-            <h2 className="font-bebas text-4xl uppercase text-white sm:text-5xl">
-              READY TO START A CONVERSATION ?
-            </h2>
-            
-            <Btn text="Contact Us" href="/contact" />
-            </div>
-          
-            <p className="mt-2 text-sm text-white">
-              Let&apos;s discuss how we can collaborate
-            </p>
-            
-          </div>
-          
+   {/* CTA Row */}
+<motion.div
+  initial={{ opacity: 0, y: -50 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6 }}
+  viewport={{ once: true }}
+  className="mx-auto max-w-7xl px-6 pt-12 pb-10 sm:px-10 lg:px-14"
+>
+  <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+    <div>
+      <div className="flex items-center gap-5">
+        <h2 className="font-bebas text-4xl uppercase text-white sm:text-5xl">
+          READY TO START A CONVERSATION ?
+        </h2>
+        {/* Desktop only */}
+        <div className="hidden sm:block">
+          <Btn text="Contact Us" href="/contact" />
         </div>
-      </motion.div>
+      </div>
+      <p className="mt-2 text-sm text-white">
+        Let&apos;s discuss how we can collaborate
+      </p>
+      {/* Mobile only */}
+      <div className="mt-4 sm:hidden">
+        <Btn text="Contact Us" href="/contact" />
+      </div>
+    </div>
+  </div>
+</motion.div>
 
       {/* Divider */}
       <div className="border-t border-white/10" />
@@ -63,31 +67,27 @@ export default function FooterSection() {
           </div>
 
           {/* Nav links */}
-        {/* Nav links */}
-<nav className="hidden items-center gap-8 lg:flex">
-  <a href="/ourcompany" className="text-sm text-white hover:text-yellow-500 transition-colors">Our Company</a>
-  <a href="/whatwedo" className="text-sm text-white hover:text-yellow-500 transition-colors">Our Services</a>
-  <a href="/ourproject" className="text-sm text-white hover:text-yellow-500 transition-colors">Our Projects</a>
-  <a href="/newsandinsights" className="text-sm text-white hover:text-yellow-500 transition-colors">News & Insights</a>
-  <a href="/career" className="text-sm text-white hover:text-yellow-500 transition-colors">Careers</a>
-  <a href="#" className="text-sm text-white hover:text-yellow-500 transition-colors">Resources</a>
-</nav>
+          <nav className="hidden items-center gap-8 lg:flex">
+            <a href="/ourcompany" className="text-sm text-white hover:text-yellow-500 transition-colors">Our Company</a>
+            <a href="/whatwedo" className="text-sm text-white hover:text-yellow-500 transition-colors">Our Services</a>
+            <a href="/ourproject" className="text-sm text-white hover:text-yellow-500 transition-colors">Our Projects</a>
+            <a href="/newsandinsights" className="text-sm text-white hover:text-yellow-500 transition-colors">News & Insights</a>
+            <a href="/career" className="text-sm text-white hover:text-yellow-500 transition-colors">Careers</a>
+            <a href="#" className="text-sm text-white hover:text-yellow-500 transition-colors">Resources</a>
+          </nav>
 
           {/* Social icons */}
           <div className="flex items-center gap-3">
-            {/* LinkedIn */}
             <a href="#" className="flex h-9 w-9 items-center justify-center rounded bg-white/10 hover:bg-white/20 transition-colors">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/>
               </svg>
             </a>
-            {/* Facebook */}
             <a href="#" className="flex h-9 w-9 items-center justify-center rounded bg-white/10 hover:bg-white/20 transition-colors">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
               </svg>
             </a>
-            {/* X / Twitter */}
             <a href="#" className="flex h-9 w-9 items-center justify-center rounded bg-white/10 hover:bg-white/20 transition-colors">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.258 5.63 5.906-5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
@@ -100,33 +100,23 @@ export default function FooterSection() {
       {/* Divider */}
       <div className="border-t border-white/10" />
 
-      {/* Info Row — 3 columns */}
+      {/* Info Row */}
       <div className="mx-auto max-w-7xl px-6 py-10 sm:px-10 lg:px-14">
         <div className="grid gap-10 lg:grid-cols-3">
-
-          {/* Col 1 — Office */}
           <div>
             <p className="text-sm font-bold text-white">Office</p>
             <p className="mt-3 text-sm leading-6 text-white">
               6, Abosede Odebowale Close, Nepa B/ Stop, Ifako Gbagada, Lagos State.
             </p>
             <p className="mt-4 text-sm font-semibold text-white">Phone:</p>
-            <a href="tel:+2348023050847" className="block text-sm text-[#E8950A] hover:underline mt-1">
-              +2348023050847,
-            </a>
-            <a href="tel:+2348032598082" className="block text-sm text-[#E8950A] hover:underline">
-              +2348032598082
-            </a>
+            <a href="tel:+2348023050847" className="block text-sm text-[#E8950A] hover:underline mt-1">+2348023050847,</a>
+            <a href="tel:+2348032598082" className="block text-sm text-[#E8950A] hover:underline">+2348032598082</a>
           </div>
-
-          {/* Col 2 — Description */}
           <div className="flex items-start">
             <p className="text-sm leading-7 text-white">
               We operate at the intersection of engineering expertise and construction discipline — ensuring that every project is delivered with clarity, control, and measurable performance.
             </p>
           </div>
-
-          {/* Col 3 — Newsletter */}
           <div>
             <p className="text-sm leading-6 text-white">
               Subscribe to Our Newsletter to get Important News, Amazing Offers & Inside Scoops.
@@ -143,7 +133,6 @@ export default function FooterSection() {
               </button>
             </div>
           </div>
-
         </div>
       </div>
 
