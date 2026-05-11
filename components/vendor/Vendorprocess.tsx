@@ -41,7 +41,7 @@ export default function VendorProcess() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
-              className="mt-8 rounded-xl bg-[#C47F00]/85 backdrop-blur-sm px-7 py-6 max-w-2xl space-y-3"
+              className="mt-8 rounded-xl bg-[#C47F00]/85 backdrop-blur-sm px-7 py-6 max-w-2xl space-y-3 "
             >
               <p className="font-montserrat text-sm leading-6 text-white">
                 Vendor engagement is based on capability and alignment with project requirements.
@@ -54,7 +54,7 @@ export default function VendorProcess() {
                 Send a mail to{" "}
                 <a
                   href="mailto:mooladokun@instinctengineering.com"
-                  className="underline underline-offset-2 text-white/90 hover:text-white transition-colors"
+                  className="underline underline-offset-2 text-white/90 hover:text-white transition-colors break-all"
                 >
                   mooladokun@instinctengineering.com
                 </a>
