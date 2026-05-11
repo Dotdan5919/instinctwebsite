@@ -40,26 +40,25 @@ export default function AvailableOpenings() {
           AVAILABLE OPENINGS
         </h2>
 
-        {/* Filter tabs */}
-        <div className="flex flex-wrap gap-3 mb-10">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setActiveCategory(cat)}
-              className={`
-                px-5 py-2.5 rounded-lg text-sm font-montserrat font-medium
-                 transition-all duration-200
-                ${activeCategory === cat
-                  ? 'bg-[#FFE3B0] text-[#593A00]'
-                  : 'bg-[#E6E6E6] text-gray-600 hover:border-[#FFE3B0] hover:text-[#593A00]'
-                }
-              `}
-            >
-              {cat}
-            </button>
-            
-          ))}
-        </div>
+       {/* Filter tabs */}
+<div className="flex gap-3 mb-10 overflow-x-auto pb-2 scrollbar-hide sm:flex-wrap">
+  {categories.map((cat) => (
+    <button
+      key={cat}
+      onClick={() => setActiveCategory(cat)}
+      className={`
+        px-5 py-2.5 rounded-lg text-sm font-montserrat font-medium whitespace-nowrap flex-shrink-0
+        transition-all duration-200
+        ${activeCategory === cat
+          ? 'bg-[#FFE3B0] text-[#593A00]'
+          : 'bg-[#E6E6E6] text-gray-600 hover:border-[#FFE3B0] hover:text-[#593A00]'
+        }
+      `}
+    >
+      {cat}
+    </button>
+  ))}
+</div>
 
         {/* Job grid */}
         {filtered.length > 0 ? (

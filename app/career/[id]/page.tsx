@@ -23,7 +23,7 @@ export default function page({ params }: { params: { id: string } }) {
         </div>
       </div>
     
-    <div className={`flex w-screen overflow-hidden flex-col bg-[url('/images/career/career2.jpg')] bg-cover bg-no-repeat bg-center min-h-screen relative`}>
+    <div className={`flex w-screen overflow-hidden flex-col bg-[url('/images/career/career2.jpg')] bg-cover bg-no-repeat bg-center min-h-[50vh] sm:min-h-screen relative`}>
         <Preheader />
         <Navbar />
         <OtherHero title="Career" subtitle={<>Build your expertise.<br /> Shape what is next.</>} />

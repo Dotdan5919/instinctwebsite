@@ -21,8 +21,8 @@ export default function OurCompany() {
   </div>
 </div>
 
-    <div className={`flex w-screen overflow-hidden flex-col bg-[url('/images/about-hero.jpg')] bg-cover bg-no-repeat bg-center min-h-screen relative`}>
-        <Preheader />
+    <div className={`flex w-screen overflow-hidden flex-col bg-[url('/images/about-hero.jpg')] bg-cover bg-no-repeat bg-center min-h-[50vh] sm:min-h-screen relative`}>
+      <Preheader />
         
         <Navbar />
 

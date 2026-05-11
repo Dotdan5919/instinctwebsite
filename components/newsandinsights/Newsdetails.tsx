@@ -154,23 +154,27 @@ export default function NewsDetailSection() {
   return (
     <section className="w-full bg-white py-16 lg:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-14 relative">
+{/* Title + intro */}
+{/* Title + intro */}
+<div className="w-full mb-8">
 
-        <div className="flex flex-col gap-4 absolute -top-50 z-10">
-          <p className='text-[#FFA500]'>News & Insights</p>
-          <div className="flex bg-[#996300]">
-            <h1 className="text-white text-2xl sm:text-[64px] leading-snug mb-6 px-8 pt-3 font-bebas uppercase">
-              {article.title}
-            </h1>
-          </div>
-        </div>
+  {/* Title block — static on mobile, absolute on lg+ */}
+  <div className="flex flex-col gap-4 lg:absolute lg:-top-50 lg:z-10 mb-6 lg:mb-0">
+    <p className="text-[#FFA500]">News & Insights</p>
+    <div className="flex bg-[#996300]">
+      <h1 className="text-white text-2xl sm:text-[64px] leading-snug mb-6 px-8 pt-3 font-bebas uppercase">
+        {article.title}
+      </h1>
+    </div>
+  </div>
 
-        {/* Title + intro */}
-        <div className="w-full mb-8">
-          
-          <p className="text-gray-600 text-sm font-montserrat leading-relaxed">
-            {article.intro}
-          </p>
-        </div>
+  {/* Spacer — only on lg+ where title is absolute */}
+  <div className="hidden lg:block lg:h-32" />
+
+  <p className="text-gray-600 text-sm font-montserrat leading-relaxed">
+    {article.intro}
+  </p>
+</div>
 
         {/* Main image */}
         <div className="relative w-full h-[320px] sm:h-[460px] overflow-hidden mb-8">

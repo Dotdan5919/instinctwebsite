@@ -2,6 +2,7 @@ import FooterSection from '@/components/FooterSection'
 import Preheader from '@/components/Preheader'
 import Navbar from '@/components/Navbar'
 import OtherHero from '@/components/OtherHero'
+import { redirect } from 'next/navigation'
 
 import React from 'react'
 import NewsDetailSection from '@/components/newsandinsights/Newsdetails'
@@ -16,7 +17,9 @@ export async function generateStaticParams() {
 }
 
 export default function page({ params }: { params: { id: string } }) {
+   redirect('/blog');
   return (
+
      <div className="flex flex-col relative min-h-screen bg-slate-950 text-white">
          <div className="hidden lg:block absolute inset-0 z-10 pointer-events-none">
            <div className="mx-auto max-w-7xl h-full px-14 xl:px-24 relative">
@@ -25,7 +28,7 @@ export default function page({ params }: { params: { id: string } }) {
          </div>
       
       
-        <div className={`flex w-screen overflow-hidden flex-col bg-[url('/images/career/career2.jpg')] bg-cover bg-no-repeat bg-center min-h-screen relative`}>
+        <div className={`flex w-screen overflow-hidden flex-col bg-[url('/images/career/career2.jpg')] bg-cover bg-no-repeat bg-center min-h-[50vh] sm:min-h-screen relative`}>
            <Preheader />
            <Navbar />
              <div className="  absolute inset-0 z-0 bg-linear-to-r from-[#000000] via-[#0a0f1a]/75 to-[#6666664D]/10 pointer-events-none  w-screen " />

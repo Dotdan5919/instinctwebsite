@@ -4,8 +4,10 @@ import Preheader from '@/components/Preheader'
 import Navbar from '@/components/Navbar'
 import FooterSection from '@/components/FooterSection'
 import NewsInsightsSection from '@/components/newsandinsights/Newsinsightssection'
+import { redirect } from 'next/navigation'
 
 export default function page() {
+  redirect('/blog');
   return (
         <div className="flex flex-col relative min-h-screen bg-slate-950 text-white">
               <div className="hidden lg:block absolute inset-0 z-10 pointer-events-none">
@@ -15,7 +17,7 @@ export default function page() {
           </div>
         </div>
              
-                    <div className={`flex w-screen overflow-hidden flex-col bg-[url('/images/news&insights/newsandinsight.jpg')] bg-cover bg-no-repeat bg-center min-h-screen relative`}>
+                    <div className={`flex w-screen overflow-hidden flex-col bg-[url('/images/news&insights/newsandinsight.jpg')] bg-cover bg-no-repeat bg-center min-h-[50vh] sm:min-h-screen relative`}>
                       <Preheader />
                       
                       <Navbar />

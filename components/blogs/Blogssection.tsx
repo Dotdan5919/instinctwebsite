@@ -89,12 +89,12 @@ const relatedBlogs = [
 // ── Main component ────────────────────────────────────────────────────────────
 export default function BlogDetailSection() {
   return (
-    <section className="w-full bg-white text-black lg:px-24 px-16">
+    <section className="w-full bg-white text-black ">
 
  
 
       {/* ══ ARTICLE BODY ═════════════════════════════════════════════════════ */}
-      <div className="w-full mx-auto px-4 sm:px-8 lg:px-14 py-12 flex flex-col gap-5 relative">
+      <div className="w-full mx-auto px-4 sm:px-8 lg:px-24 py-12 flex flex-col gap-5 relative">
 <div className="absolute -top-40 left-0 w-full z-10 ">
           <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-14 pb-10">
             <span className="font-montserrat text-amber-400 text-xs font-semibold tracking-widest uppercase">
@@ -110,7 +110,8 @@ export default function BlogDetailSection() {
             </div>
           </div>
         </div>
-        <div className="flex p-10 h-20"></div>
+       
+        <div className="flex sm:p-10 p-5 sm:h-20 h-14 "></div>
         {/* intro paragraphs */}
         {blogPost.intro.map((para, i) => (
           <p key={i} className="font-montserrat text-gray-700 text-sm leading-relaxed ">

@@ -34,25 +34,25 @@ export default function OtherHero({ title, subtitle }: { title?: string; subtitl
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, delay: 0.3 }}
       viewport={{ once: true }}
-      className="px-6 sm:px-10 md:px-14 lg:px-16 pt-16 mx-auto w-full max-w-7xl relative overflow-hidden flex flex-col items-center bg-cover bg-center transition-all duration-1000 z-10"
+      className=" px-6 sm:px-10 md:px-14 lg:px-16 pt-10 mb-15 mx-auto w-full max-w-7xl relative overflow-hidden flex flex-col items-center bg-cover bg-center transition-all duration-1000 z-10"
     >
       <div className="absolute inset-0 z-10" />
 
-      <div className="relative z-20 w-full mt-10 sm:mt-20 md:mt-24 min-h-0 sm:min-h-[260px] md:min-h-[300px] flex flex-col justify-end">
+     <div className="relative z-20 w-full mt-30 sm:mt-20 md:mt-24 min-h-0 sm:min-h-[260px] md:min-h-[300px]  flex flex-col justify-center sm:justify-end">
 
-        <p className="font-montserrat text-amber-500 text-sm sm:text-base">
-          {title}
-        </p>
+  <p className="font-montserrat text-amber-500 text-sm sm:text-base">
+    {title}
+  </p>
 
-        <h1
-          className="
-            font-bebas uppercase leading-none tracking-wide mb-3 sm:mb-8 text-white pt-2 sm:pt-6 md:pt-8
-            text-[clamp(36px,10vw,100px)]
-          "
-        >
-          {subtitle}
-        </h1>
-      </div>
+  <h1
+    className="
+      font-bebas uppercase leading-none tracking-wide mb-0 sm:mb-8 text-white pt-2 sm:pt-6 md:pt-8
+      text-[clamp(36px,10vw,100px)]
+    "
+  >
+    {subtitle}
+  </h1>
+</div>
     </motion.section>
   )
 }
