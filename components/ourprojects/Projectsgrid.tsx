@@ -8,17 +8,14 @@ import ProjectCard, { type Project } from './Projectscard'
 // ─── Filter categories ────────────────────────────────────────────────────────
 const filters = [
   { id: 'all', label: 'All Projects' },
-  { id: 'active', label: 'Active Projects' },
-  { id: 'preconstruction', label: 'Preconstruction' },
-  { id: 'construction-management', label: 'Construction Management' },
-  { id: 'building-construction', label: 'Building construction' },
-  { id: 'road-infrastructure', label: 'Road & Infrastructure' },
+  { id: 'residential-development', label: 'Residential Development' },
+  { id: 'commercial-development', label: 'Commercial Development' },
   { id: 'project-partnering', label: 'Project Partnering' },
-  { id: 'roofing-system', label: 'Roofing system' },
-  { id: 'flooring', label: 'Flooring' },
   { id: 'reconstruction-upgrade', label: 'Reconstruction and Upgrade' },
+  { id: 'roofing-system', label: 'Roofing System' },
+  { id: 'flooring', label: 'Flooring' },
+  { id: 'road-infrastructure', label: 'Road & Infrastructure' },
 ]
-
 export default function ProjectsGridClient({ projects: initialProjects }: { projects: Project[] }) {
   const searchParams = useSearchParams()
   const [activeFilter, setActiveFilter] = useState('all')
@@ -32,12 +29,12 @@ export default function ProjectsGridClient({ projects: initialProjects }: { proj
     }
   }, [searchParams])
 
-  const displayed =
-    activeFilter === 'all'
-      ? projects
-      : activeFilter === 'active'
-      ? projects.filter((p) => p.status === 'active')
-      : projects.filter((p) => p.category === activeFilter)
+const displayed =
+  activeFilter === 'all'
+    ? projects
+    : activeFilter === 'commercial-development' || activeFilter === 'residential-development'
+    ? projects.filter((p) => (p as any).subCategory === activeFilter)
+    : projects.filter((p) => p.category === activeFilter)
 
   return (
     <section className="bg-white pb-20">

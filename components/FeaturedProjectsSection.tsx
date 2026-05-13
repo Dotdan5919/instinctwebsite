@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 const img1 = "/images/project1.jpg";
+
 const img2 = "/images/project2.png";
 const img3 = "/images/project3.png";
 const img4 = "/images/chisco-3.jpg";
@@ -29,11 +30,11 @@ type Project = { location: string; title: string; details: string; image: any; i
 const projectCollections: Record<CategoryKey, Project[]> = {
   residential: [
     {
-      location: "Abiola Close, Shonibare Estate",
+      location: "Chisco Court",
       title: "A Block of 6-Unit Luxury Flats",
       details: "Premium luxury flats built to the highest standards, blending elegant design with structural integrity and long-term performance.",
       image: img1,
-      id: 5,
+      id: 9,
     },
     {
       location: "Oduduwa Way, Ikeja GRA",
@@ -130,22 +131,22 @@ function MobileProjects({
       {/* Cards */}
       <div className="mt-5 px-6 sm:px-10">
         <AnimatePresence mode="wait">
-          <motion.div
-            key={`${activeCategoryKey}-${activeCard}`}
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -30 }}
-            transition={{ duration: 0.35 }}
-            className="relative w-full overflow-hidden rounded-2xl"
-            style={{ height: "340px" }}
-          >
+         <motion.div
+  key={`${activeCategoryKey}-${activeCard}`}
+  initial={{ opacity: 0, x: 30 }}
+  animate={{ opacity: 1, x: 0 }}
+  exit={{ opacity: 0, x: -30 }}
+  transition={{ duration: 0.35 }}
+  className="group relative w-full overflow-hidden rounded-2xl"
+  style={{ height: "340px" }}
+>
             <Image
               src={projects[activeCard].image}
               alt={projects[activeCard].title}
               fill
               className="object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
             <div className="absolute inset-x-6 bottom-6 text-white">
               <p className="text-base font-bold text-amber-400">{projects[activeCard].location}</p>
               <p className="mt-1 text-sm font-medium leading-snug text-white/90">
@@ -314,19 +315,22 @@ function DesktopProjects({
                 fill
                 className="object-cover transition duration-700 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
-              <div className="absolute inset-x-7 bottom-8 text-white">
-                <p className="text-xl font-bold text-amber-400 sm:text-2xl">{project.location}</p>
-                <p className="mt-2 text-base font-medium text-white/90 sm:text-lg leading-snug">
-                  {project.title}
-                </p>
-                <div className="mt-3 overflow-hidden">
-                  <p className="text-sm leading-6 text-white/75 max-w-sm translate-y-4 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
-                    {project.details}
-                  </p>
-                </div>
-                <Btn text="View Details"  href={'/ourproject/'+project.id} />
-              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent opacity-0 transition-opacity duration-700 group-hover:opacity-100" />
+
+
+<div className="absolute inset-x-7 bottom-8 text-white">
+  <p className="text-xl font-bold text-amber-400 sm:text-2xl">{project.location}</p>
+  <p className="mt-2 text-base font-medium text-white/90 sm:text-lg leading-snug">
+    {project.title}
+  </p>
+  <div className="mt-3">
+    <p className="text-sm leading-6 text-white/75 max-w-sm opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+      {project.details}
+    </p>
+  </div>
+  <Btn text="View Details" href={'/ourproject/'+project.id} />
+</div>
             </div>
           ))}
         </motion.div>
@@ -399,7 +403,7 @@ export default function FeaturedProjectsSection() {
             </p>
           </div>
           <div className="flex items-center xl:justify-end">
-            <Btn text="See all Projects" href="/ourprojects" />
+            <Btn text="See all Projects" href="/ourproject" />
           </div>
         </div>
       </motion.div>

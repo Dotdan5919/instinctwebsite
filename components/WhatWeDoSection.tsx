@@ -3,35 +3,35 @@ import { useState } from "react";
 import Image from "next/image";
 import Btn from "./Btn";
 const extraordinary = "/images/extraordinary.png";
-const whatwedo1 = "/images/whatwedo1.jpg";
-const whatwedo2 = "/images/whatwedo2.jpg";
-const whatwedo3 = "/images/whatwedo3.jpg";
-const whatwedo4 = "/images/whatwedo4.jpg";
+const whatwedo1 = "/images/whatwedo3.jpg";
+const whatwedo2 = "/images/whatwedo7.jpg";
+const whatwedo7 = "/images/whatwedo4.png";
+const whatwedo4 = "/images/whatwedo6.jpg";
 const whatwedo5 = "/images/whatwedo5.jpg";
-const whatwedo6 = "/images/whatwedo6.jpg";
-const whatwedo7 = "/images/whatwedo7.jpg";
+const whatwedo6 = "/images/whatwedo2.png";
+const whatwedo3 = "/images/whatwedo1.jpg";
 
 const services = [
   {
     num: "01",
-    name: "Construction Management",
+    name: "Residential Development",
     description:
-      "We provide coordinated oversight across all phases of construction — aligning design, resources, and site execution to deliver projects with precision and control.",
-    link: "Learn about Construction Management",
+      "We deliver high-quality residential developments — from luxury flats to duplex housing — built to defined specifications that ensure structural integrity, comfort, and long-term performance.",
+    link: "View Building Projects",
   },
   {
     num: "02",
-    name: "Building Construction",
+    name: "Commercial Development",
     description:
-      "From residential developments to commercial buildings, we execute projects to defined specifications — ensuring structural integrity, quality, and long-term performance.",
+      "We develop commercial spaces — from retail destinations to mixed-use facilities — designed to meet business demands, attract footfall, and deliver lasting value.",
     link: "View Building Projects",
   },
   {
     num: "03",
-    name: "Road & Infrastructure",
+    name: "Construction Management",
     description:
-      "We deliver civil and infrastructure works designed for durability, efficiency, and long-term usability — supporting movement, access, and development.",
-    link: "Explore Infrastructure",
+      "We provide coordinated oversight across all phases of construction — aligning design, resources, and site execution to deliver projects with precision and control.",
+    link: "Learn about Construction Management",
   },
   {
     num: "04",
@@ -42,39 +42,39 @@ const services = [
   },
   {
     num: "05",
+    name: "Reconstruction & Upgrades",
+    description:
+      "We upgrade and redevelop existing structures — improving integrity, functionality, and lifespan through structured and carefully managed execution.",
+    link: "See more on reconstruction",
+  },
+  {
+    num: "06",
     name: "Roofing Systems",
     description:
       "Engineered roofing solutions installed with precision — designed to provide protection, resilience, and long-term performance under varying conditions.",
     link: "View roofing solutions",
   },
   {
-    num: "06",
+    num: "07",
     name: "Flooring & Finishes",
     description:
       "We deliver high-performance flooring and finishing systems — combining durability, functionality, and refined detailing across all project types.",
     link: "Explore flooring and finishes",
   },
-  {
-    num: "07",
-    name: "Reconstruction & Upgrades",
-    description:
-      "We upgrade and redevelop existing structures — improving integrity, functionality, and lifespan through structured and carefully managed execution.",
-    link: "See more on reconstruction",
-  },
+];
+
+const serviceImages = [
+  whatwedo7,
+  whatwedo6,
+  whatwedo5,
+  whatwedo4,
+  whatwedo3,
+  whatwedo1,
+  whatwedo2,
 ];
 
 export default function WhatWeDoSection() {
   const [active, setActive] = useState(0);
-
-  const serviceImages = [
-    whatwedo7,
-    whatwedo6,
-    whatwedo5,
-    whatwedo4,
-    whatwedo3,
-    whatwedo1,
-    whatwedo2,
-  ]
 
   return (
     <section className="bg-white py-24">
@@ -90,7 +90,7 @@ export default function WhatWeDoSection() {
             processes that align planning, execution, and outcomes at every stage.
           </p>
           <div className="flex lg:justify-end">
-            <Btn text="Our Vision, Values & Commitment"  href="/ourcompany"/>
+            <Btn text="Our Vision, Values & Commitment" href="/ourcompany" />
           </div>
         </div>
 
@@ -113,7 +113,7 @@ export default function WhatWeDoSection() {
                     }`}
                   />
 
-                   {/* Vertical divider */}
+                  {/* Vertical divider */}
                   <span className="w-px h-[14px] bg-[#734A00]/30 mx-3 flex-shrink-0" />
                   {/* Number */}
                   <span
@@ -123,7 +123,7 @@ export default function WhatWeDoSection() {
                   >
                     {service.num}
                   </span>
-                 
+
                   {/* Name */}
                   <span
                     className={`text-[13.5px] font-medium transition-colors duration-200 ${
@@ -138,26 +138,44 @@ export default function WhatWeDoSection() {
 
             {/* Right – image + text panel */}
             <div className="relative min-h-[420px] bg-slate-950 overflow-hidden">
-              <Image
-                src={serviceImages[active] ?? extraordinary}
-                alt={services[active].name}
-                fill
-                className="object-cover"
-              />
+
+              {/*
+               * ALL images are rendered at once and stacked.
+               * Only the active one is visible (opacity-100), the rest are hidden (opacity-0).
+               * Because they're all in the DOM from the start, Next.js fetches and caches
+               * them all immediately — no delay when switching tabs.
+               * The `priority` prop on every image tells Next.js to preload them eagerly.
+               */}
+              {serviceImages.map((src, i) => (
+                <Image
+                  key={src}
+                  src={src ?? extraordinary}
+                  alt={services[i]?.name ?? ""}
+                  fill
+                  priority
+                  className={`object-cover transition-opacity duration-300 ${
+                    active === i ? "opacity-100" : "opacity-0"
+                  }`}
+                />
+              ))}
+
+              {/* Dark overlay */}
               <div className="absolute inset-0 bg-slate-950/50" />
+
+              {/* Text content — only the active service's text is shown */}
               <div className="absolute inset-0 flex flex-col justify-center px-12 py-10">
                 <p
                   key={active}
-                  className="text-[18px] font-montserrat leading-8 text-white/85  max-w-lg animate-fadeIn"
+                  className="text-[18px] font-montserrat leading-8 text-white/85 max-w-lg animate-fadeIn"
                 >
                   {services[active].description}
                 </p>
-                <div className="mt-8 ">
-                  <Btn text={services[active].link}  href="/whatwedo" />
+                <div className="mt-8">
+                  <Btn text={services[active].link} href="/whatwedo" />
                 </div>
               </div>
-            </div>
 
+            </div>
           </div>
         </div>
       </div>

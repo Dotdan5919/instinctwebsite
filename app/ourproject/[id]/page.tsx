@@ -8,7 +8,7 @@ import ProjectDetailBody from '@/components/projectdetails/Projectdetailbody'
 const building = "/images/precision.jpg"
 const define = "/images/define.jpg"
 const accountability = "/images/accountability.jpg"
-const expertise_hero = "/images/expertise_hero.jpg"
+const expertise_hero = "/images/project/hero.jpg"
 const approach = "/images/project/approach.png"
 import { getAllProjects, getProjectImages } from '@/lib/projects'
 

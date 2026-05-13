@@ -130,11 +130,11 @@ function OurCompanyMenu() {
           { label: 'Our Values', href: '/ourcompany#our-values' },
                     { label: 'Our Journey', href: '/ourjourney' },
         ]} />
-        <LinkColumn heading="Our Culture" items={[
+        {/* <LinkColumn heading="Our Culture" items={[
           { label: 'Nigerian Content Execution strategy', href: '/ourcompany#nigerian-content' },
           { label: 'Cooperate social Responsibility', href: '/ourcompany#csr' },
           { label: 'QHSE Statement Policy', href: '/ourcompany#qhse' },
-        ]} />
+        ]} /> */}
         <VendorPanel />
       </div>
     </div>
@@ -189,11 +189,11 @@ function OurProjectsMenu() {
       />
       <div className="flex flex-col lg:flex-row flex-1">
         <LinkColumn heading="Categories" items={[
-          { label: 'Projects', href: '/ourproject' },
-          { label: 'Residential Developments', href: '/ourproject#residential' },
-          { label: 'Commercial Projects', href: '/ourproject#commercial' },
-          { label: 'Infrastructure', href: '/ourproject#infrastructure' },
-          { label: 'Renovation & Reconstruction', href: '/ourproject#renovation' },
+          { label: 'Projects', href: '/ourproject/?category=all' },
+          { label: 'Residential Developments', href: '/ourproject/?category=residential-development' },
+          { label: 'Commercial Projects', href: '/ourproject/?category=commercial-development' },
+          { label: 'Infrastructure', href: '/ourproject/?category=road-infrastructure' },
+          { label: 'Renovation & Reconstruction', href: '/ourproject/?category=reconstruction-upgrade' },
         ]} />
         <div className="flex-1 px-6 lg:px-10 py-6 lg:py-10">
           <h3 className="text-gray-900 text-sm lg:text-base font-semibold mb-4 lg:mb-6">Latest Project</h3>
@@ -327,7 +327,7 @@ function ResourcesMenu() {
       />
       <div className="flex flex-col sm:flex-row lg:flex-row flex-1">
         <LinkColumn heading="Resources" items={[
-          { label: 'Service Brochures', href: '/resources#brochures' },
+         
           { label: 'Certificates', href: '/resources#certificates' },
           { label: 'Company Profile', href: '/resources#company-profile' },
           { label: 'Technical Document', href: '/resources#technical' },

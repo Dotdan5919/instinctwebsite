@@ -5,13 +5,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import type { StaticImport } from 'next/dist/shared/lib/get-img-props'
 
-const preconstruction = "/images/whatwedo/preconstruction_1.jpg"
-const preconstruction1 = "/images/whatwedo/preconstruction1.jpg"
-const preconstruction_2 = "/images/whatwedo/preconstruction2.jpg"
-const preconstruction_3 = "/images/whatwedo/preconstruction3.jpg"
-const construction = "/images/whatwedo/construction_1.jpg"
-const construction_2 = "/images/whatwedo/construction_2.jpg"
-const construction_3 = "/images/whatwedo/construction_3.jpg"
 const building_con_1 = "/images/whatwedo/building_con_1.jpg"
 const building_con_2 = "/images/whatwedo/building_con_2.jpg"
 const building_con_3 = "/images/whatwedo/building_con_3.jpg"
@@ -33,34 +26,28 @@ interface Category {
 // ─── Data ─────────────────────────────────────────────────────────────────────
 const categories: Category[] = [
   {
-    id: 'preconstruction',
-    label: 'Preconstruction',
-    description: 'Establishing clarity at the outset — defining scope, cost, timelines, and execution strategy to ensure every project begins with a coordinated foundation.',
-    coverImage: preconstruction,
-  },
-  {
-    id: 'construction-management',
-    label: 'Construction Management',
-    description: 'Providing structured oversight across all phases — aligning planning, resources, and site execution to ensure consistency and control.',
-    coverImage: construction,
-  },
-  {
-    id: 'building-construction',
-    label: 'Building Construction',
-    description: 'Delivering residential and commercial developments to defined specifications, ensuring structural integrity, functionality and long-term performance.',
+    id: 'residential-development',
+    label: 'Residential Development',
+    description: 'Delivering high-quality residential developments to defined specifications, ensuring structural integrity, functionality and long-term performance for homeowners and communities.',
     coverImage: building_con_1,
   },
   {
-    id: 'road-infrastructure',
-    label: 'Road & Infrastructure',
-    description: 'Executing road and infrastructure projects designed to deliver efficiency, and long-term usability across varying environments.',
-    coverImage: road_1,
+    id: 'commercial-development',
+    label: 'Commercial Development',
+    description: 'Delivering commercial developments to defined specifications, ensuring structural integrity, functionality and long-term performance for businesses and investors.',
+    coverImage: building_con_2,
   },
   {
     id: 'project-partnering',
     label: 'Project Partnering',
     description: 'Working alongside developers, investors, and public agencies to co-deliver projects that exceed scope and delivery expectations.',
     coverImage: projectmanagement,
+  },
+  {
+    id: 'reconstruction-upgrade',
+    label: 'Reconstruction and Upgrade',
+    description: 'Restoring and upgrading existing structures to modern standards — improving performance, safety, and longevity through precise interventions.',
+    coverImage: reconstruction_1,
   },
   {
     id: 'roofing-system',
@@ -75,11 +62,22 @@ const categories: Category[] = [
     coverImage: flooring_1,
   },
   {
-    id: 'reconstruction-upgrade',
-    label: 'Reconstruction & Upgrade',
-    description: 'Restoring and upgrading existing structures to modern standards — improving performance, safety, and longevity through precise interventions.',
-    coverImage: reconstruction_1,
+    id: 'road-infrastructure',
+    label: 'Road & Infrastructure',
+    description: 'Executing road and infrastructure projects designed to deliver efficiency, and long-term usability across varying environments.',
+    coverImage: road_1,
   },
+]
+
+const filters = [
+  { id: 'all', label: 'All Projects' },
+  { id: 'residential-development', label: 'Residential Development' },
+  { id: 'commercial-development', label: 'Commercial Development' },
+  { id: 'project-partnering', label: 'Project Partnering' },
+  { id: 'reconstruction-upgrade', label: 'Reconstruction and Upgrade' },
+  { id: 'roofing-system', label: 'Roofing System' },
+  { id: 'flooring', label: 'Flooring' },
+  { id: 'road-infrastructure', label: 'Road & Infrastructure' },
 ]
 
 // ─── Arrow Icon ───────────────────────────────────────────────────────────────
@@ -181,7 +179,7 @@ function CategorySection({ cat }: { cat: Category }) {
 
 // ─── Main export ──────────────────────────────────────────────────────────────
 export default function OurExpertise() {
-  const [activeFilter, setActiveFilter] = useState('preconstruction')
+  const [activeFilter, setActiveFilter] = useState('residential-development')
   const [hoveredFilter, setHoveredFilter] = useState<string | null>(null)
 
   const displayed =
@@ -193,132 +191,110 @@ export default function OurExpertise() {
     <section className="bg-white font-montserrat">
 
       {/* ── FILTER BAR ── */}
-{/* ── FILTER BAR ── */}
-<div className="border-b border-slate-200">
-  <div className="mx-auto max-w-7xl relative">
-    <style>{`
-      #filter-bar {
-        overflow-x: auto;
-        scrollbar-width: none;
-        -ms-overflow-style: none;
-      }
-      #filter-bar::-webkit-scrollbar { display: none; }
-    `}</style>
+      <div className="border-b border-slate-200">
+        <div className="mx-auto max-w-7xl relative">
+          <style>{`
+            #filter-bar {
+              overflow-x: auto;
+              scrollbar-width: none;
+              -ms-overflow-style: none;
+            }
+            #filter-bar::-webkit-scrollbar { display: none; }
+          `}</style>
 
-    <div
-      id="filter-bar"
-      className="flex gap-2 py-5 px-6 sm:px-10 lg:px-14"
-      style={{ flexWrap: 'nowrap' }}
-      onScroll={(e) => {
-        const el = e.currentTarget
-        const left = document.getElementById('scroll-arrow-left')
-        const right = document.getElementById('scroll-arrow-right')
-        const atStart = el.scrollLeft <= 4
-        const atEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 4
-        if (left) {
-          left.style.opacity = atStart ? '0' : '1'
-          left.style.pointerEvents = atStart ? 'none' : 'auto'
-        }
-        if (right) {
-          right.style.opacity = atEnd ? '0' : '1'
-          right.style.pointerEvents = atEnd ? 'none' : 'auto'
-        }
-      }}
-    >
-      {/* All button */}
-      {(() => {
-        const isActive = activeFilter === 'all'
-        const isHovered = hoveredFilter === 'all'
-        return (
-          <button
-            key="all"
-            onClick={() => setActiveFilter('all')}
-            onMouseEnter={() => setHoveredFilter('all')}
-            onMouseLeave={() => setHoveredFilter(null)}
-            className="px-4 py-2 text-sm rounded-lg cursor-pointer whitespace-nowrap flex-shrink-0 border-0 flex items-center gap-2"
-            style={{
-              background: isActive ? '#fde68a' : isHovered ? '#e0e0de' : '#ebebea',
-              color: isActive ? '#92400e' : isHovered ? '#333' : '#555',
-              fontFamily: 'inherit',
-              fontWeight: isActive || isHovered ? 500 : 400,
-              transition: 'background 0.18s, color 0.18s, font-weight 0.18s',
+          <div
+            id="filter-bar"
+            className="flex gap-2 py-5 px-6 sm:px-10 lg:px-14"
+            style={{ flexWrap: 'nowrap' }}
+            onScroll={(e) => {
+              const el = e.currentTarget
+              const left = document.getElementById('scroll-arrow-left')
+              const right = document.getElementById('scroll-arrow-right')
+              const atStart = el.scrollLeft <= 4
+              const atEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 4
+              if (left) {
+                left.style.opacity = atStart ? '0' : '1'
+                left.style.pointerEvents = atStart ? 'none' : 'auto'
+              }
+              if (right) {
+                right.style.opacity = atEnd ? '0' : '1'
+                right.style.pointerEvents = atEnd ? 'none' : 'auto'
+              }
             }}
           >
-            All
-          </button>
-        )
-      })()}
+            {filters.map((filter) => {
+              const isActive = activeFilter === filter.id
+              const isHovered = hoveredFilter === filter.id
+              const isAll = filter.id === 'all'
+              return (
+                <button
+                  key={filter.id}
+                  onClick={() => setActiveFilter(filter.id)}
+                  onMouseEnter={() => setHoveredFilter(filter.id)}
+                  onMouseLeave={() => setHoveredFilter(null)}
+                  className="px-4 py-2 text-sm rounded-lg cursor-pointer whitespace-nowrap flex-shrink-0 border-0 flex items-center gap-2"
+                  style={{
+                    background: isActive
+                      ? '#fde68a'
+                      : isHovered
+                      ? isAll ? '#e0e0de' : '#f2d852'
+                      : '#ebebea',
+                    color: isActive ? '#92400e' : isHovered ? '#333' : '#555',
+                    fontFamily: 'inherit',
+                    fontWeight: isActive || isHovered ? 500 : 400,
+                    transition: 'background 0.18s, color 0.18s, font-weight 0.18s',
+                  }}
+                >
+                  {filter.label}
+                </button>
+              )
+            })}
+          </div>
 
-      {/* Category buttons */}
-      {categories.map((cat) => {
-        const isActive = activeFilter === cat.id
-        const isHovered = hoveredFilter === cat.id
-        return (
-          <button
-            key={cat.id}
-            onClick={() => setActiveFilter(cat.id)}
-            onMouseEnter={() => setHoveredFilter(cat.id)}
-            onMouseLeave={() => setHoveredFilter(null)}
-            className="px-4 py-2 text-sm rounded-lg cursor-pointer whitespace-nowrap flex-shrink-0 border-0 flex items-center gap-2"
+          {/* ── Left arrow (hidden at start) ── */}
+          <div
+            id="scroll-arrow-left"
+            className="absolute left-0 top-0 bottom-0 flex items-center pl-2 transition-opacity duration-300"
             style={{
-              background: isActive ? '#fde68a' : isHovered ? '#f2d852' : '#ebebea',
-              color: isActive ? '#92400e' : isHovered ? '#333' : '#555',
-              fontFamily: 'inherit',
-              fontWeight: isActive || isHovered ? 500 : 400,
-              transition: 'background 0.18s, color 0.18s, font-weight 0.18s',
+              background: 'linear-gradient(to left, transparent, white 40%)',
+              paddingRight: '3rem',
+              opacity: 0,
+              pointerEvents: 'none',
+            }}
+            onClick={() => {
+              const el = document.getElementById('filter-bar')
+              if (el) el.scrollBy({ left: -160, behavior: 'smooth' })
             }}
           >
-            {cat.label}
-          </button>
-        )
-      })}
-    </div>
+            <div className="w-8 h-8 rounded-full bg-white border border-slate-200 shadow-sm flex items-center justify-center cursor-pointer hover:bg-slate-50 transition-colors">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path d="M9 3L5 7l4 4" stroke="#555" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </div>
+          </div>
 
-    {/* ── Left arrow (hidden at start) ── */}
-    <div
-      id="scroll-arrow-left"
-      className="absolute left-0 top-0 bottom-0 flex items-center pl-2 transition-opacity duration-300"
-      style={{
-        background: 'linear-gradient(to left, transparent, white 40%)',
-        paddingRight: '3rem',
-        opacity: 0,
-        pointerEvents: 'none',
-      }}
-      onClick={() => {
-        const el = document.getElementById('filter-bar')
-        if (el) el.scrollBy({ left: -160, behavior: 'smooth' })
-      }}
-    >
-      <div className="w-8 h-8 rounded-full bg-white border border-slate-200 shadow-sm flex items-center justify-center cursor-pointer hover:bg-slate-50 transition-colors">
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-          <path d="M9 3L5 7l4 4" stroke="#555" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-        </svg>
+          {/* ── Right arrow (visible at start) ── */}
+          <div
+            id="scroll-arrow-right"
+            className="absolute right-0 top-0 bottom-0 flex items-center pr-2 transition-opacity duration-300"
+            style={{
+              background: 'linear-gradient(to right, transparent, white 40%)',
+              paddingLeft: '3rem',
+              pointerEvents: 'auto',
+            }}
+            onClick={() => {
+              const el = document.getElementById('filter-bar')
+              if (el) el.scrollBy({ left: 160, behavior: 'smooth' })
+            }}
+          >
+            <div className="w-8 h-8 rounded-full bg-white border border-slate-200 shadow-sm flex items-center justify-center cursor-pointer hover:bg-slate-50 transition-colors">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path d="M5 3l4 4-4 4" stroke="#555" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-
-    {/* ── Right arrow (visible at start) ── */}
-    <div
-      id="scroll-arrow-right"
-      className="absolute right-0 top-0 bottom-0 flex items-center pr-2 transition-opacity duration-300"
-      style={{
-        background: 'linear-gradient(to right, transparent, white 40%)',
-        paddingLeft: '3rem',
-        pointerEvents: 'auto',
-      }}
-      onClick={() => {
-        const el = document.getElementById('filter-bar')
-        if (el) el.scrollBy({ left: 160, behavior: 'smooth' })
-      }}
-    >
-      <div className="w-8 h-8 rounded-full bg-white border border-slate-200 shadow-sm flex items-center justify-center cursor-pointer hover:bg-slate-50 transition-colors">
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-          <path d="M5 3l4 4-4 4" stroke="#555" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-        </svg>
-      </div>
-    </div>
-
-  </div>
-</div>
 
       {/* ── CATEGORY SECTIONS ── */}
       <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-14 py-10">
