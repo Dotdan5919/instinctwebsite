@@ -5,50 +5,45 @@ import Btn from "./Btn";
 
 export default function TrustedSection() {
   return (
-    <section className="relative overflow-hidden py-16 z-10 bg-white">
+    <section className="relative overflow-hidden  sm:py-24 py-0 pb-12  z-10 bg-white">
       <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-14">
 
-        {/* ── Mobile / Tablet (< lg): stacked ── */}
-        <div className="flex flex-col gap-6 lg:hidden">
-          {/* Image */}
-          <motion.div
-            initial={{ opacity: 0, y: -30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9 }}
-            viewport={{ once: true }}
-            className="relative w-full overflow-hidden rounded-3xl shadow-2xl"
-            style={{ height: "300px" }}
-          >
-            <Image
-              src={TrustedImage}
-              alt="Trusted partnership"
-              className="object-cover object-center"
-              fill
-            />
-          </motion.div>
+     {/* ── Mobile / Tablet (< lg): stacked ── */}
+<div className="flex flex-col gap-6 lg:hidden">
+  <motion.div
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.7 }}
+    viewport={{ once: true }}
+    className="rounded-3xl bg-[#fff8ed] px-8 pt-10 pb-8 shadow-xl sm:px-10"
+  >
+    <h2 className="mb-6 font-bebas text-3xl uppercase leading-tight text-slate-950 sm:text-5xl">
+      A trusted,
+      <br />
+      collaborative partner
+      <br />
+      focused on your goals.
+    </h2>
+    <p className="mb-8 max-w-md text-base leading-7 font-montserrat text-slate-600">
+      Every project follows a structured methodology —
+      ensuring clarity before execution and control throughout delivery.
+    </p>
+    <Btn text="Explore Our Approach" href="/ourapproach" />
 
-          {/* Cream box */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.15 }}
-            viewport={{ once: true }}
-            className="rounded-3xl bg-[#fff8ed] px-8 py-10 shadow-xl sm:px-10"
-          >
-            <h2 className="mb-6 font-bebas text-4xl uppercase leading-tight text-slate-950 sm:text-5xl">
-              A trusted,
-              <br />
-              collaborative partner
-              <br />
-              focused on your goals.
-            </h2>
-            <p className="mb-8 max-w-md text-base leading-7 font-montserrat text-slate-600">
-              Every project follows a structured methodology —
-              ensuring clarity before execution and control throughout delivery.
-            </p>
-            <Btn text="Explore Our Approach" href="/ourapproach" />
-          </motion.div>
-        </div>
+    {/* Image inside cream box, with padding on sides and rounded corners all around */}
+    <div
+      className="relative w-full overflow-hidden rounded-2xl mt-8"
+      style={{ height: "260px" }}
+    >
+      <Image
+        src={TrustedImage}
+        alt="Trusted partnership"
+        className="object-cover object-center"
+        fill
+      />
+    </div>
+  </motion.div>
+</div>
 
         {/* ── Desktop (lg+): overlapping layout ── */}
         <div className="relative hidden lg:flex lg:items-center">
@@ -80,7 +75,7 @@ export default function TrustedSection() {
             className="relative z-0 flex-1 rounded-3xl bg-[#fff8ed] py-14 pr-12 shadow-xl"
             style={{ marginLeft: "-80px", paddingLeft: "calc(80px + 48px)" }}
           >
-            <h2 className="mb-6 font-bebas text-4xl uppercase leading-tight text-slate-950 sm:text-5xl">
+            <h2 className="mb-6 font-bebas text-3xl uppercase leading-tight text-slate-950 sm:text-5xl">
               A trusted,
               <br />
               collaborative partner

@@ -43,7 +43,7 @@ export default function Hero({ currentStep = 0 }: { currentStep?: number }) {
   }
 
   return (
-    <section className="px-6 sm:px-10 lg:px-14 mx-auto w-full max-w-7xl relative min-h-screen flex flex-col items-center">
+    <section className="px-6 sm:px-10 lg:px-14 mx-auto w-full max-w-7xl relative min-h-screen  flex flex-col items-center">
       <style>{`
         @keyframes fillLine {
           from { width: 0%; }
@@ -67,11 +67,11 @@ export default function Hero({ currentStep = 0 }: { currentStep?: number }) {
 
         {/* ─── Headline ─── */}
       <h1 className="font-bebas leading-none tracking-wide mb-6 sm:mb-8
-                text-[52px] sm:text-[72px] md:text-[88px] lg:text-[100px] text-white">
+                text-[36px] sm:text-[72px] md:text-[88px] lg:text-[100px] text-white">
   <span>BUILT WITH INTENT.<br /></span>
   <span>
     DELIVERED WITH{' '}
-    <span className="text-amber-500" style={wordStyle}>
+    <span className="text-amber-500  " style={wordStyle}>
       {cyclingWords[wordIndex]}
     </span>
   </span>
@@ -82,7 +82,7 @@ export default function Hero({ currentStep = 0 }: { currentStep?: number }) {
                         max-w-4xl gap-5 sm:gap-0 sm:justify-between">
           <div className="flex gap-3 sm:gap-4 items-start sm:items-center">
             <div className="w-3 h-2 p-2 bg-amber-500 mt-1 flex-shrink-0" />
-            <p className="text-gray-300 text-[14px] sm:text-[15px] leading-relaxed font-montserrat max-w-[480px]">
+            <p className="text-gray-300 text-[10px] sm:text-[15px] leading-relaxed font-montserrat max-w-[480px]">
               At Instinct Engineering, construction is approached as a disciplined system
               where planning, precision, and execution align to produce outcomes that endure.
             </p>

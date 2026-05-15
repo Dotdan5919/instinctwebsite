@@ -77,15 +77,15 @@ export default function WhatWeDoSection() {
   const [active, setActive] = useState(0);
 
   return (
-    <section className="bg-white py-24">
+    <section className="bg-white sm:py-24 py-0 pb-12 ">
       <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-14">
 
         {/* Header - 3 columns */}
         <div className="grid gap-10 lg:grid-cols-[1fr_1.4fr_1.2fr] lg:items-center mb-12">
-          <h2 className="font-bebas text-5xl uppercase leading-tight text-black sm:text-6xl">
+          <h2 className="font-bebas text-3xl uppercase leading-tight text-black sm:text-6xl">
             WHAT WE DO.
           </h2>
-          <p className="text-lg leading-8 text-black font-montserrat">
+          <p className="sm:text-lg text-md leading-8 text-black font-montserrat">
             We operate across key construction disciplines, applying structured
             processes that align planning, execution, and outcomes at every stage.
           </p>

@@ -4,7 +4,6 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 const img1 = "/images/project1.jpg";
-
 const img2 = "/images/project2.png";
 const img3 = "/images/project3.png";
 const img4 = "/images/chisco-3.jpg";
@@ -93,6 +92,7 @@ const projectCollections: Record<CategoryKey, Project[]> = {
     },
   ],
 };
+
 // ─── Mobile: stacked card carousel ───────────────────────────────────────────
 function MobileProjects({
   activeCategoryIndex,
@@ -105,21 +105,20 @@ function MobileProjects({
   const projects = projectCollections[activeCategoryKey];
   const [activeCard, setActiveCard] = useState(0);
 
-  // Reset card index when category changes
   useEffect(() => setActiveCard(0), [activeCategoryIndex]);
 
   return (
     <div className="mt-8 lg:hidden">
       {/* Category tabs — horizontal scroll */}
-      <div className="flex gap-2 overflow-x-auto px-6 sm:px-10 pb-1" style={{ scrollbarWidth: "none" }}>
+      <div className="flex gap-2 overflow-x-auto px-6 sm:px-10 " style={{ scrollbarWidth: "none" }}>
         {categories.map((cat, i) => (
           <button
             key={cat.key}
             type="button"
             onClick={() => setActiveCategoryIndex(i)}
-            className={`flex-shrink-0 rounded-full px-4 py-2 text-xs font-semibold tracking-wide transition-all duration-300 ${
+            className={`flex-shrink-0 rounded-lg px-4 py-2 text-xs font-semibold tracking-wide transition-all duration-300 ${
               i === activeCategoryIndex
-                ? "bg-[#5b3900] text-white"
+                ? "bg-[#FFE3B0] text-[#593A00]"
                 : "bg-gray-100 text-gray-700 hover:bg-gray-200"
             }`}
           >
@@ -131,15 +130,15 @@ function MobileProjects({
       {/* Cards */}
       <div className="mt-5 px-6 sm:px-10">
         <AnimatePresence mode="wait">
-         <motion.div
-  key={`${activeCategoryKey}-${activeCard}`}
-  initial={{ opacity: 0, x: 30 }}
-  animate={{ opacity: 1, x: 0 }}
-  exit={{ opacity: 0, x: -30 }}
-  transition={{ duration: 0.35 }}
-  className="group relative w-full overflow-hidden rounded-2xl"
-  style={{ height: "340px" }}
->
+          <motion.div
+            key={`${activeCategoryKey}-${activeCard}`}
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -30 }}
+            transition={{ duration: 0.35 }}
+            className="group relative w-full overflow-hidden rounded-2xl"
+            style={{ height: "340px" }}
+          >
             <Image
               src={projects[activeCard].image}
               alt={projects[activeCard].title}
@@ -156,7 +155,7 @@ function MobileProjects({
                 {projects[activeCard].details}
               </p>
               <div className="mt-4">
-                <Btn text="View Details"  href={'/ourproject/1'} />
+                <Btn text="View Details" href={'/ourproject/1'} />
               </div>
             </div>
           </motion.div>
@@ -250,7 +249,6 @@ function DesktopProjects({
 
   return (
     <div className="hidden lg:block">
-      {/* Sidebar + Cards row */}
       <div className="mt-12 flex items-stretch h-[480px] lg:h-[500px]">
         {/* Sidebar */}
         <motion.div
@@ -316,21 +314,19 @@ function DesktopProjects({
                 className="object-cover transition duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent opacity-0 transition-opacity duration-700 group-hover:opacity-100" />
-
-
-<div className="absolute inset-x-7 bottom-8 text-white">
-  <p className="text-xl font-bold text-amber-400 sm:text-2xl">{project.location}</p>
-  <p className="mt-2 text-base font-medium text-white/90 sm:text-lg leading-snug">
-    {project.title}
-  </p>
-  <div className="mt-3">
-    <p className="text-sm leading-6 text-white/75 max-w-sm opacity-0 transition-opacity duration-500 group-hover:opacity-100">
-      {project.details}
-    </p>
-  </div>
-  <Btn text="View Details" href={'/ourproject/'+project.id} />
-</div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent opacity-0 transition-opacity duration-700 group-hover:opacity-100" />
+              <div className="absolute inset-x-7 bottom-8 text-white">
+                <p className="text-xl font-bold text-amber-400 sm:text-2xl">{project.location}</p>
+                <p className="mt-2 text-base font-medium text-white/90 sm:text-lg leading-snug">
+                  {project.title}
+                </p>
+                <div className="mt-3">
+                  <p className="text-sm leading-6 text-white/75 max-w-sm opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                    {project.details}
+                  </p>
+                </div>
+                <Btn text="View Details" href={'/ourproject/' + project.id} />
+              </div>
             </div>
           ))}
         </motion.div>
@@ -375,34 +371,34 @@ export default function FeaturedProjectsSection() {
   const [activeCategoryIndex, setActiveCategoryIndex] = useState(0);
 
   return (
-    <section className="bg-white text-black pt-24 pb-0 overflow-hidden">
+    <section className="bg-white text-black sm:py-24 py-0 pb-12 overflow-hidden">
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: -50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
         viewport={{ once: true }}
-        className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-14"
+        className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-14 pt-0 sm:pt-0"
       >
-        <div className="grid gap-10 xl:grid-cols-[0.95fr_1.2fr_0.8fr] xl:items-start">
+        <div className="grid gap-5.5 xl:gap-10 xl:grid-cols-[0.95fr_1.2fr_0.8fr] xl:items-start">
           <div>
-            <h2 className="font-bebas text-5xl uppercase leading-tight text-black sm:text-6xl">
+            <h2 className="font-bebas text-3xl uppercase leading-tight text-black sm:text-6xl">
               Our Featured
               <br />
               Projects
             </h2>
           </div>
           <div>
-            <p className="font-montserrat text-base font-semibold text-gray-700 sm:text-lg">
+            <p className="font-montserrat  font-semibold text-gray-700 sm:text-lg">
               Scale. Complexity. Performance. Impact.
             </p>
-            <p className="mt-5 font-montserrat text-base leading-7 text-gray-800">
+            <p className="mt-5 font-montserrat  leading-7 text-gray-800">
               We deliver projects that go beyond construction — creating structures that meet
               functional demands, uphold quality standards, and support long-term use across
               diverse environments.
             </p>
           </div>
-          <div className="flex items-center xl:justify-end">
+          <div className="flex items-center xl:justify-end sm:pt-0 pt-1">
             <Btn text="See all Projects" href="/ourproject" />
           </div>
         </div>

@@ -53,49 +53,69 @@ export default function FooterSection() {
       <div className="border-t border-white/10" />
 
       {/* Nav Row */}
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-        className="mx-auto max-w-7xl px-6 py-6 sm:px-10 lg:px-14"
-      >
-        <div className="flex items-center justify-between gap-6">
-          {/* Logo */}
-          <div className="h-12 w-12 shrink-0 overflow-hidden rounded-full bg-white/10">
-            <Image src={logo} alt="Instinct Engineering" width={48} height={48} className="object-cover" />
-          </div>
+    {/* Nav Row */}
+<motion.div
+  initial={{ opacity: 0, y: 50 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8 }}
+  viewport={{ once: true }}
+  className="mx-auto max-w-7xl px-6 py-6 sm:px-10 lg:px-14"
+>
+  {/* Desktop: logo + nav + socials in a row */}
+  <div className="hidden lg:flex items-center justify-between gap-6">
+    <div className="h-12 w-12 shrink-0 overflow-hidden rounded-full bg-white/10">
+      <Image src={logo} alt="Instinct Engineering" width={48} height={48} className="object-cover" />
+    </div>
+    <nav className="flex items-center gap-8">
+      <a href="/ourcompany" className="text-sm text-white hover:text-yellow-500 transition-colors">Our Company</a>
+      <a href="/whatwedo" className="text-sm text-white hover:text-yellow-500 transition-colors">Our Services</a>
+      <a href="/ourproject" className="text-sm text-white hover:text-yellow-500 transition-colors">Our Projects</a>
+      <a href="/newsandinsights" className="text-sm text-white hover:text-yellow-500 transition-colors">News & Insights</a>
+      <a href="/career" className="text-sm text-white hover:text-yellow-500 transition-colors">Careers</a>
+      <a href="#" className="text-sm text-white hover:text-yellow-500 transition-colors">Resources</a>
+    </nav>
+    <div className="flex items-center gap-3">
+      <a href="#" className="flex h-9 w-9 items-center justify-center rounded bg-white/10 hover:bg-white/20 transition-colors">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+      </a>
+      <a href="#" className="flex h-9 w-9 items-center justify-center rounded bg-white/10 hover:bg-white/20 transition-colors">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+      </a>
+      <a href="#" className="flex h-9 w-9 items-center justify-center rounded bg-white/10 hover:bg-white/20 transition-colors">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.258 5.63 5.906-5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+    </div>
+  </div>
 
-          {/* Nav links */}
-          <nav className="hidden items-center gap-8 lg:flex">
-            <a href="/ourcompany" className="text-sm text-white hover:text-yellow-500 transition-colors">Our Company</a>
-            <a href="/whatwedo" className="text-sm text-white hover:text-yellow-500 transition-colors">Our Services</a>
-            <a href="/ourproject" className="text-sm text-white hover:text-yellow-500 transition-colors">Our Projects</a>
-            <a href="/newsandinsights" className="text-sm text-white hover:text-yellow-500 transition-colors">News & Insights</a>
-            <a href="/career" className="text-sm text-white hover:text-yellow-500 transition-colors">Careers</a>
-            <a href="#" className="text-sm text-white hover:text-yellow-500 transition-colors">Resources</a>
-          </nav>
+  {/* Mobile: logo + socials row, then nav links stacked below */}
+  <div className="flex flex-col gap-6 lg:hidden">
+    <div className="flex items-center justify-between">
+      <div className="h-12 w-12 shrink-0 overflow-hidden rounded-full bg-white/10">
+        <Image src={logo} alt="Instinct Engineering" width={48} height={48} className="object-cover" />
+      </div>
+      <div className="flex items-center gap-3">
+        <a href="#" className="flex h-9 w-9 items-center justify-center rounded bg-white/10 hover:bg-white/20 transition-colors">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="#" className="flex h-9 w-9 items-center justify-center rounded bg-white/10 hover:bg-white/20 transition-colors">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="#" className="flex h-9 w-9 items-center justify-center rounded bg-white/10 hover:bg-white/20 transition-colors">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.258 5.63 5.906-5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+      </div>
+    </div>
 
-          {/* Social icons */}
-          <div className="flex items-center gap-3">
-            <a href="#" className="flex h-9 w-9 items-center justify-center rounded bg-white/10 hover:bg-white/20 transition-colors">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/>
-              </svg>
-            </a>
-            <a href="#" className="flex h-9 w-9 items-center justify-center rounded bg-white/10 hover:bg-white/20 transition-colors">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
-              </svg>
-            </a>
-            <a href="#" className="flex h-9 w-9 items-center justify-center rounded bg-white/10 hover:bg-white/20 transition-colors">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.258 5.63 5.906-5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-              </svg>
-            </a>
-          </div>
-        </div>
-      </motion.div>
+    <nav className="flex flex-col gap-4">
+      <a href="/ourcompany" className="text-sm text-white hover:text-yellow-500 transition-colors">Our Company</a>
+      <a href="/whatwedo" className="text-sm text-white hover:text-yellow-500 transition-colors">Our Services</a>
+      <a href="/ourproject" className="text-sm text-white hover:text-yellow-500 transition-colors">Our Projects</a>
+      <a href="/newsandinsights" className="text-sm text-white hover:text-yellow-500 transition-colors">News & Insights</a>
+      <a href="/career" className="text-sm text-white hover:text-yellow-500 transition-colors">Careers</a>
+      <a href="#" className="text-sm text-white hover:text-yellow-500 transition-colors">Resources</a>
+    </nav>
+  </div>
+</motion.div>
 
       {/* Divider */}
       <div className="border-t border-white/10" />

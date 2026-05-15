@@ -37,3 +37,9 @@ body {
 .animate-fadeIn {
   animation: fadeIn 0.35s ease forwards;
 }
+
+@media (max-width: 640px) {
+  section + section {
+    margin-top: 40px;
+  }
+}

@@ -47,19 +47,19 @@ function StatItem({
   const count = useCountUp(value, 2000, delayedStart);
 
   return (
-    <div className="flex flex-col gap-3">
-      <p className="text-xs uppercase tracking-widest text-white/60 font-light">
+    <div className="flex flex-col gap-3 ">
+      <p className="text-xs uppercase tracking-widest text-white/60 font-medium ">
         {label}
       </p>
       <div className="flex items-center">
         <span
-          className="font-bebas text-6xl text-white tabular-nums"
+          className="font-bebas sm:text-6xl text-4xl text-white tabular-nums"
           style={{ lineHeight: "72px" }}
         >
           {count.toLocaleString()}
         </span>
         <span
-          className="font-bebas text-5xl text-amber-400 ml-1"
+          className="font-bebas sm:text-5xl text-4xl  text-amber-400 ml-1"
           style={{ lineHeight: "72px" }}
         >
           +
@@ -99,9 +99,9 @@ export default function NumbersSection() {
   }, []);
 
   return (
-    <section className="bg-white sm:py-24 py-6" ref={sectionRef}>
+    <section className="bg-white sm:py-24 py-0 pb-12" ref={sectionRef}>
       <div className="mx-auto max-w-7xl px-5 sm:px-10 lg:px-14">
-        <div className="flex flex-col gap-10 rounded-[2rem] border border-white/10 bg-[#5b3900] p-8 sm:p-10 lg:p-12">
+        <div className="flex flex-col gap-10 rounded-[2rem] border border-white/10 bg-[#5b3900] px-5 py-6 sm:p-10 lg:p-12">
 
           {/* Stats row */}
           <motion.div
@@ -112,7 +112,7 @@ export default function NumbersSection() {
             className="grid gap-8 xl:grid-cols-[auto_1fr] xl:items-center"
           >
             <div className="flex items-center pr-8 xl:border-r xl:border-white/20">
-              <h2 className="font-bebas text-5xl uppercase leading-none text-amber-400 sm:text-6xl lg:text-7xl">
+              <h2 className="font-bebas   text-[36px] uppercase leading-none text-amber-400 sm:text-6xl lg:text-7xl">
                 Our
                 <br />
                 Numbers
@@ -137,7 +137,7 @@ export default function NumbersSection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="rounded-[1.5rem] bg-white p-8 text-black sm:p-10"
+            className="rounded-[1.5rem] bg-white p-5 text-black sm:p-10"
           >
             <h2 className="font-bebas text-4xl uppercase tracking-tight text-black sm:text-5xl">
               We Build History

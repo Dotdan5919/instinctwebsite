@@ -6,9 +6,9 @@ import Btn from "./Btn"
 
 export default function ExtraordinarySection() {
   return (
-    <section className="bg-white text-black py-24 z-10">
+    <section className="bg-white text-black sm:py-24 py-12 z-10">
       <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-14">
-        <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr] items-center">
+        <div className="grid sm:gap-12 gap-10 lg:grid-cols-[1.2fr_0.8fr] items-center ">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -16,12 +16,12 @@ export default function ExtraordinarySection() {
             viewport={{ once: true }}
             className="max-w-2xl "
           >
-            <h2 className="font-bebas text-4xl md:text-5xl tracking-tight uppercase leading-tight">
+            <h2 className="font-bebas text-3xl md:text-5xl tracking-tight uppercase leading-tight">
               EXTRAORDINARY TEAMS
               <br />
               BUILDING INSPIRING PROJECTS
             </h2>
-            <p className="mt-8 font-montserrat text-gray-600 text-md leading-8">
+            <p className="mt-8 font-montserrat text-gray-600 text-md  leading-8">
               Instinct Engineering is a fully integrated construction and engineering
               company delivering projects across residential, commercial, and
               infrastructure sectors.
