@@ -9,12 +9,12 @@ export default function ApproachIntro() {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
-      className="bg-white py-16 text-black"
+      className="bg-white py-0 pt-10 sm:py-24 text-black"
     >
       <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-14">
         <div className="grid gap-10 lg:grid-cols-[280px_1fr] lg:gap-20 items-start">
           {/* Left — heading */}
-          <h1 className="font-bebas text-5xl uppercase tracking-tight text-black sm:text-6xl leading-none">
+          <h1 className="font-bebas text-3xl uppercase tracking-tight text-black sm:text-6xl leading-none">
             HOW WE DELIVER
           </h1>
 

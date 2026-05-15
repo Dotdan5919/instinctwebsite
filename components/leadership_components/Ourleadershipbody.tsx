@@ -117,6 +117,7 @@ export default function OurLeadershipBody() {
         members={managementMembers}
         columns={3}
       />
+      <div className="flex pb-26"/>
     </>
   )
 }

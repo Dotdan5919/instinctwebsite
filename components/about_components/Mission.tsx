@@ -9,7 +9,7 @@ export default function Mission() {
       whileInView={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.9, delay: 0.3 }}
       viewport={{ once: true }}
-      className="bg-white py-14 sm:py-20 md:py-24 text-black"
+      className="bg-white py-10 sm:py-24 text-black"
     >
       <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-14">
 
@@ -17,7 +17,7 @@ export default function Mission() {
 
           {/* Left — amber panel */}
           <div className="bg-[#e79c00] p-8 sm:p-14 flex flex-col justify-center">
-            <h3 className="font-bebas text-4xl sm:text-5xl lg:text-6xl uppercase tracking-tight text-white">
+            <h3 className="font-bebas text-3xl sm:text-5xl lg:text-6xl uppercase tracking-tight text-white">
               OUR MISSION
             </h3>
             <p className="mt-6 sm:mt-8 text-sm leading-7 sm:leading-8 text-white/90 font-montserrat">
@@ -43,7 +43,7 @@ export default function Mission() {
 
             {/* Vision card */}
             <div className="relative z-10 bg-white rounded-[16px] sm:rounded-[24px] p-8 sm:p-8 shadow-xl w-full">
-              <h3 className="font-bebas text-4xl sm:text-5xl lg:text-6xl uppercase tracking-tight text-black">
+              <h3 className="font-bebas text-3xl sm:text-5xl lg:text-6xl uppercase tracking-tight text-black">
                 OUR VISION
               </h3>
               <p className="mt-4 sm:mt-5 text-sm leading-7 text-gray-900 font-montserrat">

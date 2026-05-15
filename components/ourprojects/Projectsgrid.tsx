@@ -37,7 +37,7 @@ const displayed =
     : projects.filter((p) => p.category === activeFilter)
 
   return (
-    <section className="bg-white pb-20">
+    <section className="bg-white pb-25">
       {/* ── Filter bar ── */}
       <div className="border-b border-slate-200">
         <div className="mx-auto max-w-7xl relative">

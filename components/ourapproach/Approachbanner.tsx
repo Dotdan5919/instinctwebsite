@@ -7,7 +7,7 @@ import Btn from '../Btn';
 
 export default function ApproachBanner() {
   return (
-    <section className="bg-white py-12">
+    <section className="bg-white py-0 pt-10 pb-28 sm:py-24">
       <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-14">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -30,13 +30,13 @@ export default function ApproachBanner() {
 
           {/* Content */}
           <div className="relative z-10 px-10 py-12 max-w-2xl">
-            <h2 className="font-bebas text-5xl sm:text-6xl uppercase text-white leading-tight mb-5">
+            <h2 className="font-bebas text-3xl sm:text-6xl uppercase text-white leading-tight mb-5">
               ONE SYSTEM.<br />FULLY ALIGNED.
             </h2>
-            <p className="text-sm leading-7 text-white/85 mb-3">
+            <p className="sm:text-sm sm:leading-7 text-white/85 mb-3">
               Each stage of our approach is interconnected — forming a single, coordinated system of delivery. From early planning through to final execution, our processes ensure continuity, reduce risk, and maintain alignment across all project components.
             </p>
-            <p className="text-sm leading-7 text-white/85 mb-8">
+            <p className="sm:text-sm sm:leading-7 text-white/85 mb-8">
               This integrated approach allows us to deliver projects with consistency, clarity, and confidence.
             </p>
 

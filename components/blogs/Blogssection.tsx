@@ -94,13 +94,13 @@ export default function BlogDetailSection() {
  
 
       {/* ══ ARTICLE BODY ═════════════════════════════════════════════════════ */}
-      <div className="w-full mx-auto px-4 sm:px-8 lg:px-24 py-12 flex flex-col gap-5 relative">
+      <div className="w-full mx-auto px-4 sm:px-8 lg:px-24 py-0 pt-10 pb-28 flex flex-col gap-5 relative">
 <div className="absolute -top-40 left-0 w-full z-10 ">
           <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-14 pb-10">
             <span className="font-montserrat text-amber-400 text-xs font-semibold tracking-widest uppercase">
               {blogPost.tag}
             </span>
-            <div className="mt-3 bg-[#996300] px-6 py-5 w-full">
+            <div className="mt-3.5 bg-[#996300] px-6 py-5 w-full">
               <h1 className="font-bebas text-white text-3xl md:text-[64px] leading-tight tracking-wide">
                 {blogPost.title}
               </h1>

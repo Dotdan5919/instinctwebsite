@@ -10,13 +10,13 @@ export default function Aboutus() {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7, delay: 0.1 }}
       viewport={{ once: true }}
-      className="bg-white py-14 sm:py-20 md:py-24 text-black"
+      className="bg-white pt-10 py-0 sm:py-24 text-black"
     >
       <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-14">
         <div className="flex flex-col lg:grid lg:grid-cols-[0.5fr_1fr] gap-8 sm:gap-12 lg:gap-16 items-start">
 
           {/* Left — title only */}
-          <h2 className="font-bebas text-4xl sm:text-5xl lg:text-6xl uppercase tracking-tight text-black lg:sticky lg:top-24">
+          <h2 className="font-bebas text-3xl sm:text-5xl lg:text-6xl uppercase tracking-tight text-black lg:sticky lg:top-24">
             ABOUT INSTINCT
           </h2>
 

@@ -46,7 +46,10 @@ function LeftPanel({ title, paragraphs, linkLabel, href = '#' }: {
         ))}
       </div>
       <Link href={href} className="text-white text-sm font-semibold flex items-center gap-2 hover:gap-3 transition-all mt-4">
-        {linkLabel} <span>↗</span>
+        {linkLabel} 
+<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M1 13L13 1M13 1H4M13 1v9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+</svg>
       </Link>
     </div>
   )
@@ -89,7 +92,10 @@ function ContentCard({ label, title, linkLabel = 'See details', href = '#', imag
       {label && <p className="text-[#CC8400] text-xs font-semibold">{label}</p>}
       <p className="text-gray-800 text-xs font-semibold leading-snug">{title}</p>
       <Link href={href} className="text-amber-500 text-xs font-semibold flex items-center gap-1 hover:gap-2 transition-all">
-        {linkLabel} <span>↗</span>
+        {linkLabel} 
+<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M1 13L13 1M13 1H4M13 1v9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+</svg>
       </Link>
     </div>
   )
@@ -104,7 +110,10 @@ function VendorPanel() {
         <Image src={projectImage} alt="Become a vendor" fill className="object-cover" />
       </div>
       <Link href="/vendor" className="text-amber-500 text-sm font-semibold flex items-center gap-1 hover:gap-2 transition-all">
-        Learn How <span>↗</span>
+        Learn How 
+<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M1 13L13 1M13 1H4M13 1v9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+</svg>
       </Link>
     </div>
   )
@@ -290,7 +299,10 @@ function CareersMenu() {
           <div className="flex items-center justify-between mb-4 lg:mb-6">
             <h3 className="text-gray-900 text-sm lg:text-base font-semibold">Open Positions</h3>
             <Link href="/career/joblisting" className="text-gray-900 text-xs lg:text-sm font-semibold flex items-center gap-1 hover:text-amber-500 transition-colors">
-              See all positions <span>↗</span>
+              See all positions 
+<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M1 13L13 1M13 1H4M13 1v9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+</svg>
             </Link>
           </div>
           <div className="grid grid-cols-2 gap-4 lg:gap-6">
@@ -303,7 +315,10 @@ function CareersMenu() {
                 Are you driven by purpose, thrive on a team, and live for a challenge? Check out our job openings and learn more about joining our team.
               </p>
               <Link href="/career#opportunities" className="text-amber-500 text-xs font-semibold flex items-center gap-1 hover:gap-2 transition-all">
-                Read More <span>↗</span>
+                Read More 
+<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M1 13L13 1M13 1H4M13 1v9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+</svg>
               </Link>
             </div>
            

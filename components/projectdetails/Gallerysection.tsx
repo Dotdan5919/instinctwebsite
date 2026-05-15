@@ -113,12 +113,12 @@ export default function GallerySection({ images }: GalleryProps) {
   )
 
   return (
-    <section className="bg-white py-14">
+    <section className="bg-white py-12 sm:py-24">
       <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-14">
 
         {/* Header row */}
         <div className="flex items-center justify-between mb-7">
-          <h2 className="font-bebas text-4xl uppercase tracking-tight text-black">GALLERY</h2>
+          <h2 className="font-bebas text-3xl uppercase tracking-tight text-black">GALLERY</h2>
           <div className="flex gap-2">
             <button
               onClick={() => scroll('left')}

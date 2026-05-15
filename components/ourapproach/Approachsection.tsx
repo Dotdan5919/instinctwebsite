@@ -51,7 +51,7 @@ export default function ApproachSection({
       className="flex flex-col justify-center"
       id={id}
     >
-      <h2 className="font-bebas text-4xl sm:text-5xl uppercase tracking-tight text-black mb-5 leading-none">
+      <h2 className="font-bebas text-3xl sm:text-5xl uppercase tracking-tight text-black mb-5 leading-none">
         {title}
       </h2>
       <div className="space-y-4 mb-8">
@@ -84,10 +84,10 @@ export default function ApproachSection({
   )
 
   return (
-    <section className="bg-white py-12" id={id}>
+    <section className="bg-white py-0 pt-10 sm:py-24" id={id}>
       <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-14" id={id}>
         {/* Two-col grid — text and image swap sides per imagePosition */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center mb-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center mb-6">
           {isImageLeft ? (
             <>
               {imageCol}

@@ -68,7 +68,7 @@ export default function OurValues() {
     <section 
       id="our-values"
     
-      className="bg-[#f0eeeb] py-24 text-black"
+      className="bg-[#f0eeeb] py-10  sm:py-24 text-black"
     >
       <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-14">
 
@@ -81,7 +81,7 @@ export default function OurValues() {
       viewport={{ once: true }}
         
         className="grid gap-10 lg:grid-cols-[0.5fr_1fr] items-start mb-16">
-          <h2 className="font-bebas text-5xl uppercase tracking-tight sm:text-6xl">
+          <h2 className="font-bebas text-3xl uppercase tracking-tight sm:text-6xl">
             OUR VALUE
           </h2>
           <div className="space-y-5">

@@ -16,7 +16,7 @@ export default function LeadershipGrid({
   columns = 3,
 }: LeadershipGridProps) {
   return (
-    <section className="bg-white pb-14">
+    <section className="bg-white sm:pb-14 ">
       <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-14">
         {/* Section title */}
         <motion.h2
@@ -24,7 +24,7 @@ export default function LeadershipGrid({
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.45 }}
           viewport={{ once: true }}
-          className="font-montserrat font-bold text-2xl uppercase text-black mb-8"
+          className="font-montserrat font-bold sm:text-2xl text-xl uppercase text-black mb-8"
         >
           {title}
         </motion.h2>

@@ -5,7 +5,7 @@ import Btn from "./Btn";
 
 export default function BuildingTogetherSection() {
   return (
-    <section className="bg-white  sm:py-20 py-0 pb-28 overflow-hidden">
+    <section className="bg-white py-0  sm:py-24 overflow-hidden pb-28">
       <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-14">
 
       {/* ── Mobile / Tablet  (< lg): stacked ── */}

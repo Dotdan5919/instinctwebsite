@@ -2,12 +2,12 @@
 
 export default function WorkingEnvironment() {
   return (
-    <section className="w-full bg-white py-20 lg:py-28">
+    <section className="w-full bg-white py-0 pt-10 sm:py-24 lg:py-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-14">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-start">
 
           {/* Left */}
-          <h2 className="font-bebas text-gray-900 text-[40px] sm:text-[52px] lg:text-[58px] leading-none tracking-wide">
+          <h2 className="font-bebas text-gray-900 text-3xl sm:text-[52px] lg:text-[58px] leading-none tracking-wide">
             OUR WORKING<br />ENVIRONMENT
           </h2>
 

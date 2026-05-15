@@ -6,7 +6,7 @@ import OtherHero from '@/components/OtherHero'
 import OurProjectsBody from '@/components/ourprojects/Ourprojectsbody'
 import ProjectDetailBody from '@/components/projectdetails/Projectdetailbody'
 const building = "/images/precision.jpg"
-const define = "/images/define.jpg"
+const define = "/images/ourrole.jpeg"
 const accountability = "/images/accountability.jpg"
 const expertise_hero = "/images/project/hero.jpg"
 const approach = "/images/project/approach.png"
@@ -42,7 +42,7 @@ export default async function page({ params }: { params: Promise<{ id: string }>
     }))
 
   return (
-   <div className="flex flex-col relative min-h-screen bg-slate-950 text-white ">
+   <div className="flex flex-col relative min-h-screen  text-white ">
        <div className="hidden lg:block absolute inset-0 z-10 pointer-events-none">
   <div className="mx-auto max-w-7xl h-full px-14 xl:px-24 relative">
     <div className="absolute inset-y-0 left-8 right-8 

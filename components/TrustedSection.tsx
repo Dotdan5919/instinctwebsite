@@ -5,7 +5,7 @@ import Btn from "./Btn";
 
 export default function TrustedSection() {
   return (
-    <section className="relative overflow-hidden  sm:py-24 py-0 pb-12  z-10 bg-white">
+    <section className="relative overflow-hidden py-0 pb-10 sm:py-24 z-10 bg-white">
       <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-14">
 
      {/* ── Mobile / Tablet (< lg): stacked ── */}

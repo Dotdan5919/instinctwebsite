@@ -32,7 +32,7 @@ export default function AvailableOpenings() {
     : jobs.filter((job) => job.category === activeCategory)
 
   return (
-    <section className="w-full bg-white py-20 lg:py-28">
+    <section className="w-full bg-white py-12 sm:py-24 lg:py-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-14">
 
         {/* Heading */}

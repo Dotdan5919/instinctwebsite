@@ -130,7 +130,7 @@ export default function NewsInsightsSection({ defaultTab = 'Blogs' }: NewsInsigh
     : articles.filter((a) => a.tab === activeTab)
 
   return (
-    <section className="w-full bg-white py-16 lg:py-20">
+    <section className="w-full bg-white py-12 sm:py-24 lg:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-14 mb-32">
 
         {/* ── Tab filters ── */}

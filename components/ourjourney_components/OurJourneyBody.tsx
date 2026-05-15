@@ -91,13 +91,13 @@ function JourneyIntro() {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
-      className="bg-white py-14 sm:py-20 md:py-24 text-black"
+      className="bg-white py-0 pt-10  sm:py-24 text-black"
     >
       <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-14">
         <div className="flex flex-col gap-8 lg:grid lg:grid-cols-[260px_1fr] lg:gap-20 items-start">
 
           {/* Left — big heading */}
-          <h1 className="font-bebas text-4xl sm:text-5xl lg:text-6xl uppercase tracking-tight text-black lg:sticky lg:top-24">
+          <h1 className="font-bebas text-3xl sm:text-5xl lg:text-6xl uppercase tracking-tight text-black lg:sticky lg:top-24">
             OUR JOURNEY
           </h1>
 
@@ -230,7 +230,7 @@ function JourneyTimeline() {
       viewport={{ once: true }}
       className="bg-[#f4f4ef]"
     >
-      <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-14 pt-12 sm:pt-16 pb-0">
+      <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-14 pt-12 sm:pt-16 sm:pb-0 pb-28">
         {milestones.map((m, i) => (
           <TimelineItem
             key={m.heading}

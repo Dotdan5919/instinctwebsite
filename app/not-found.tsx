@@ -42,14 +42,18 @@ export default function NotFound() {
             className="inline-flex items-center gap-2 px-8 py-4 bg-amber-500 text-black font-bebas text-lg uppercase tracking-wide hover:bg-amber-600 transition-colors duration-300 rounded-lg"
           >
             Return to Home
-            <span className="text-base">↗</span>
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 13L13 1M13 1H4M13 1v9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
           </Link>
           <Link
             href="/ourproject"
             className="inline-flex items-center gap-2 px-8 py-4 border-2 border-amber-500 text-amber-500 font-bebas text-lg uppercase tracking-wide hover:bg-amber-500 hover:text-black transition-colors duration-300 rounded-lg"
           >
             View Projects
-            <span className="text-base">↗</span>
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 13L13 1M13 1H4M13 1v9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
           </Link>
         </div>
 

@@ -9,12 +9,12 @@ export default function ContactIntro() {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
-      className="bg-white py-16"
+      className="bg-white py-0 pt-10 sm:py-24"
     >
       <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-14">
-        <div className="grid gap-10 lg:grid-cols-[260px_1fr] lg:gap-20 items-start">
+        <div className="grid gap-3.5 lg:grid-cols-[260px_1fr] lg:gap-20 items-start">
           {/* Left — heading */}
-          <h1 className="font-bebas text-5xl sm:text-6xl uppercase tracking-tight text-black leading-none">
+          <h1 className="font-bebas text-3xl sm:text-6xl uppercase tracking-tight text-black leading-none">
             CONTACT US
           </h1>
 

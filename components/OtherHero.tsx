@@ -38,7 +38,7 @@ export default function OtherHero({ title, subtitle }: { title?: string; subtitl
     >
       <div className="absolute inset-0 z-10" />
 
-     <div className="relative z-20 w-full mt-30 sm:mt-20 md:mt-24 min-h-0 sm:min-h-[260px] md:min-h-[300px]  flex flex-col justify-center sm:justify-end">
+     <div className="relative z-20 w-full mt-30 sm:mt-20 md:mt-24 min-h-0 sm:min-h-[260px] md:min-h-[300px]  flex flex-col justify-center gap-1.5 sm:justify-end">
 
   <p className="font-montserrat text-amber-500 text-sm sm:text-base">
     {title}
@@ -47,7 +47,7 @@ export default function OtherHero({ title, subtitle }: { title?: string; subtitl
   <h1
     className="
       font-bebas uppercase leading-none tracking-wide mb-0 sm:mb-8 text-white pt-2 sm:pt-6 md:pt-8
-      text-[clamp(36px,10vw,100px)]
+      sm:text-[clamp(36px,10vw,100px)] text-4xl
     "
   >
     {subtitle}

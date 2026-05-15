@@ -11,7 +11,7 @@ import Navbar from '../Navbar'
 // ─── Tag pill ─────────────────────────────────────────────────────────────────
 function Tag({ label }: { label: string }) {
   return (
-    <span className="inline-block rounded-lg bg-[#fdf6e3] text-gray-900 text-sm sm:text-base lg:text-lg px-3 sm:px-4 py-2 sm:py-2.5 font-medium">
+    <span className="inline-block rounded-lg bg-[#fdf6e3] text-gray-900 text-sm px-3 py-2 font-medium">
       {label}
     </span>
   )
@@ -69,11 +69,6 @@ function ContentBlock({
   )
 }
 
-// ─── Related project card ─────────────────────────────────────────────────────
-function RelatedProjectCard({ project, index }: { project: Project; index: number }) {
-  return <ProjectCard project={project} index={index} />
-}
-
 // ─── Props ────────────────────────────────────────────────────────────────────
 export interface ProjectDetailData {
   breadcrumbs: string[]
@@ -114,13 +109,13 @@ export default function ProjectDetailBody({ data }: { data: ProjectDetailData })
           <div className="absolute inset-0 bg-black/55" />
         </div>
 
-        {/* Info card — flush to bottom, white card */}
-        <div className="relative z-10 flex items-end h-full min-h-[480px] px-4 sm:px-8   pb-0">
+        {/* Info card — centred on mobile with small side gaps, left-aligned on desktop */}
+        <div className="relative z-10 flex items-end justify-center lg:justify-start h-full min-h-[480px] w-full px-4 lg:px-14">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="absolute bg-white rounded-t-xl px-5 sm:px-8 pt-5 sm:pt-6 pb-6 sm:pb-8 ml-15 w-full max-w-sm sm:max-w-md lg:max-w-xl"
+            className="w-full max-w-md lg:max-w-xl bg-white rounded-t-xl px-5 sm:px-8 pt-5 sm:pt-6 pb-6 sm:pb-8"
           >
             {/* Breadcrumbs */}
             <p className="text-xs text-gray-600 mb-3 leading-relaxed">
@@ -138,9 +133,8 @@ export default function ProjectDetailBody({ data }: { data: ProjectDetailData })
                 onClick={() => setOverviewOpen(true)}
                 className="flex items-center gap-2 text-xs sm:text-sm font-medium text-gray-800 hover:text-black transition-colors group"
               >
-                <span className="hidden sm:inline">See Project Overview</span>
-                <span className="sm:hidden">Overview</span>
-                <span className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#e8a020] flex items-center justify-center shrink-0 group-hover:bg-[#c98a18] transition-colors">
+                <span>See Project Overview</span>
+                <span className="w-7 h-7 rounded-full bg-[#e8a020] flex items-center justify-center shrink-0 group-hover:bg-[#c98a18] transition-colors">
                   <svg width="12" height="12" viewBox="0 0 14 14" fill="none">
                     <path d="M3 11L11 3M11 3H5M11 3v6" stroke="#111" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
@@ -157,8 +151,9 @@ export default function ProjectDetailBody({ data }: { data: ProjectDetailData })
       </section>
 
       {/* ── INTRO PARAGRAPHS ── */}
-      <section className="bg-white py-10 sm:py-12">
-        <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-14 space-y-4">
+      {/* mobile: 40px top padding matching design annotation */}
+      <section className="bg-white pt-[40px] pb-8 lg:py-24">
+        <div className="mx-auto max-w-7xl px-5 sm:px-10 lg:px-14 space-y-4">
           {data.introParagraphs.map((p, i) => (
             <p key={i} className="text-sm leading-7 text-gray-800">{p}</p>
           ))}
@@ -198,8 +193,8 @@ export default function ProjectDetailBody({ data }: { data: ProjectDetailData })
       </div>
 
       {/* ── RELATED PROJECTS ── */}
-      <section className="bg-white py-10 sm:py-14 border-t border-slate-100">
-        <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-14">
+      <section className="bg-white py-12 sm:py-24 border-t border-slate-100">
+        <div className="mx-auto max-w-7xl px-5 sm:px-10 lg:px-14">
           <div className="flex items-center justify-between mb-6 sm:mb-8">
             <h2 className="font-bebas text-3xl sm:text-4xl uppercase tracking-tight text-black">
               RELATED PROJECTS
@@ -210,7 +205,7 @@ export default function ProjectDetailBody({ data }: { data: ProjectDetailData })
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {data.relatedProjects.map((p, i) => (
-              <RelatedProjectCard key={p.id} project={p} index={i} />
+              <ProjectCard key={p.id} project={p} index={i} />
             ))}
           </div>
         </div>

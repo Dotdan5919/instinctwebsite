@@ -77,7 +77,7 @@ export default function WhatWeDoSection() {
   const [active, setActive] = useState(0);
 
   return (
-    <section className="bg-white sm:py-24 py-0 pb-12 ">
+    <section className="bg-white py-0 pb-10 sm:py-24">
       <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-14">
 
         {/* Header - 3 columns */}

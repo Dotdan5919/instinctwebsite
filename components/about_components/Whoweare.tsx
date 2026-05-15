@@ -11,7 +11,7 @@ export default function Whoweare() {
       whileInView={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.8, delay: 0.2 }}
       viewport={{ once: true }}
-      className="bg-white overflow-hidden"
+      className="bg-white py-0 pt-10 sm:py-24 overflow-hidden"
     >
       <div className="grid lg:grid-cols-[1.2fr_1.1fr]">
 
@@ -20,7 +20,7 @@ export default function Whoweare() {
           <div className="flex flex-col sm:grid sm:grid-cols-[auto_1fr] gap-6 sm:gap-8 items-start sm:pl-10 lg:pl-20 xl:pl-30">
             
             {/* Title */}
-            <h2 className="font-bebas text-4xl sm:text-5xl uppercase tracking-tight leading-tight text-white whitespace-nowrap">
+            <h2 className="font-bebas text-3xl sm:text-5xl uppercase tracking-tight leading-tight text-white whitespace-nowrap">
               WHO WE ARE
             </h2>
 

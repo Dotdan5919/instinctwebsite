@@ -371,7 +371,7 @@ export default function FeaturedProjectsSection() {
   const [activeCategoryIndex, setActiveCategoryIndex] = useState(0);
 
   return (
-    <section className="bg-white text-black sm:py-24 py-0 pb-12 overflow-hidden">
+    <section className="bg-white text-black py-0 pb-10 sm:py-24 overflow-hidden">
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: -50 }}

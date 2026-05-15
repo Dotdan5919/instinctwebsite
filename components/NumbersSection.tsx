@@ -99,7 +99,7 @@ export default function NumbersSection() {
   }, []);
 
   return (
-    <section className="bg-white sm:py-24 py-0 pb-12" ref={sectionRef}>
+    <section className="bg-white py-0 pb-10 sm:py-24" ref={sectionRef}>
       <div className="mx-auto max-w-7xl px-5 sm:px-10 lg:px-14">
         <div className="flex flex-col gap-10 rounded-[2rem] border border-white/10 bg-[#5b3900] px-5 py-6 sm:p-10 lg:p-12">
 
@@ -139,7 +139,7 @@ export default function NumbersSection() {
             viewport={{ once: true }}
             className="rounded-[1.5rem] bg-white p-5 text-black sm:p-10"
           >
-            <h2 className="font-bebas text-4xl uppercase tracking-tight text-black sm:text-5xl">
+            <h2 className="font-bebas text-3xl uppercase tracking-tight text-black sm:text-5xl">
               We Build History
             </h2>
             <p className="mt-5 font-montserrat max-w-3xl leading-8 text-slate-600 sm:text-md">

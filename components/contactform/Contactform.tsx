@@ -53,7 +53,7 @@ function ContactInfoCard() {
       transition={{ duration: 0.55 }}
       viewport={{ once: true }}
       className="relative rounded-2xl overflow-hidden flex flex-col justify-around font-montserrat"
-      style={{ background: '#996300', minHeight:647, padding: '48px 48px 36px' }}
+      style={{ background: '#996300', minHeight:647, padding: '20px 20px 36px' }}
     >
       {/* Title */}
       <div>
@@ -139,7 +139,7 @@ function ContactFormFields() {
 
   if (sent) {
     return (
-      <div className="flex flex-col items-center justify-center h-full py-20 text-center">
+      <div className="flex flex-col items-center justify-center h-full sm:py-20 py-0 pt-10  pb-28 text-center">
         <div className="w-14 h-14 rounded-full bg-amber-100 flex items-center justify-center mb-4">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#e8a020" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
             <path d="M20 6L9 17l-5-5" />
@@ -158,7 +158,7 @@ function ContactFormFields() {
       whileInView={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.55, delay: 0.1 }}
       viewport={{ once: true }}
-      className="space-y-5  h-[647px] rounded-2xl p-8"
+      className="space-y-5  h-[647px] rounded-2xl px-5 py-8"
     >
       {/* Row 1: First + Last name */}
       <div className="grid grid-cols-2 gap-4">

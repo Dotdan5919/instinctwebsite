@@ -92,7 +92,10 @@ export default function Hero({ currentStep = 0 }: { currentStep?: number }) {
                              bg-white/10 backdrop-blur-md hover:bg-white/20 hover:border-white/50
                              hover:text-amber-500 font-montserrat transition-all duration-300 whitespace-nowrap">
             Explore our Approach
-            <span className="text-base">↗</span>
+            
+<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M1 13L13 1M13 1H4M13 1v9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+</svg>
           </Link>
         </div>
 

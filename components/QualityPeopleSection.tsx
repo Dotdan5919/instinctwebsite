@@ -5,7 +5,7 @@ import Btn from "./Btn";
 
 export default function QualityPeopleSection() {
   return (
-    <section className="bg-white sm:py-24 py-0 pb-12  sm:px-10 lg:px-14">
+    <section className="bg-white py-0 pb-10 sm:py-24 sm:px-10 lg:px-14">
       <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-14">
         <div className="relative overflow-hidden rounded-[28px] min-h-[500px]">
           
@@ -37,7 +37,7 @@ export default function QualityPeopleSection() {
               <p className="text-md leading-7 text-white/85 sm:text-base">
                 Our people bring technical excellence, ingenuity, drive, creativity, and experience to help our customers achieve their bold visions. We succeed through partnership and a shared desire to make a difference. Motivated by tomorrow's challenges, we push the limits of what's possible.
               </p>
-              <Btn text="The people behind the projects"  href="/ourleadership" />
+              <Btn text="The people behind the projects"  href="/ourleadership" className=" sm:scale-100 scale-90 sm:right-0 right-6 "/>
             </div>
           </motion.div>
 
