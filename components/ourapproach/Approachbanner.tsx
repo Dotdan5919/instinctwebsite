@@ -43,7 +43,7 @@ export default function ApproachBanner() {
             {/* Arrow CTA */}
          
 
-            <Btn text='See our Expertise' />
+            <Btn text='See our Expertise' href='/whatwedo' />
           </div>
         </motion.div>
       </div>
